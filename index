@@ -1,1 +1,250 @@
-
+<div style="width: 100%; height: 100%; position: relative; background: white">
+    <div style="width: 1031px; height: 555px; left: 0px; top: 0px; position: absolute; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div style="align-self: stretch; height: 2209px; padding-top: 65px; background: #F9FAFB; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="align-self: stretch; height: 1751px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="align-self: stretch; height: 368px; position: relative; background: linear-gradient(135deg, #4F39F6 0%, #9810FA 50%, #155DFC 100%); overflow: hidden">
+                    <div style="width: 1031px; height: 588px; left: 0px; top: 0px; position: absolute; opacity: 0.20">
+                        <div style="width: 288px; height: 288px; left: 40px; top: 80px; position: absolute; opacity: 0.82; background: white; box-shadow: 48px 48px 48px; border-radius: 16777200px; filter: blur(24px)"></div>
+                        <div style="width: 288px; height: 288px; left: 703px; top: 160px; position: absolute; opacity: 0.51; background: #DAB2FF; box-shadow: 48px 48px 48px; border-radius: 16777200px; filter: blur(24px)"></div>
+                        <div style="width: 288px; height: 288px; left: 80px; top: 332px; position: absolute; opacity: 0.51; background: #8EC5FF; box-shadow: 48px 48px 48px; border-radius: 16777200px; filter: blur(24px)"></div>
+                    </div>
+                    <div style="width: 1031px; height: 332px; left: 0px; top: 63px; position: absolute">
+                        <div style="width: 171.09px; height: 38px; left: 429.95px; top: 0px; position: absolute; background: rgba(255, 255, 255, 0.20); border-radius: 16777200px; outline: 1px rgba(255, 255, 255, 0.30) solid; outline-offset: -1px">
+                            <div style="left: 17px; top: 9.50px; position: absolute; text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Trusted by educators</div>
+                        </div>
+                        <div style="width: 967px; height: 72px; left: 32px; top: 62px; position: absolute">
+                            <div style="left: 181.34px; top: 1.50px; position: absolute; text-align: center; color: white; font-size: 72px; font-family: Inter; font-weight: 800; line-height: 72px; word-wrap: break-word">EdTech Navigator</div>
+                        </div>
+                        <div style="width: 768px; height: 78px; left: 131.50px; top: 158px; position: absolute">
+                            <div style="width: 606px; left: 81.09px; top: 0.50px; position: absolute; text-align: center; color: #F3E8FF; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 39px; letter-spacing: 0.07px; word-wrap: break-word">Your comprehensive guide to educational technology tools, implementation strategies, and peer insights</div>
+                        </div>
+                        <div style="width: 967px; height: 48px; padding-right: 0.01px; left: 32px; top: 284px; position: absolute"></div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 683px; padding-top: 96px; background: linear-gradient(180deg, white 0%, #F9FAFB 100%); flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="align-self: stretch; height: 474px; padding-left: 32px; padding-right: 32px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: flex">
+                        <div style="align-self: stretch; height: 92px; position: relative">
+                            <div style="width: 967px; height: 48px; left: 0px; top: 0px; position: absolute">
+                                <div style="left: 286.83px; top: 0.50px; position: absolute; text-align: center; color: #101828; font-size: 48px; font-family: Inter; font-weight: 400; line-height: 48px; word-wrap: break-word">Choose Your Path</div>
+                            </div>
+                            <div style="width: 672px; height: 28px; left: 147.50px; top: 64px; position: absolute">
+                                <div style="left: 89.20px; top: 0px; position: absolute; text-align: center; color: #4A5565; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Tailored resources and tools for every role in education</div>
+                            </div>
+                        </div>
+                        <div style="align-self: stretch; height: 318px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: white; box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); overflow: hidden; border-radius: 14px">
+                                <div style="width: 237px; height: 254px; left: 32px; top: 32px; position: absolute">
+                                    <div style="width: 64px; height: 64px; left: 0px; top: 0px; position: absolute; background: linear-gradient(135deg, #2B7FFF 0%, #4F39F6 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                        <div style="width: 32px; height: 32px; position: relative; overflow: hidden">
+                                            <div style="width: 26.67px; height: 24px; left: 2.67px; top: 4px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 237px; height: 32px; left: 0px; top: 88px; position: absolute">
+                                        <div style="left: 0px; top: 0px; position: absolute; color: #101828; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Teachers</div>
+                                    </div>
+                                    <div style="width: 237px; height: 78px; left: 0px; top: 132px; position: absolute">
+                                        <div style="width: 224px; left: 0px; top: -0.50px; position: absolute; color: #4A5565; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Discover tools, implementation guides, and peer reviews from fellow educators.</div>
+                                    </div>
+                                    <div style="width: 237px; height: 20px; left: 0px; top: 234px; position: absolute; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+                                        <div style="width: 72.98px; height: 20px; position: relative">
+                                            <div style="left: 0px; top: 0.50px; position: absolute; color: #4F39F6; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Learn more</div>
+                                        </div>
+                                        <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
+                                            <div style="width: 4.67px; height: 9.33px; left: 8px; top: 3.33px; position: absolute; outline: 1.33px #4F39F6 solid; outline-offset: -0.67px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: white; box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); overflow: hidden; border-radius: 14px">
+                                <div style="width: 237px; height: 254px; left: 32px; top: 32px; position: absolute">
+                                    <div style="width: 64px; height: 64px; left: 0px; top: 0px; position: absolute; background: linear-gradient(135deg, #00C950 0%, #009966 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                        <div style="width: 32px; height: 32px; position: relative; overflow: hidden">
+                                            <div style="width: 18.67px; height: 8px; left: 2.67px; top: 20px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                            <div style="width: 10.67px; height: 10.67px; left: 6.67px; top: 4px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                            <div style="width: 4px; height: 7.83px; left: 25.33px; top: 20.17px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                            <div style="width: 4.01px; height: 10.33px; left: 21.33px; top: 4.17px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 237px; height: 32px; left: 0px; top: 88px; position: absolute">
+                                        <div style="left: 0px; top: 0px; position: absolute; color: #101828; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Parents</div>
+                                    </div>
+                                    <div style="width: 237px; height: 78px; left: 0px; top: 132px; position: absolute">
+                                        <div style="width: 211px; left: 0px; top: -0.50px; position: absolute; color: #4A5565; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Learn how educational technology tools can support your child's learning.</div>
+                                    </div>
+                                    <div style="width: 237px; height: 20px; left: 0px; top: 234px; position: absolute; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+                                        <div style="width: 72.98px; height: 20px; position: relative">
+                                            <div style="left: 0px; top: 0.50px; position: absolute; color: #4F39F6; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Learn more</div>
+                                        </div>
+                                        <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
+                                            <div style="width: 4.67px; height: 9.33px; left: 8px; top: 3.33px; position: absolute; outline: 1.33px #4F39F6 solid; outline-offset: -0.67px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: white; box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); overflow: hidden; border-radius: 14px">
+                                <div style="width: 237px; height: 254px; left: 32px; top: 32px; position: absolute">
+                                    <div style="width: 64px; height: 64px; left: 0px; top: 0px; position: absolute; background: linear-gradient(135deg, #AD46FF 0%, #7F22FE 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                        <div style="width: 32px; height: 32px; position: relative; overflow: hidden">
+                                            <div style="width: 16px; height: 26.67px; left: 8px; top: 2.67px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                            <div style="width: 5.33px; height: 13.33px; left: 2.67px; top: 16px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                            <div style="width: 5.33px; height: 17.33px; left: 24px; top: 12px; position: absolute; outline: 2.67px white solid; outline-offset: -1.33px"></div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 237px; height: 32px; left: 0px; top: 88px; position: absolute">
+                                        <div style="left: 0px; top: 0px; position: absolute; color: #101828; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Administrators</div>
+                                    </div>
+                                    <div style="width: 237px; height: 78px; left: 0px; top: 132px; position: absolute">
+                                        <div style="width: 224px; left: 0px; top: -0.50px; position: absolute; color: #4A5565; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Access policy guides, implementation strategies, and district-level resources.</div>
+                                    </div>
+                                    <div style="width: 237px; height: 20px; left: 0px; top: 234px; position: absolute; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+                                        <div style="width: 72.98px; height: 20px; position: relative">
+                                            <div style="left: 0px; top: 0.50px; position: absolute; color: #4F39F6; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Learn more</div>
+                                        </div>
+                                        <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
+                                            <div style="width: 4.67px; height: 9.33px; left: 8px; top: 3.33px; position: absolute; outline: 1.33px #4F39F6 solid; outline-offset: -0.67px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 700px; position: relative; background: #101828; overflow: hidden">
+                    <div style="width: 1031px; height: 700px; left: 0px; top: 0px; position: absolute; opacity: 0.10">
+                        <div style="width: 384px; height: 384px; left: 257.75px; top: 0px; position: absolute; background: #AD46FF; box-shadow: 128px 128px 128px; border-radius: 16777200px; filter: blur(64px)"></div>
+                        <div style="width: 384px; height: 384px; left: 389.25px; top: 316px; position: absolute; background: #2B7FFF; box-shadow: 128px 128px 128px; border-radius: 16777200px; filter: blur(64px)"></div>
+                    </div>
+                    <div style="width: 1031px; height: 508px; padding-left: 32px; padding-right: 32px; left: 0px; top: 96px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: inline-flex">
+                        <div style="align-self: stretch; height: 120px; position: relative">
+                            <div style="width: 967px; height: 48px; left: 0px; top: 0px; position: absolute">
+                                <div style="left: 322.95px; top: 0.50px; position: absolute; text-align: center; color: white; font-size: 48px; font-family: Inter; font-weight: 400; line-height: 48px; word-wrap: break-word">What We Offer</div>
+                            </div>
+                            <div style="width: 672px; height: 56px; left: 147.50px; top: 64px; position: absolute">
+                                <div style="width: 586px; left: 43.42px; top: 0px; position: absolute; text-align: center; color: #99A1AF; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Everything you need to make informed decisions about educational technology, always with the student in mind</div>
+                            </div>
+                        </div>
+                        <div style="align-self: stretch; height: 324px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: rgba(255, 255, 255, 0.05); border-radius: 16px; outline: 1px rgba(255, 255, 255, 0.10) solid; outline-offset: -1px">
+                                <div style="width: 80px; height: 80px; left: 110.50px; top: 33px; position: absolute; background: linear-gradient(135deg, #2B7FFF 0%, #4F39F6 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                    <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+                                        <div style="width: 33.33px; height: 30px; left: 3.33px; top: 5px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                    </div>
+                                </div>
+                                <div style="width: 235px; height: 64px; left: 33px; top: 137px; position: absolute">
+                                    <div style="width: 185px; left: 25px; top: 0px; position: absolute; text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Implementation Guides</div>
+                                </div>
+                                <div style="width: 235px; height: 78px; left: 33px; top: 213px; position: absolute">
+                                    <div style="width: 220px; left: 7.73px; top: -0.50px; position: absolute; text-align: center; color: #99A1AF; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Step-by-step instructions for integrating new tools into your educational environment.</div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: rgba(255, 255, 255, 0.05); border-radius: 16px; outline: 1px rgba(255, 255, 255, 0.10) solid; outline-offset: -1px">
+                                <div style="width: 80px; height: 80px; left: 110.50px; top: 33px; position: absolute; background: linear-gradient(135deg, #00C950 0%, #009966 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                    <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+                                        <div style="width: 23.33px; height: 10px; left: 3.33px; top: 25px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                        <div style="width: 13.33px; height: 13.33px; left: 8.33px; top: 5px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                        <div style="width: 5px; height: 9.78px; left: 31.67px; top: 25.22px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                        <div style="width: 5.01px; height: 12.92px; left: 26.67px; top: 5.22px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                    </div>
+                                </div>
+                                <div style="width: 235px; height: 32px; left: 33px; top: 137px; position: absolute">
+                                    <div style="left: 40.77px; top: 0px; position: absolute; text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Peer Reviews</div>
+                                </div>
+                                <div style="width: 235px; height: 78px; left: 33px; top: 181px; position: absolute">
+                                    <div style="width: 234px; left: 0.95px; top: -0.50px; position: absolute; text-align: center; color: #99A1AF; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Real feedback from educators who have used these tools.</div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; align-self: stretch; position: relative; background: rgba(255, 255, 255, 0.05); border-radius: 16px; outline: 1px rgba(255, 255, 255, 0.10) solid; outline-offset: -1px">
+                                <div style="width: 80px; height: 80px; left: 110.50px; top: 33px; position: absolute; background: linear-gradient(135deg, #AD46FF 0%, #7F22FE 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 16px; justify-content: center; align-items: center; display: inline-flex">
+                                    <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+                                        <div style="width: 20px; height: 33.33px; left: 10px; top: 3.33px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                        <div style="width: 6.67px; height: 16.67px; left: 3.33px; top: 20px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                        <div style="width: 6.67px; height: 21.67px; left: 30px; top: 15px; position: absolute; outline: 3.33px white solid; outline-offset: -1.67px"></div>
+                                    </div>
+                                </div>
+                                <div style="width: 235px; height: 32px; left: 33px; top: 137px; position: absolute">
+                                    <div style="left: 20.89px; top: 0px; position: absolute; text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 400; line-height: 32px; letter-spacing: 0.07px; word-wrap: break-word">Policy Resources</div>
+                                </div>
+                                <div style="width: 235px; height: 78px; left: 33px; top: 181px; position: absolute">
+                                    <div style="width: 233px; left: 1.29px; top: -0.50px; position: absolute; text-align: center; color: #99A1AF; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 26px; word-wrap: break-word">Guidance for administrators and policymakers on ed tech adoption and governance.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="align-self: stretch; height: 393px; padding-top: 64px; padding-left: 32px; padding-right: 32px; background: linear-gradient(135deg, #101828 0%, #1E2939 100%); flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 48px; display: flex">
+                <div style="align-self: stretch; height: 164px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="align-self: stretch; align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+                        <div style="align-self: stretch; height: 40px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 14px; justify-content: center; align-items: center; display: flex">
+                                <div style="width: 24px; height: 24px; position: relative; overflow: hidden">
+                                    <div style="width: 20.02px; height: 10px; left: 2px; top: 5px; position: absolute; outline: 2px white solid; outline-offset: -1px"></div>
+                                    <div style="width: 12px; height: 6.50px; left: 6px; top: 12.50px; position: absolute; outline: 2px white solid; outline-offset: -1px"></div>
+                                </div>
+                            </div>
+                            <div style="width: 154.38px; height: 28px; position: relative">
+                                <div style="left: 0px; top: 0px; position: absolute; color: white; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">EdTech Navigator</div>
+                            </div>
+                        </div>
+                        <div style="align-self: stretch; height: 68.25px; position: relative">
+                            <div style="width: 205px; left: 0px; top: 1px; position: absolute; color: #99A1AF; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 22.75px; word-wrap: break-word">Empowering educators, parents, and administrators with curated ed tech resources.</div>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+                        <div style="align-self: stretch; height: 24px; position: relative">
+                            <div style="left: 0px; top: -0.50px; position: absolute; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Resources</div>
+                        </div>
+                        <div style="align-self: stretch; height: 116px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+                            <div style="align-self: stretch; height: 20px; position: relative">
+                                <div style="width: 83.57px; height: 20px; left: 0px; top: 0px; position: absolute">
+                                    <div style="left: 0px; top: 0.50px; position: absolute; color: #D1D5DC; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">For Teachers</div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; height: 20px; position: relative">
+                                <div style="width: 73.82px; height: 20px; left: 0px; top: 0px; position: absolute">
+                                    <div style="left: 0px; top: 0.50px; position: absolute; color: #D1D5DC; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">For Parents</div>
+                                </div>
+                            </div>
+                            <div style="align-self: stretch; height: 20px; position: relative">
+                                <div style="width: 118.92px; height: 20px; left: 0px; top: 0px; position: absolute">
+                                    <div style="left: 0px; top: 0.50px; position: absolute; color: #D1D5DC; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">For Administrators</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="align-self: stretch; height: 53px; padding-top: 33px; border-top: 1px #364153 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div style="align-self: stretch; height: 20px; position: relative">
+                        <div style="left: 335.66px; top: 0.50px; position: absolute; text-align: center; color: #99A1AF; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">© 2026 EdTech Navigator. All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 1031px; height: 65px; padding-bottom: 1px; padding-left: 32px; padding-right: 32px; left: 0px; top: 0px; position: absolute; background: rgba(255, 255, 255, 0.80); box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px rgba(0, 0, 0, 0.10); border-bottom: 1px rgba(229, 231, 235, 0.50) solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div style="align-self: stretch; height: 64px; justify-content: space-between; align-items: center; display: inline-flex">
+            <div style="width: 202.38px; height: 40px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%); box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10); border-radius: 14px; justify-content: center; align-items: center; display: flex">
+                    <div style="width: 24px; height: 24px; position: relative; overflow: hidden">
+                        <div style="width: 20.02px; height: 10px; left: 2px; top: 5px; position: absolute; outline: 2px white solid; outline-offset: -1px"></div>
+                        <div style="width: 12px; height: 6.50px; left: 6px; top: 12.50px; position: absolute; outline: 2px white solid; outline-offset: -1px"></div>
+                    </div>
+                </div>
+                <div style="flex: 1 1 0; height: 28px; position: relative">
+                    <div style="left: -3px; top: 0px; position: absolute; text-align: center; color: #101828; font-size: 20px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">EdTech Navigator</div>
+                </div>
+            </div>
+            <div style="width: 422.01px; height: 40px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                <div style="width: 125.82px; height: 40px; position: relative; border-radius: 10px">
+                    <div style="left: 16px; top: 7.50px; position: absolute; text-align: center; color: #364153; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">For Teachers</div>
+                </div>
+                <div style="width: 114.81px; height: 40px; position: relative; border-radius: 10px">
+                    <div style="left: 15px; top: 7.50px; position: absolute; text-align: center; color: #364153; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">For Parents</div>
+                </div>
+                <div style="flex: 1 1 0; height: 40px; position: relative; border-radius: 10px">
+                    <div style="left: 16px; top: 7.50px; position: absolute; text-align: center; color: #364153; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">For Administrators</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
