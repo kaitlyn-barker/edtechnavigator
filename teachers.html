@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Teachers – EdTech Navigator</title>
+  <script src="edtech-tools.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -781,105 +782,10 @@
       <!-- TOOLS PANEL -->
       <div class="tab-panel active" id="panel-tools">
         <h2 class="section-title">Featured Ed Tech Tools</h2>
-        <div class="tools-list">
-
-          <!-- ClassDojo -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">ClassDojo</div>
-              <span class="tool-category">Communication</span>
-            </div>
-            <div class="tool-rating">
-              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
-              </svg>
-              <span class="rating-score">4.5</span>
-              <span class="rating-count">(234)</span>
-            </div>
-            <p class="tool-desc">A classroom communication and community platform that allows teachers to track student behavior, share updates with parents, and build a positive classroom culture through points, badges, and messaging features.</p>
-            <div class="tool-meta">
-              <span><span class="label">Grade: </span><span class="value">K-8</span></span>
-              <span><span class="label">Subject: </span><span class="value">All Subjects</span></span>
-            </div>
-            <div class="tool-actions">
-              <button class="btn-primary">View Details</button>
-              <button class="btn-secondary">Read Reviews</button>
-            </div>
-          </div>
-
-          <!-- IXL Math -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">IXL Math</div>
-              <span class="tool-category">Mathematics</span>
-            </div>
-            <div class="tool-rating">
-              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
-              </svg>
-              <span class="rating-score">4.8</span>
-              <span class="rating-count">(189)</span>
-            </div>
-            <p class="tool-desc">An adaptive math practice platform covering Pre-K through 12th grade that adjusts difficulty based on student performance, providing personalized skill-building and real-time diagnostic insights for teachers.</p>
-            <div class="tool-meta">
-              <span><span class="label">Grade: </span><span class="value">K-12</span></span>
-              <span><span class="label">Subject: </span><span class="value">Mathematics</span></span>
-            </div>
-            <div class="tool-actions">
-              <button class="btn-primary">View Details</button>
-              <button class="btn-secondary">Read Reviews</button>
-            </div>
-          </div>
-
-          <!-- Epic! -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">Epic!</div>
-              <span class="tool-category">Literacy</span>
-            </div>
-            <div class="tool-rating">
-              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
-              </svg>
-              <span class="rating-score">4.6</span>
-              <span class="rating-count">(312)</span>
-            </div>
-            <p class="tool-desc">A digital reading library for kids ages 12 and under that offers thousands of books, audiobooks, and educational videos, making it a popular tool for building independent reading habits in elementary classrooms.</p>
-            <div class="tool-meta">
-              <span><span class="label">Grade: </span><span class="value">K-5</span></span>
-              <span><span class="label">Subject: </span><span class="value">ELA</span></span>
-            </div>
-            <div class="tool-actions">
-              <button class="btn-primary">View Details</button>
-              <button class="btn-secondary">Read Reviews</button>
-            </div>
-          </div>
-
-          <!-- Discovery Education -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">Discovery Education</div>
-              <span class="tool-category">Science</span>
-            </div>
-            <div class="tool-rating">
-              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
-              </svg>
-              <span class="rating-score">4.4</span>
-              <span class="rating-count">(156)</span>
-            </div>
-            <p class="tool-desc">A digital learning platform that provides video content, virtual field trips, interactive lessons, and standards-aligned resources across science, social studies, and other subjects for K–12 classrooms.</p>
-            <div class="tool-meta">
-              <span><span class="label">Grade: </span><span class="value">K-12</span></span>
-              <span><span class="label">Subject: </span><span class="value">Science</span></span>
-            </div>
-            <div class="tool-actions">
-              <button class="btn-primary">View Details</button>
-              <button class="btn-secondary">Read Reviews</button>
-            </div>
-          </div>
-
+        <div class="tools-list" id="teacher-tools-list">
+          <!-- populated by JS -->
         </div>
+        <p id="teacher-no-results" style="display:none; color:#6A7282; font-size:16px; padding:24px 0;">No tools matched your search. Try a different keyword.</p>
       </div>
 
       <!-- GUIDES PANEL -->
@@ -1051,25 +957,77 @@
   </footer>
 
   <script>
-    // Tab switcher
+    // ── Tab switcher ──────────────────────────────────────────────
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
-
-        tabBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
         tabPanels.forEach(p => p.classList.remove('active'));
-
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
         document.getElementById('panel-' + target).classList.add('active');
       });
     });
+
+    // ── Tool database rendering ───────────────────────────────────
+    const STAR_SVG = `<svg class="star-icon" viewBox="0 0 20 20" fill="none">
+      <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
+    </svg>`;
+
+    const RELEVANCE_BADGE = { High: '', Medium: ' style="background:#F0F9FF;"' };
+
+    function buildTeacherCard(tool) {
+      return `
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-name">${tool.name}</div>
+            <span class="tool-category">${tool.subcategory}</span>
+          </div>
+          <div class="tool-rating">
+            ${STAR_SVG}
+            <span class="rating-score">${tool.teacherRelevant === 'High' ? 'Top Pick' : 'Recommended'}</span>
+          </div>
+          <p class="tool-desc">${tool.description}</p>
+          <div class="tool-meta">
+            <span><span class="label">Grade: </span><span class="value">${tool.gradeLevels}</span></span>
+            <span><span class="label">Subject: </span><span class="value">${tool.subjects.join(', ')}</span></span>
+            <span><span class="label">Pricing: </span><span class="value">${tool.pricingModel}</span></span>
+          </div>
+          <div class="tool-actions">
+            <a class="btn-primary" href="${tool.website}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;">Visit Website</a>
+            <button class="btn-secondary">${tool.category}</button>
+          </div>
+        </div>`;
+    }
+
+    function renderTeacherTools(query) {
+      const list    = document.getElementById('teacher-tools-list');
+      const noRes   = document.getElementById('teacher-no-results');
+      const base    = getToolsForAudience('Teachers');
+      const results = filterTools(base, query);
+
+      if (results.length === 0) {
+        list.innerHTML = '';
+        noRes.style.display = 'block';
+      } else {
+        list.innerHTML = results.map(buildTeacherCard).join('');
+        noRes.style.display = 'none';
+      }
+    }
+
+    // Initial render
+    renderTeacherTools('');
+
+    // Wire up search
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn   = document.querySelector('.search-btn');
+
+    searchBtn.addEventListener('click', () => renderTeacherTools(searchInput.value));
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderTeacherTools(searchInput.value); });
+    searchInput.addEventListener('input', () => renderTeacherTools(searchInput.value));
   </script>
 
 </body>

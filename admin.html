@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Administrators – EdTech Navigator</title>
+  <script src="edtech-tools.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -839,84 +840,10 @@
       <div id="tab-solutions" class="tab-panel active" role="tabpanel">
         <h2 class="section-title">Enterprise Ed Tech Solutions</h2>
 
-        <div class="solution-cards">
-
-          <!-- Schoology -->
-          <div class="solution-card">
-            <div class="card-header">
-              <h3 class="card-title">Schoology</h3>
-              <div class="card-tags">
-                <span class="tag tag-dark">Infrastructure</span>
-                <span class="tag tag-light">District-wide</span>
-                <span class="tag tag-gray">Enterprise</span>
-              </div>
-            </div>
-            <p class="card-desc">Schoology is a powerful learning management system (LMS) that empowers school and district administrators to streamline curriculum delivery, assessment, and communication across all classrooms. Designed for scalability, Schoology gives administrators full visibility into instructional activity while supporting teachers and students with an intuitive, easy-to-use platform.</p>
-            <div class="card-features">
-              <p class="features-label">Key Features:</p>
-              <div class="feature-pills">
-                <span class="feature-pill">Curriculum Management</span>
-                <span class="feature-pill">Integration Ready</span>
-                <span class="feature-pill">Assessment Tools</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <button class="btn-primary">Request Demo</button>
-              <button class="btn-secondary">Download Spec Sheet</button>
-            </div>
-          </div>
-
-          <!-- Newsela -->
-          <div class="solution-card">
-            <div class="card-header">
-              <h3 class="card-title">Newsela</h3>
-              <div class="card-tags">
-                <span class="tag tag-dark">Instruction</span>
-                <span class="tag tag-light">District-wide</span>
-                <span class="tag tag-gray">Enterprise</span>
-              </div>
-            </div>
-            <p class="card-desc">Newsela is a dynamic content platform that brings current events, primary sources, and informational texts into the classroom across all subject areas. With its unique text-leveling technology, Newsela allows administrators to support literacy school-wide while giving teachers the flexibility to meet every student where they are.</p>
-            <div class="card-features">
-              <p class="features-label">Key Features:</p>
-              <div class="feature-pills">
-                <span class="feature-pill">Differentiation</span>
-                <span class="feature-pill">Standards Alignment</span>
-                <span class="feature-pill">Assessment</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <button class="btn-primary">Request Demo</button>
-              <button class="btn-secondary">Download Spec Sheet</button>
-            </div>
-          </div>
-
-          <!-- Lexia Core5 -->
-          <div class="solution-card">
-            <div class="card-header">
-              <h3 class="card-title">Lexia Core5</h3>
-              <div class="card-tags">
-                <span class="tag tag-dark">Literacy</span>
-                <span class="tag tag-light">K-12</span>
-                <span class="tag tag-gray">Annual License</span>
-              </div>
-            </div>
-            <p class="card-desc">Lexia Core5 is a research-backed adaptive reading program that provides personalized literacy instruction for students in grades Pre-K–5. Built on the science of reading, Lexia Core5 helps administrators ensure every student receives targeted support to build strong foundational literacy skills, while giving teachers and leaders real-time data to drive intervention decisions.</p>
-            <div class="card-features">
-              <p class="features-label">Key Features:</p>
-              <div class="feature-pills">
-                <span class="feature-pill">Adaptive Learning</span>
-                <span class="feature-pill">Standards Alignment</span>
-                <span class="feature-pill">Progress Tracking</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <button class="btn-primary">Request Demo</button>
-              <button class="btn-secondary">Download Spec Sheet</button>
-            </div>
-          </div>
-
-        </div><!-- /solution-cards -->
+        <div class="solution-cards" id="admin-tools-list">
+          <!-- populated by JS -->
+        </div>
+        <p id="admin-no-results" style="display:none; color:#6A7282; font-size:16px; padding:24px 0;">No tools matched your search. Try a different keyword.</p>
 
         <!-- Need Help Card -->
         <div class="help-card">
@@ -1167,24 +1094,73 @@
   </footer>
 
   <script>
+    // ── Tab switcher ──────────────────────────────────────────────
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
-
-        tabBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
         tabPanels.forEach(p => p.classList.remove('active'));
-
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
         document.getElementById('tab-' + target).classList.add('active');
       });
     });
+
+    // ── Tool database rendering ───────────────────────────────────
+    function buildAdminCard(tool) {
+      const tier  = tool.adminRelevant === 'High' ? 'Enterprise' : 'District';
+      const scope = tool.gradeLevels;
+      return `
+        <div class="solution-card">
+          <div class="card-header">
+            <h3 class="card-title">${tool.name}</h3>
+            <div class="card-tags">
+              <span class="tag tag-dark">${tool.category}</span>
+              <span class="tag tag-light">${scope}</span>
+              <span class="tag tag-gray">${tier}</span>
+            </div>
+          </div>
+          <p class="card-desc">${tool.description} Vendor: ${tool.vendor}. Subjects: ${tool.subjects.join(', ')}. Pricing: ${tool.pricingModel}.</p>
+          <div class="card-features">
+            <p class="features-label">Key Details:</p>
+            <div class="feature-pills">
+              <span class="feature-pill">${tool.subcategory}</span>
+              <span class="feature-pill">${tool.platformType}</span>
+              <span class="feature-pill">${tool.adminRelevant} Admin Relevance</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="btn-primary" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Visit Website</a>
+            <button class="btn-secondary">Save to List</button>
+          </div>
+        </div>`;
+    }
+
+    function renderAdminTools(query) {
+      const list  = document.getElementById('admin-tools-list');
+      const noRes = document.getElementById('admin-no-results');
+      const base  = getToolsForAudience('Admins');
+      const results = filterTools(base, query);
+
+      if (results.length === 0) {
+        list.innerHTML = '';
+        noRes.style.display = 'block';
+      } else {
+        list.innerHTML = results.map(buildAdminCard).join('');
+        noRes.style.display = 'none';
+      }
+    }
+
+    renderAdminTools('');
+
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn   = document.querySelector('.search-btn');
+    searchBtn.addEventListener('click', () => renderAdminTools(searchInput.value));
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderAdminTools(searchInput.value); });
+    searchInput.addEventListener('input', () => renderAdminTools(searchInput.value));
   </script>
 </body>
 </html>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Parents – EdTech Navigator</title>
+  <script src="edtech-tools.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -753,96 +754,10 @@
       <div class="tab-panel active" id="panel-tools">
         <h2 class="section-title">Recommended for Families</h2>
 
-        <div class="tools-grid">
-
-          <!-- Khan Academy -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">Khan Academy</div>
-              <div class="tool-tags">
-                <span class="tag-category">Study Support</span>
-                <span class="tag-age">4-18 years</span>
-              </div>
-            </div>
-            <p class="tool-desc">A free, comprehensive learning platform covering math, science, ELA, and more for grades K–12. Parents can create a parent account to monitor progress, set goals, and see exactly where their child needs support — all at no cost.</p>
-            <div class="tool-badges">
-              <div class="badge-safety">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
-                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="badge-safety-text">Safety: Excellent</span>
-              </div>
-              <div class="badge-dashboard">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
-                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
-                </svg>
-                <span class="badge-dashboard-text">Parent Dashboard Available</span>
-              </div>
-            </div>
-            <button class="btn-learn-more">Learn More</button>
-          </div>
-
-          <!-- Epic! -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">Epic!</div>
-              <div class="tool-tags">
-                <span class="tag-category">Literacy</span>
-                <span class="tag-age">4-12 years</span>
-              </div>
-            </div>
-            <p class="tool-desc">A digital reading library with thousands of books, audiobooks, and educational videos. Parents can set up a home account, track reading activity, and encourage independent reading habits in a safe, ad-free environment.</p>
-            <div class="tool-badges">
-              <div class="badge-safety">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
-                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="badge-safety-text">Safety: Excellent</span>
-              </div>
-              <div class="badge-dashboard">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
-                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
-                </svg>
-                <span class="badge-dashboard-text">Parent Dashboard Available</span>
-              </div>
-            </div>
-            <button class="btn-learn-more">Learn More</button>
-          </div>
-
-          <!-- Prodigy Math -->
-          <div class="tool-card">
-            <div class="tool-header">
-              <div class="tool-name">Prodigy Math</div>
-              <div class="tool-tags">
-                <span class="tag-category">Math</span>
-                <span class="tag-age">6-14 years</span>
-              </div>
-            </div>
-            <p class="tool-desc">A game-based math platform where students build a fantasy world and battle characters by answering math questions. It aligns to school curriculum standards, complementing what students are already learning in class.</p>
-            <div class="tool-badges">
-              <div class="badge-safety">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
-                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="badge-safety-text">Safety: Excellent</span>
-              </div>
-              <div class="badge-dashboard">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
-                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
-                </svg>
-                <span class="badge-dashboard-text">Parent Dashboard Available</span>
-              </div>
-            </div>
-            <button class="btn-learn-more">Learn More</button>
-          </div>
-
+        <div class="tools-grid" id="parent-tools-grid">
+          <!-- populated by JS -->
         </div>
+        <p id="parent-no-results" style="display:none; color:#6A7282; font-size:16px; padding:24px 0;">No tools matched your search. Try a different keyword.</p>
 
         <!-- Safety First Banner -->
         <div class="safety-banner">
@@ -1079,43 +994,90 @@
   </footer>
 
   <script>
-    // Tab switcher
+    // ── Tab switcher ──────────────────────────────────────────────
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
-
-        tabBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
         tabPanels.forEach(p => p.classList.remove('active'));
-
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
         document.getElementById('panel-' + target).classList.add('active');
       });
     });
 
-    // FAQ accordion
+    // ── FAQ accordion ─────────────────────────────────────────────
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('open');
           i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
-
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
+
+    // ── Tool database rendering ───────────────────────────────────
+    const SHIELD_SVG = `<svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+      <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
+      <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
+    const DASH_SVG = `<svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+      <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
+      <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
+    </svg>`;
+
+    function buildParentCard(tool) {
+      const hasDashboard = tool.intendedUsers.includes('Parents');
+      return `
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-name">${tool.name}</div>
+            <div class="tool-tags">
+              <span class="tag-category">${tool.subcategory}</span>
+              <span class="tag-age">${tool.gradeLevels}</span>
+            </div>
+          </div>
+          <p class="tool-desc">${tool.description} Subjects: ${tool.subjects.join(', ')}. Pricing: ${tool.pricingModel}.</p>
+          <div class="tool-badges">
+            <div class="badge-safety">
+              ${SHIELD_SVG}
+              <span class="badge-safety-text">Safety: ${tool.parentRelevant === 'High' ? 'Excellent' : 'Good'}</span>
+            </div>
+            ${hasDashboard ? `<div class="badge-dashboard">${DASH_SVG}<span class="badge-dashboard-text">Parent Dashboard Available</span></div>` : ''}
+          </div>
+          <a class="btn-learn-more" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Learn More</a>
+        </div>`;
+    }
+
+    function renderParentTools(query) {
+      const grid  = document.getElementById('parent-tools-grid');
+      const noRes = document.getElementById('parent-no-results');
+      const base  = getToolsForAudience('Parents');
+      const results = filterTools(base, query);
+
+      if (results.length === 0) {
+        grid.innerHTML = '';
+        noRes.style.display = 'block';
+      } else {
+        grid.innerHTML = results.map(buildParentCard).join('');
+        noRes.style.display = 'none';
+      }
+    }
+
+    renderParentTools('');
+
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn   = document.querySelector('.search-btn');
+    searchBtn.addEventListener('click', () => renderParentTools(searchInput.value));
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderParentTools(searchInput.value); });
+    searchInput.addEventListener('input', () => renderParentTools(searchInput.value));
   </script>
 
 </body>
