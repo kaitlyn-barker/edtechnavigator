@@ -1,1 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Parents – EdTech Navigator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F9FAFB;
+      color: #101828;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.50);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #364153;
+      text-decoration: none;
+      border-radius: 10px;
+      line-height: 24px;
+      transition: background 0.15s;
+    }
+
+    .nav-links a:hover { background: rgba(15,22,35,0.05); }
+
+    .nav-links a.active {
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      color: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    .nav-links a.active:hover { background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 252px;
+      background: linear-gradient(135deg, #00A63E 0%, #009966 50%, #009689 100%);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 32px;
+    }
+
+    .hero-blobs {
+      position: absolute;
+      inset: 0;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(24px);
+    }
+
+    .blob-1 {
+      width: 256px; height: 256px;
+      background: #5EE9B5;
+      left: 40px; top: -44px;
+      opacity: 0.52;
+    }
+
+    .blob-2 {
+      width: 256px; height: 256px;
+      background: white;
+      right: 296px; top: 40px;
+      opacity: 0.74;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 400;
+      color: white;
+      line-height: 48px;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #DCFCE7;
+      line-height: 28px;
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-bar-wrap {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      border-bottom: 1px solid rgba(0,0,0,0.10);
+      padding: 32px 32px 31px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 16px;
+      max-width: 967px;
+      margin: 0 auto;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 56px;
+      padding: 4px 12px 4px 48px;
+      background: #F3F3F5;
+      border-radius: 14px;
+      border: 2px solid #E5E7EB;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      color: #101828;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-input::placeholder { color: #717182; }
+    .search-input:focus { border-color: #00A63E; }
+
+    .search-btn {
+      height: 56px;
+      padding: 8px 32px;
+      background: linear-gradient(90deg, #00A63E 0%, #009966 100%);
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .search-btn:hover { opacity: 0.90; }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      background: linear-gradient(180deg, #F9FAFB 0%, white 100%);
+      padding: 56px 32px 80px;
+    }
+
+    .content-inner {
+      max-width: 967px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      width: 448px;
+      height: 56px;
+      background: #F3F4F6;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      padding: 4.5px 4px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      height: 47px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #0A0A0A;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+
+    .tab-btn.active {
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    /* ── TAB PANELS ── */
+    .tab-panel { display: none; flex-direction: column; gap: 32px; }
+    .tab-panel.active { display: flex; }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 30px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 36px;
+      letter-spacing: 0.40px;
+    }
+
+    /* ── TOOL CARDS (TOOLS TAB) ── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tool-card {
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .tool-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tool-name {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .tool-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag-category {
+      display: inline-block;
+      background: #ECEEF2;
+      border-radius: 9999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #030213;
+      line-height: 16px;
+    }
+
+    .tag-age {
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 9999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 16px;
+    }
+
+    .tool-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+      flex: 1;
+    }
+
+    .tool-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .badge-safety {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #F0FDF4;
+      border-radius: 14px;
+      padding: 8px 12px;
+      height: 36px;
+    }
+
+    .badge-safety-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: #008236;
+      line-height: 20px;
+    }
+
+    .badge-dashboard {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #EFF6FF;
+      border-radius: 14px;
+      padding: 8px 12px;
+      height: 36px;
+    }
+
+    .badge-dashboard-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1447E6;
+      line-height: 20px;
+    }
+
+    .btn-learn-more {
+      height: 32px;
+      padding: 0 12px;
+      background: linear-gradient(90deg, #00A63E 0%, #009966 100%);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    .btn-learn-more:hover { opacity: 0.88; }
+
+    /* ── SAFETY FIRST BANNER ── */
+    .safety-banner {
+      background: linear-gradient(135deg, #FEFCE8 0%, #FFFBEB 100%);
+      border-radius: 16px;
+      border: 1px solid #FFF085;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .safety-banner-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .safety-banner-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: #364153;
+      line-height: 29.25px;
+    }
+
+    /* ── GUIDES TAB ── */
+    .guides-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .guide-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #00C950 0%, #009966 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+    }
+
+    .guide-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .guide-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .guide-pill {
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 9999px;
+      padding: 2px 9px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 16px;
+      width: fit-content;
+    }
+
+    /* ── TIPS SECTION ── */
+    .tips-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .tips-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .tip-icon {
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #00C950 0%, #009966 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    .tip-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tip-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .tip-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+    }
+
+    /* ── FAQ TAB ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 500;
+      color: #101828;
+      line-height: 28px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .faq-question:hover { background: #F9FAFB; }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 32px 24px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(135deg, #101828 0%, #1E2939 100%);
+      padding: 64px 32px 0;
+    }
+
+    .footer-inner {
+      max-width: 967px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .footer-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .footer-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      line-height: 28px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 22.75px;
+      max-width: 205px;
+    }
+
+    .footer-links-col h4 {
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-col a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #D1D5DC;
+      text-decoration: none;
+      line-height: 20px;
+      transition: color 0.15s;
+    }
+
+    .footer-links-col a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid #364153;
+      padding: 33px 0 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 20px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .tabs { width: 100%; }
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 20px; }
+      .hero-title { font-size: 36px; }
+      .search-bar-wrap { padding: 20px; }
+      .main-content { padding: 40px 20px 60px; }
+      footer { padding: 48px 20px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">EdTech Navigator</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="teachers.html">For Teachers</a></li>
+      <li><a href="parents.html" class="active">For Parents</a></li>
+      <li><a href="admin.html">For Administrators</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Resources for Parents</h1>
+      <p class="hero-sub">Learn about safe, effective ed tech tools to support your child's learning journey</p>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <svg class="search-icon" width="20" height="20" fill="none" viewBox="0 0 20 20">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="#99A1AF" stroke-width="1.67"/>
+          <path d="M13.5 13.5L17 17" stroke="#99A1AF" stroke-width="1.67" stroke-linecap="round"/>
+        </svg>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for tools by age, subject, or category..."
+        />
+      </div>
+      <button class="search-btn">Search</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-inner">
+
+      <!-- TABS -->
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tools">Tools</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="guides">Guides</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="faq">FAQ</button>
+      </div>
+
+      <!-- TOOLS PANEL -->
+      <div class="tab-panel active" id="panel-tools">
+        <h2 class="section-title">Recommended for Families</h2>
+
+        <div class="tools-grid">
+
+          <!-- Khan Academy -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Khan Academy</div>
+              <div class="tool-tags">
+                <span class="tag-category">Study Support</span>
+                <span class="tag-age">4-18 years</span>
+              </div>
+            </div>
+            <p class="tool-desc">A free, comprehensive learning platform covering math, science, ELA, and more for grades K–12. Parents can create a parent account to monitor progress, set goals, and see exactly where their child needs support — all at no cost.</p>
+            <div class="tool-badges">
+              <div class="badge-safety">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
+                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="badge-safety-text">Safety: Excellent</span>
+              </div>
+              <div class="badge-dashboard">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
+                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
+                </svg>
+                <span class="badge-dashboard-text">Parent Dashboard Available</span>
+              </div>
+            </div>
+            <button class="btn-learn-more">Learn More</button>
+          </div>
+
+          <!-- Epic! -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Epic!</div>
+              <div class="tool-tags">
+                <span class="tag-category">Literacy</span>
+                <span class="tag-age">4-12 years</span>
+              </div>
+            </div>
+            <p class="tool-desc">A digital reading library with thousands of books, audiobooks, and educational videos. Parents can set up a home account, track reading activity, and encourage independent reading habits in a safe, ad-free environment.</p>
+            <div class="tool-badges">
+              <div class="badge-safety">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
+                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="badge-safety-text">Safety: Excellent</span>
+              </div>
+              <div class="badge-dashboard">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
+                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
+                </svg>
+                <span class="badge-dashboard-text">Parent Dashboard Available</span>
+              </div>
+            </div>
+            <button class="btn-learn-more">Learn More</button>
+          </div>
+
+          <!-- Prodigy Math -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Prodigy Math</div>
+              <div class="tool-tags">
+                <span class="tag-category">Math</span>
+                <span class="tag-age">6-14 years</span>
+              </div>
+            </div>
+            <p class="tool-desc">A game-based math platform where students build a fantasy world and battle characters by answering math questions. It aligns to school curriculum standards, complementing what students are already learning in class.</p>
+            <div class="tool-badges">
+              <div class="badge-safety">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <path d="M8 1.5L2 4v4c0 3.31 2.55 6.41 6 7 3.45-.59 6-3.69 6-7V4L8 1.5z" stroke="#00A63E" stroke-width="1.33" stroke-linejoin="round"/>
+                  <path d="M5.5 8l1.75 1.75L10.5 6" stroke="#00A63E" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="badge-safety-text">Safety: Excellent</span>
+              </div>
+              <div class="badge-dashboard">
+                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                  <rect x="1.33" y="1.33" width="13.33" height="13.33" rx="1.5" stroke="#1447E6" stroke-width="1.33"/>
+                  <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
+                </svg>
+                <span class="badge-dashboard-text">Parent Dashboard Available</span>
+              </div>
+            </div>
+            <button class="btn-learn-more">Learn More</button>
+          </div>
+
+        </div>
+
+        <!-- Safety First Banner -->
+        <div class="safety-banner">
+          <div class="safety-banner-title">Safety First</div>
+          <p class="safety-banner-text">All tools featured on EdTech Navigator are reviewed for privacy compliance and child safety. We prioritize platforms with strong parental controls and transparent data policies.</p>
+        </div>
+
+      </div>
+
+      <!-- GUIDES PANEL -->
+      <div class="tab-panel" id="panel-guides">
+        <h2 class="section-title">Parent Guides</h2>
+
+        <div class="guides-list">
+
+          <!-- Guide 1 -->
+          <div class="guide-card">
+            <div class="guide-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                <path d="M8 4h10.67L26.67 12v16a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="white" stroke-width="2.67" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Understanding Screen Time Guidelines</div>
+              <span class="guide-pill">Digital Wellness</span>
+            </div>
+          </div>
+
+          <!-- Guide 2 -->
+          <div class="guide-card">
+            <div class="guide-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                <path d="M4 8h24M4 16h24M4 24h16" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Supporting Your Child's Learning At Home</div>
+              <span class="guide-pill">Learning Support</span>
+            </div>
+          </div>
+
+          <!-- Guide 3 -->
+          <div class="guide-card">
+            <div class="guide-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                <rect x="8" y="2.67" width="16" height="16" rx="2" stroke="white" stroke-width="2.67"/>
+                <path d="M6 24h20M10 28h12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Choosing Age-Appropriate Ed Tech Tools</div>
+              <span class="guide-pill">Tool Selection</span>
+            </div>
+          </div>
+
+          <!-- Guide 4 -->
+          <div class="guide-card">
+            <div class="guide-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                <rect x="2.67" y="2.67" width="26.67" height="26.67" rx="2" stroke="white" stroke-width="2.67"/>
+                <path d="M10 16h12M16 10v12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Monitoring Your Child's Progress</div>
+              <span class="guide-pill">Parental Involvement</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tips for Parents -->
+        <div class="tips-card">
+          <h2 class="section-title">Tips for Parents</h2>
+          <div class="tips-list">
+
+            <div class="tip-item">
+              <div class="tip-icon">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="2" stroke="white" stroke-width="2"/>
+                  <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tip-body">
+                <div class="tip-title">Start with a Conversation</div>
+                <p class="tip-desc">Talk to your child about online safety and set clear expectations before introducing new tools.</p>
+              </div>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="2" stroke="white" stroke-width="2"/>
+                  <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tip-body">
+                <div class="tip-title">Try It Together</div>
+                <p class="tip-desc">Explore new educational tools alongside your child to understand how they work and ensure they're appropriate.</p>
+              </div>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="2" stroke="white" stroke-width="2"/>
+                  <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tip-body">
+                <div class="tip-title">Monitor Progress</div>
+                <p class="tip-desc">Use parent dashboards to track your child's learning progress and celebrate their achievements.</p>
+              </div>
+            </div>
+
+            <div class="tip-item">
+              <div class="tip-icon">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="2" stroke="white" stroke-width="2"/>
+                  <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tip-body">
+                <div class="tip-title">Balance is Key</div>
+                <p class="tip-desc">Ensure ed tech supplements, rather than replaces, hands-on learning and physical activities.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ PANEL -->
+      <div class="tab-panel" id="panel-faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I know if an ed tech tool is safe for my child?
+              <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                <path d="M5 7.5l5 5 5-5" stroke="#6A7282" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              All tools on EdTech Navigator are reviewed for COPPA and FERPA compliance, data privacy, and child safety. Look for the "Safety: Excellent" badge on tool cards, and check whether the platform offers a parent dashboard so you can monitor your child's activity.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What's the right amount of screen time for my child?
+              <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                <path d="M5 7.5l5 5 5-5" stroke="#6A7282" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              The American Academy of Pediatrics recommends no more than 1 hour of high-quality screen time per day for children aged 2–5, and consistent limits for ages 6 and older. Educational screen time—especially interactive, curriculum-aligned tools—is generally more beneficial than passive consumption. See our Screen Time Guidelines guide for more detail.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Are these tools free to use at home?
+              <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                <path d="M5 7.5l5 5 5-5" stroke="#6A7282" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Many featured tools offer free tiers suitable for home use. Khan Academy is completely free. Epic! offers a free 30-day trial followed by a low monthly fee. Prodigy Math has a free core experience with optional paid upgrades. Each tool's pricing model is noted in its full details page.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I set up a parent account on these platforms?
+              <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                <path d="M5 7.5l5 5 5-5" stroke="#6A7282" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Each platform has a slightly different setup process, but most allow you to sign up as a parent and then add your child as a linked account. Click "Learn More" on any tool card for step-by-step setup instructions and tips on configuring parental controls.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I use these tools to supplement what my child learns at school?
+              <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                <path d="M5 7.5l5 5 5-5" stroke="#6A7282" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Absolutely. All tools in the "Recommended for Families" section align to standard school curricula. Prodigy Math and Khan Academy map directly to grade-level standards, making them ideal for reinforcing what your child is covering in class. We recommend asking your child's teacher which platforms they already use so you can continue that practice at home.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <div class="footer-logo-mark">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="footer-logo-text">EdTech Navigator</span>
+          </a>
+          <p class="footer-tagline">Empowering educators, parents, and administrators with curated ed tech resources.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="teachers.html">For Teachers</a></li>
+            <li><a href="parents.html">For Parents</a></li>
+            <li><a href="admin.html">For Administrators</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 EdTech Navigator. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switcher
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + target).classList.add('active');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
