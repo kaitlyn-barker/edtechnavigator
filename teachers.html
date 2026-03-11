@@ -431,67 +431,131 @@
       border-radius: 16px;
       box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
       padding: 32px;
+      height: 130px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .guide-card-left {
       display: flex;
       align-items: flex-start;
       gap: 24px;
+      flex: 1;
     }
 
     .guide-icon {
-      width: 56px; height: 56px;
-      border-radius: 14px;
+      width: 64px; height: 64px;
+      border-radius: 16px;
       background: linear-gradient(135deg, #2B7FFF 0%, #4F39F6 100%);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
     }
 
-    .guide-body { flex: 1; }
-
-    .guide-title {
-      font-size: 20px;
-      font-weight: 500;
-      color: #101828;
-      line-height: 28px;
-      margin-bottom: 8px;
+    .guide-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .guide-desc {
-      font-size: 16px;
-      color: #4A5565;
-      line-height: 26px;
-      margin-bottom: 16px;
+    .guide-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
     }
 
     .guide-meta {
       display: flex;
+      align-items: center;
       gap: 16px;
-      font-size: 14px;
-      color: #6A7282;
     }
 
-    .guide-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .guide-read-time {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 20px;
+    }
+
+    .guide-level-pill {
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(0,0,0,0.10);
+      font-size: 12px;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 16px;
     }
 
     .btn-guide {
       height: 36px;
-      padding: 0 16px;
-      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      padding: 8px 16px;
       border: none;
+      background: transparent;
       border-radius: 10px;
-      color: white;
+      color: #0A0A0A;
       font-size: 14px;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
+      line-height: 20px;
       cursor: pointer;
       flex-shrink: 0;
-      align-self: center;
-      transition: opacity 0.15s;
+      white-space: nowrap;
+      transition: background 0.15s;
     }
 
-    .btn-guide:hover { opacity: 0.88; }
+    .btn-guide:hover { background: rgba(0,0,0,0.05); }
+
+    /* ── GUIDES CTA BANNER ── */
+    .guides-cta {
+      background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
+      border-radius: 16px;
+      border: 1px solid #BEDBFF;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px 33px 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .guides-cta-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+      margin-bottom: 12px;
+    }
+
+    .guides-cta-sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 29.25px;
+      margin-bottom: 20px;
+    }
+
+    .btn-cta-outline {
+      display: inline-block;
+      height: 36px;
+      padding: 0 19px;
+      background: white;
+      border-radius: 10px;
+      border: 2px solid rgba(0,0,0,0.10);
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 36px;
+      cursor: pointer;
+      width: fit-content;
+      transition: background 0.15s;
+    }
+
+    .btn-cta-outline:hover { background: #F1F5F9; }
 
     /* ── REVIEWS PANEL ── */
     .reviews-list { display: flex; flex-direction: column; gap: 24px; }
@@ -823,75 +887,72 @@
         <h2 class="section-title">Implementation Guides</h2>
         <div class="guides-list">
 
+          <!-- Guide 1 -->
           <div class="guide-card">
-            <div class="guide-icon">
-              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-                <rect x="3" y="4" width="22" height="20" rx="2" stroke="white" stroke-width="2"/>
-                <line x1="3" y1="10" x2="25" y2="10" stroke="white" stroke-width="2"/>
-                <line x1="9" y1="10" x2="9" y2="24" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="guide-body">
-              <div class="guide-title">Getting Started with ClassDojo</div>
-              <p class="guide-desc">A step-by-step walkthrough for setting up ClassDojo in your classroom, from creating your class roster to connecting with parents and tracking engagement.</p>
-              <div class="guide-meta">
-                <span>
-                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  15 min read
-                </span>
-                <span>Grades K-8</span>
-                <span>Communication</span>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="2.67" y="4" width="26.67" height="24" rx="2" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Getting Started with Blended Learning</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">15 min read</span>
+                  <span class="guide-level-pill">Beginner</span>
+                </div>
               </div>
             </div>
-            <button class="btn-guide">View Guide</button>
+            <button class="btn-guide">Read Guide</button>
           </div>
 
+          <!-- Guide 2 -->
           <div class="guide-card">
-            <div class="guide-icon" style="background: linear-gradient(135deg, #00C950 0%, #009966 100%);">
-              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-                <path d="M14 4l3 6 6 1-4.5 4 1 6L14 18l-5.5 3 1-6L5 11l6-1 3-6z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="guide-body">
-              <div class="guide-title">Implementing Adaptive Math with IXL</div>
-              <p class="guide-desc">Learn how to use IXL's diagnostic reports to identify gaps, assign targeted practice, and monitor individual student progress across your entire class roster.</p>
-              <div class="guide-meta">
-                <span>
-                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  20 min read
-                </span>
-                <span>Grades K-12</span>
-                <span>Mathematics</span>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="2.67" y="4" width="26.67" height="24" rx="2" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Differentiating Instruction using Digital Tools</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">20 min read</span>
+                  <span class="guide-level-pill">Intermediate</span>
+                </div>
               </div>
             </div>
-            <button class="btn-guide">View Guide</button>
+            <button class="btn-guide">Read Guide</button>
           </div>
 
+          <!-- Guide 3 -->
           <div class="guide-card">
-            <div class="guide-icon" style="background: linear-gradient(135deg, #AD46FF 0%, #7F22FE 100%);">
-              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
-                <rect x="3" y="3" width="9" height="12" rx="1.5" stroke="white" stroke-width="2"/>
-                <rect x="16" y="3" width="9" height="8" rx="1.5" stroke="white" stroke-width="2"/>
-                <rect x="16" y="15" width="9" height="10" rx="1.5" stroke="white" stroke-width="2"/>
-                <rect x="3" y="19" width="9" height="6" rx="1.5" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="guide-body">
-              <div class="guide-title">Building a Reading Routine with Epic!</div>
-              <p class="guide-desc">Discover how to integrate Epic! into your daily literacy block, manage student reading assignments, and use reading data to guide small-group instruction.</p>
-              <div class="guide-meta">
-                <span>
-                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  12 min read
-                </span>
-                <span>Grades K-5</span>
-                <span>ELA</span>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="2.67" y="4" width="26.67" height="24" rx="2" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Maximizing Student Engagement with Digital Tools</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">12 min read</span>
+                  <span class="guide-level-pill">Beginner</span>
+                </div>
               </div>
             </div>
-            <button class="btn-guide">View Guide</button>
+            <button class="btn-guide">Read Guide</button>
           </div>
 
         </div>
+
+        <!-- CTA Banner -->
+        <div class="guides-cta">
+          <div class="guides-cta-title">New to EdTech?</div>
+          <p class="guides-cta-sub">Start with our beginner-friendly guides to learn the basics of integrating technology into your classroom.</p>
+          <button class="btn-cta-outline">Browse Beginner Guides</button>
+        </div>
+
       </div>
 
       <!-- REVIEWS PANEL -->
