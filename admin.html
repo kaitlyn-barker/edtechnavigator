@@ -225,18 +225,20 @@
     }
 
     .tab-nav {
-      display: inline-flex;
-      flex-direction: column;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       background: #F3F4F6;
       border-radius: 14px;
       padding: 4.5px 4px;
       gap: 0;
       margin-bottom: 56px;
       width: 672px;
+      height: 56px;
     }
 
     .tab-btn {
-      padding: 4px 8px;
+      flex: 1;
       height: 47px;
       border: none;
       background: transparent;
@@ -248,7 +250,6 @@
       line-height: 20px;
       cursor: pointer;
       text-align: center;
-      outline: 1px solid transparent;
       transition: background 0.15s, box-shadow 0.15s;
     }
 
@@ -782,9 +783,8 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="5" width="20" height="10" rx="1" stroke="white" stroke-width="2"/>
-          <rect x="6" y="12.5" width="12" height="6.5" rx="1" stroke="white" stroke-width="2"/>
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </div>
       <span class="nav-logo-text">EdTech Navigator</span>
@@ -1144,9 +1144,8 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <div class="footer-logo-mark">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="5" width="20" height="10" rx="1" stroke="white" stroke-width="2"/>
-              <rect x="6" y="12.5" width="12" height="6.5" rx="1" stroke="white" stroke-width="2"/>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <span class="footer-logo-text">EdTech Navigator</span>
