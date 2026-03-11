@@ -1,1 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Teachers – EdTech Navigator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F9FAFB;
+      color: #101828;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.50);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #364153;
+      text-decoration: none;
+      border-radius: 10px;
+      line-height: 24px;
+      transition: background 0.15s;
+    }
+
+    .nav-links a:hover { background: rgba(15,22,35,0.05); }
+
+    .nav-links a.active {
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      color: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    .nav-links a.active:hover { background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 252px;
+      background: linear-gradient(135deg, #155DFC 0%, #4F39F6 50%, #9810FA 100%);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 32px;
+    }
+
+    .hero-blobs {
+      position: absolute;
+      inset: 0;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(24px);
+    }
+
+    .blob-1 {
+      width: 256px; height: 256px;
+      background: #8EC5FF;
+      left: 40px; top: -44px;
+      opacity: 0.96;
+    }
+
+    .blob-2 {
+      width: 256px; height: 256px;
+      background: white;
+      right: 40px; top: 40px;
+      opacity: 0.51;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 400;
+      color: white;
+      line-height: 48px;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #DBEAFE;
+      line-height: 28px;
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-bar-wrap {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      border-bottom: 1px solid rgba(0,0,0,0.10);
+      padding: 32px 32px 31px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 16px;
+      max-width: 967px;
+      margin: 0 auto;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 56px;
+      padding: 4px 12px 4px 48px;
+      background: #F3F3F5;
+      border-radius: 14px;
+      border: 2px solid #E5E7EB;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      color: #101828;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-input::placeholder { color: #717182; }
+    .search-input:focus { border-color: #4F39F6; }
+
+    .search-btn {
+      height: 56px;
+      padding: 8px 32px;
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .search-btn:hover { opacity: 0.90; }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      background: linear-gradient(180deg, #F9FAFB 0%, white 100%);
+      padding: 56px 32px 80px;
+    }
+
+    .content-inner {
+      max-width: 967px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      width: 448px;
+      height: 56px;
+      background: #F3F4F6;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      padding: 4.5px 4px;
+      gap: 0;
+    }
+
+    .tab-btn {
+      flex: 1;
+      height: 47px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #0A0A0A;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+
+    .tab-btn.active {
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    /* ── TOOL LIST ── */
+    .section-title {
+      font-size: 30px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 36px;
+      letter-spacing: 0.40px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── TOOL CARD ── */
+    .tool-card {
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto auto auto;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+
+    .tool-card:last-child { margin-bottom: 0; }
+
+    .tool-header {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tool-name {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .tool-category {
+      display: inline-block;
+      background: #ECEEF2;
+      border-radius: 9999px;
+      padding: 4px 13px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #030213;
+      line-height: 16px;
+      width: fit-content;
+    }
+
+    .tool-rating {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #FEFCE8;
+      border-radius: 14px;
+      padding: 8px 12px;
+      height: 40px;
+      white-space: nowrap;
+    }
+
+    .star-icon {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+    }
+
+    .rating-score {
+      font-size: 16px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 24px;
+    }
+
+    .rating-count {
+      font-size: 14px;
+      font-weight: 400;
+      color: #6A7282;
+      line-height: 20px;
+    }
+
+    .tool-desc {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+      max-width: 680px;
+      margin-bottom: 20px;
+    }
+
+    .tool-meta {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .tool-meta span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    .tool-meta .label { color: #6A7282; }
+    .tool-meta .value { color: #101828; }
+
+    .tool-actions {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      display: flex;
+      gap: 12px;
+      max-width: 440px;
+    }
+
+    .btn-primary {
+      flex: 1;
+      height: 32px;
+      padding: 0 12px;
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      height: 32px;
+      padding: 0 12px;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 10px;
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .btn-secondary:hover { background: #F9FAFB; }
+
+    /* ── TAB PANELS ── */
+    .tab-panel { display: none; flex-direction: column; gap: 32px; }
+    .tab-panel.active { display: flex; }
+
+    /* ── GUIDES PANEL ── */
+    .guides-list { display: flex; flex-direction: column; gap: 24px; }
+
+    .guide-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .guide-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2B7FFF 0%, #4F39F6 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+    }
+
+    .guide-body { flex: 1; }
+
+    .guide-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #101828;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+
+    .guide-desc {
+      font-size: 16px;
+      color: #4A5565;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+
+    .guide-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: #6A7282;
+    }
+
+    .guide-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-guide {
+      height: 36px;
+      padding: 0 16px;
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      flex-shrink: 0;
+      align-self: center;
+      transition: opacity 0.15s;
+    }
+
+    .btn-guide:hover { opacity: 0.88; }
+
+    /* ── REVIEWS PANEL ── */
+    .reviews-list { display: flex; flex-direction: column; gap: 24px; }
+
+    .review-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .reviewer-info { display: flex; flex-direction: column; gap: 4px; }
+
+    .reviewer-name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #101828;
+      line-height: 24px;
+    }
+
+    .reviewer-role {
+      font-size: 14px;
+      color: #6A7282;
+      line-height: 20px;
+    }
+
+    .review-stars { display: flex; gap: 2px; }
+
+    .review-tool-tag {
+      display: inline-block;
+      background: #ECEEF2;
+      border-radius: 9999px;
+      padding: 4px 13px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #030213;
+      margin-bottom: 12px;
+    }
+
+    .review-body {
+      font-size: 16px;
+      color: #4A5565;
+      line-height: 26px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(135deg, #101828 0%, #1E2939 100%);
+      padding: 64px 32px 0;
+    }
+
+    .footer-inner {
+      max-width: 967px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .footer-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .footer-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      line-height: 28px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 22.75px;
+      max-width: 205px;
+    }
+
+    .footer-links-col h4 {
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-col a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #D1D5DC;
+      text-decoration: none;
+      line-height: 20px;
+      transition: color 0.15s;
+    }
+
+    .footer-links-col a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid #364153;
+      padding: 33px 0 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 20px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .tabs { width: 100%; }
+      .tool-card { grid-template-columns: 1fr; }
+      .tool-rating { grid-column: 1; grid-row: auto; width: fit-content; }
+      .guide-card { flex-direction: column; }
+      .btn-guide { align-self: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 20px; }
+      .hero-title { font-size: 36px; }
+      .search-bar-wrap { padding: 20px; }
+      .main-content { padding: 40px 20px 60px; }
+      footer { padding: 48px 20px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">EdTech Navigator</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="teachers.html" class="active">For Teachers</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="admin.html">For Administrators</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Resources for Teachers</h1>
+      <p class="hero-sub">Discover curated ed tech tools with implementation guides and peer reviews</p>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <svg class="search-icon" width="20" height="20" fill="none" viewBox="0 0 20 20">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="#99A1AF" stroke-width="1.67"/>
+          <path d="M13.5 13.5L17 17" stroke="#99A1AF" stroke-width="1.67" stroke-linecap="round"/>
+        </svg>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for tools, subjects, or grade levels..."
+        />
+      </div>
+      <button class="search-btn">Search</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-inner">
+
+      <!-- TABS -->
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tools">Tools</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="guides">Guides</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="reviews">Reviews</button>
+      </div>
+
+      <!-- TOOLS PANEL -->
+      <div class="tab-panel active" id="panel-tools">
+        <h2 class="section-title">Featured Ed Tech Tools</h2>
+        <div class="tools-list">
+
+          <!-- ClassDojo -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">ClassDojo</div>
+              <span class="tool-category">Communication</span>
+            </div>
+            <div class="tool-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
+              </svg>
+              <span class="rating-score">4.5</span>
+              <span class="rating-count">(234)</span>
+            </div>
+            <p class="tool-desc">A classroom communication and community platform that allows teachers to track student behavior, share updates with parents, and build a positive classroom culture through points, badges, and messaging features.</p>
+            <div class="tool-meta">
+              <span><span class="label">Grade: </span><span class="value">K-8</span></span>
+              <span><span class="label">Subject: </span><span class="value">All Subjects</span></span>
+            </div>
+            <div class="tool-actions">
+              <button class="btn-primary">View Details</button>
+              <button class="btn-secondary">Read Reviews</button>
+            </div>
+          </div>
+
+          <!-- IXL Math -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">IXL Math</div>
+              <span class="tool-category">Mathematics</span>
+            </div>
+            <div class="tool-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
+              </svg>
+              <span class="rating-score">4.8</span>
+              <span class="rating-count">(189)</span>
+            </div>
+            <p class="tool-desc">An adaptive math practice platform covering Pre-K through 12th grade that adjusts difficulty based on student performance, providing personalized skill-building and real-time diagnostic insights for teachers.</p>
+            <div class="tool-meta">
+              <span><span class="label">Grade: </span><span class="value">K-12</span></span>
+              <span><span class="label">Subject: </span><span class="value">Mathematics</span></span>
+            </div>
+            <div class="tool-actions">
+              <button class="btn-primary">View Details</button>
+              <button class="btn-secondary">Read Reviews</button>
+            </div>
+          </div>
+
+          <!-- Epic! -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Epic!</div>
+              <span class="tool-category">Literacy</span>
+            </div>
+            <div class="tool-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
+              </svg>
+              <span class="rating-score">4.6</span>
+              <span class="rating-count">(312)</span>
+            </div>
+            <p class="tool-desc">A digital reading library for kids ages 12 and under that offers thousands of books, audiobooks, and educational videos, making it a popular tool for building independent reading habits in elementary classrooms.</p>
+            <div class="tool-meta">
+              <span><span class="label">Grade: </span><span class="value">K-5</span></span>
+              <span><span class="label">Subject: </span><span class="value">ELA</span></span>
+            </div>
+            <div class="tool-actions">
+              <button class="btn-primary">View Details</button>
+              <button class="btn-secondary">Read Reviews</button>
+            </div>
+          </div>
+
+          <!-- Discovery Education -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Discovery Education</div>
+              <span class="tool-category">Science</span>
+            </div>
+            <div class="tool-rating">
+              <svg class="star-icon" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/>
+              </svg>
+              <span class="rating-score">4.4</span>
+              <span class="rating-count">(156)</span>
+            </div>
+            <p class="tool-desc">A digital learning platform that provides video content, virtual field trips, interactive lessons, and standards-aligned resources across science, social studies, and other subjects for K–12 classrooms.</p>
+            <div class="tool-meta">
+              <span><span class="label">Grade: </span><span class="value">K-12</span></span>
+              <span><span class="label">Subject: </span><span class="value">Science</span></span>
+            </div>
+            <div class="tool-actions">
+              <button class="btn-primary">View Details</button>
+              <button class="btn-secondary">Read Reviews</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GUIDES PANEL -->
+      <div class="tab-panel" id="panel-guides">
+        <h2 class="section-title">Implementation Guides</h2>
+        <div class="guides-list">
+
+          <div class="guide-card">
+            <div class="guide-icon">
+              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+                <rect x="3" y="4" width="22" height="20" rx="2" stroke="white" stroke-width="2"/>
+                <line x1="3" y1="10" x2="25" y2="10" stroke="white" stroke-width="2"/>
+                <line x1="9" y1="10" x2="9" y2="24" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Getting Started with ClassDojo</div>
+              <p class="guide-desc">A step-by-step walkthrough for setting up ClassDojo in your classroom, from creating your class roster to connecting with parents and tracking engagement.</p>
+              <div class="guide-meta">
+                <span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  15 min read
+                </span>
+                <span>Grades K-8</span>
+                <span>Communication</span>
+              </div>
+            </div>
+            <button class="btn-guide">View Guide</button>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-icon" style="background: linear-gradient(135deg, #00C950 0%, #009966 100%);">
+              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+                <path d="M14 4l3 6 6 1-4.5 4 1 6L14 18l-5.5 3 1-6L5 11l6-1 3-6z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Implementing Adaptive Math with IXL</div>
+              <p class="guide-desc">Learn how to use IXL's diagnostic reports to identify gaps, assign targeted practice, and monitor individual student progress across your entire class roster.</p>
+              <div class="guide-meta">
+                <span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  20 min read
+                </span>
+                <span>Grades K-12</span>
+                <span>Mathematics</span>
+              </div>
+            </div>
+            <button class="btn-guide">View Guide</button>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-icon" style="background: linear-gradient(135deg, #AD46FF 0%, #7F22FE 100%);">
+              <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+                <rect x="3" y="3" width="9" height="12" rx="1.5" stroke="white" stroke-width="2"/>
+                <rect x="16" y="3" width="9" height="8" rx="1.5" stroke="white" stroke-width="2"/>
+                <rect x="16" y="15" width="9" height="10" rx="1.5" stroke="white" stroke-width="2"/>
+                <rect x="3" y="19" width="9" height="6" rx="1.5" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="guide-body">
+              <div class="guide-title">Building a Reading Routine with Epic!</div>
+              <p class="guide-desc">Discover how to integrate Epic! into your daily literacy block, manage student reading assignments, and use reading data to guide small-group instruction.</p>
+              <div class="guide-meta">
+                <span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#99A1AF" stroke-width="1.5"/><path d="M7 4v3.5l2 1.5" stroke="#99A1AF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  12 min read
+                </span>
+                <span>Grades K-5</span>
+                <span>ELA</span>
+              </div>
+            </div>
+            <button class="btn-guide">View Guide</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- REVIEWS PANEL -->
+      <div class="tab-panel" id="panel-reviews">
+        <h2 class="section-title">Peer Reviews</h2>
+        <div class="reviews-list">
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <div class="reviewer-name">Sarah M.</div>
+                <div class="reviewer-role">3rd Grade Teacher, Chicago, IL</div>
+              </div>
+              <div class="review-stars">
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+              </div>
+            </div>
+            <span class="review-tool-tag">ClassDojo</span>
+            <p class="review-body">ClassDojo completely transformed how I communicate with parents. The instant messaging and behavior tracking have made parent-teacher relationships so much stronger. Students love earning points and it motivates them throughout the day.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <div class="reviewer-name">James T.</div>
+                <div class="reviewer-role">7th Grade Math Teacher, Austin, TX</div>
+              </div>
+              <div class="review-stars">
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+              </div>
+            </div>
+            <span class="review-tool-tag">IXL Math</span>
+            <p class="review-body">The diagnostic data from IXL is incredibly detailed. I can see exactly where each student is struggling at the skill level and assign targeted practice in minutes. My students' test scores improved noticeably within one semester of consistent use.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <div class="reviewer-name">Rachel K.</div>
+                <div class="reviewer-role">2nd Grade Teacher, Portland, OR</div>
+              </div>
+              <div class="review-stars">
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+                <svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#FDC700"/></svg>
+              </div>
+            </div>
+            <span class="review-tool-tag">Epic!</span>
+            <p class="review-body">Epic! has been a game-changer for independent reading in my classroom. Students are genuinely excited to read during centers. The variety of books at different reading levels means every student finds something they love.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <div class="footer-logo-mark">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="footer-logo-text">EdTech Navigator</span>
+          </a>
+          <p class="footer-tagline">Empowering educators, parents, and administrators with curated ed tech resources.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="teachers.html">For Teachers</a></li>
+            <li><a href="parents.html">For Parents</a></li>
+            <li><a href="admin.html">For Administrators</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 EdTech Navigator. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switcher
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
