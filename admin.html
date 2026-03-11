@@ -1,1 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Administrators – EdTech Navigator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F9FAFB;
+      color: #101828;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.50);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-mark svg { width: 24px; height: 24px; }
+
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #364153;
+      text-decoration: none;
+      border-radius: 10px;
+      line-height: 24px;
+      transition: background 0.15s;
+    }
+
+    .nav-links a:hover { background: rgba(15,22,35,0.05); }
+
+    .nav-links a.active {
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      color: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    .nav-links a.active:hover { background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 252px;
+      background: linear-gradient(135deg, #9810FA 0%, #7F22FE 50%, #4F39F6 100%);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 32px;
+    }
+
+    .hero-blobs {
+      position: absolute;
+      inset: 0;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(24px);
+    }
+
+    .blob-1 {
+      width: 256px; height: 256px;
+      background: white;
+      right: 735px; top: 40px;
+      /* from figma: left:735 means right side */
+      left: auto; right: 40px;
+      opacity: 0.58;
+    }
+
+    .blob-2 {
+      width: 256px; height: 256px;
+      background: #DAB2FF;
+      left: 40px; top: -44px;
+      opacity: 0.69;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 400;
+      color: white;
+      line-height: 48px;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #F3E8FF;
+      line-height: 28px;
+    }
+
+    /* ── MAIN CONTENT WRAPPER ── */
+    .page-body {
+      background: linear-gradient(180deg, #F9FAFB 0%, white 100%);
+      min-height: calc(100vh - 65px - 252px);
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-bar-wrapper {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      border-bottom: 1px solid rgba(0,0,0,0.10);
+      padding: 32px 32px 0;
+    }
+
+    .search-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 32px;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 56px;
+      padding: 4px 12px 4px 48px;
+      background: #F3F3F5;
+      border-radius: 14px;
+      outline: 2px solid #E5E7EB;
+      border: none;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: #717182;
+    }
+
+    .search-input::placeholder { color: #717182; }
+    .search-input:focus { outline: 2px solid #9810FA; color: #101828; }
+
+    .search-btn {
+      height: 56px;
+      padding: 8px 32px;
+      background: linear-gradient(90deg, #9810FA 0%, #4F39F6 100%);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      border-radius: 14px;
+      border: none;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .search-btn:hover { opacity: 0.9; }
+
+    /* ── TAB NAV ── */
+    .content-area {
+      padding: 32px 32px 64px;
+    }
+
+    .tab-nav {
+      display: inline-flex;
+      flex-direction: column;
+      background: #F3F4F6;
+      border-radius: 14px;
+      padding: 4.5px 4px;
+      gap: 0;
+      margin-bottom: 56px;
+      width: 672px;
+    }
+
+    .tab-btn {
+      padding: 4px 8px;
+      height: 47px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 20px;
+      cursor: pointer;
+      text-align: center;
+      outline: 1px solid transparent;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+
+    .tab-btn.active {
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+    }
+
+    /* ── TAB PANELS ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 30px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 36px;
+      letter-spacing: 0.40px;
+      margin-bottom: 32px;
+    }
+
+    /* ── SOLUTION CARDS ── */
+    .solution-cards { display: flex; flex-direction: column; gap: 32px; margin-bottom: 32px; }
+
+    .solution-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-header { display: flex; flex-direction: column; gap: 12px; }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .tag {
+      height: 22px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+
+    .tag-dark  { background: #030213; color: white; }
+    .tag-light { border: 1px solid rgba(0,0,0,0.10); color: #0A0A0A; }
+    .tag-gray  { background: #ECEEF2; color: #030213; }
+
+    .card-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 29.25px;
+    }
+
+    .card-features { display: flex; flex-direction: column; gap: 12px; }
+
+    .features-label {
+      font-size: 14px;
+      font-weight: 400;
+      color: #364153;
+      line-height: 20px;
+    }
+
+    .feature-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .feature-pill {
+      height: 38px;
+      padding: 0 17px;
+      background: #FAF5FF;
+      border-radius: 9999px;
+      border: 1px solid #E9D4FF;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8200DB;
+      line-height: 38px;
+      white-space: nowrap;
+    }
+
+    .card-actions { display: flex; gap: 12px; }
+
+    .btn-primary {
+      height: 32px;
+      padding: 0 12px;
+      background: linear-gradient(90deg, #9810FA 0%, #4F39F6 100%);
+      border-radius: 10px;
+      border: none;
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-secondary {
+      height: 32px;
+      padding: 0 12px;
+      background: white;
+      border-radius: 10px;
+      border: none;
+      outline: 1px solid rgba(0,0,0,0.10);
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary:hover { background: #F9FAFB; }
+
+    /* ── NEED HELP CARD ── */
+    .help-card {
+      background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
+      border-radius: 16px;
+      border: 1px solid #BEDBFF;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .help-card-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .help-card-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #364153;
+      line-height: 29.25px;
+      max-width: 898px;
+    }
+
+    .btn-white {
+      align-self: flex-start;
+      height: 36px;
+      padding: 0 18px;
+      background: white;
+      border-radius: 10px;
+      border: none;
+      outline: 2px solid rgba(0,0,0,0.10);
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    .btn-white:hover { background: #F9FAFB; }
+
+    /* ── POLICY TAB ── */
+    .policy-guides { display: flex; flex-direction: column; margin-bottom: 32px; }
+
+    .policy-card {
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 0;
+    }
+
+    .policy-card + .policy-card { margin-top: 0; }
+
+    .policy-card-header { display: flex; gap: 24px; align-items: flex-start; }
+
+    .policy-icon {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #AD46FF 0%, #4F39F6 100%);
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-icon svg { width: 32px; height: 32px; }
+
+    .policy-card-meta { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+
+    .policy-card-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .tag-outline {
+      display: inline-block;
+      height: 22px;
+      padding: 0 9px;
+      border-radius: 9999px;
+      border: 1px solid rgba(0,0,0,0.10);
+      font-size: 12px;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 22px;
+    }
+
+    .policy-card-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+    }
+
+    .btn-read-guide {
+      align-self: flex-start;
+      height: 32px;
+      padding: 0 12px;
+      background: white;
+      border-radius: 10px;
+      border: none;
+      outline: 1px solid rgba(0,0,0,0.10);
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    .btn-read-guide:hover { background: #F9FAFB; }
+
+    /* ── KEY CONSIDERATIONS ── */
+    .considerations-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .considerations-title {
+      font-size: 30px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 36px;
+      letter-spacing: 0.40px;
+    }
+
+    .considerations-list { display: flex; flex-direction: column; gap: 24px; }
+
+    .consideration-item { display: flex; gap: 16px; align-items: flex-start; }
+
+    .consideration-num {
+      width: 48px; height: 48px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #AD46FF 0%, #4F39F6 100%);
+      border-radius: 14px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    .consideration-text { display: flex; flex-direction: column; gap: 8px; }
+
+    .consideration-heading {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+
+    .consideration-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 26px;
+    }
+
+    /* ── CASE STUDIES TAB ── */
+    .case-study-cards { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+
+    .case-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .case-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .case-card-left { display: flex; flex-direction: column; gap: 8px; }
+
+    .case-card-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .case-card-students {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 20px;
+    }
+
+    .case-card-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #364153;
+      line-height: 29.25px;
+    }
+
+    .outcome-banner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 16px;
+      background: #F0FDF4;
+      border-radius: 14px;
+    }
+
+    .outcome-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: #008236;
+      line-height: 20px;
+    }
+
+    .btn-case {
+      align-self: flex-start;
+      height: 32px;
+      padding: 0 12px;
+      background: white;
+      border-radius: 10px;
+      border: none;
+      outline: 1px solid rgba(0,0,0,0.10);
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    .btn-case:hover { background: #F9FAFB; }
+
+    /* ── SHARE STORY CARD ── */
+    .share-card {
+      background: linear-gradient(135deg, #FAF5FF 0%, #EEF2FF 100%);
+      border-radius: 16px;
+      border: 1px solid #E9D4FF;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .share-card-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .share-card-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #364153;
+      line-height: 28px;
+    }
+
+    .btn-gradient {
+      height: 36px;
+      padding: 0 16px;
+      background: linear-gradient(90deg, #9810FA 0%, #4F39F6 100%);
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      color: white;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    .btn-gradient:hover { opacity: 0.9; }
+
+    /* ── RESOURCES PLACEHOLDER ── */
+    .resources-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 32px;
+      text-align: center;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+    }
+
+    .resources-placeholder p {
+      font-size: 18px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 28px;
+      margin-top: 12px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: linear-gradient(135deg, #101828 0%, #1E2939 100%);
+      padding: 64px 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .footer-body {
+      display: flex;
+      gap: 64px;
+    }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 24px; }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .footer-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      line-height: 28px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 22.75px;
+      max-width: 205px;
+    }
+
+    .footer-nav { display: flex; flex-direction: column; gap: 24px; }
+
+    .footer-nav-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      line-height: 24px;
+    }
+
+    .footer-nav-links { display: flex; flex-direction: column; gap: 12px; }
+
+    .footer-nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #D1D5DC;
+      text-decoration: none;
+      line-height: 20px;
+    }
+
+    .footer-nav-links a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid #364153;
+      padding: 33px 0 20px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      font-weight: 400;
+      color: #99A1AF;
+      line-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="20" height="10" rx="1" stroke="white" stroke-width="2"/>
+          <rect x="6" y="12.5" width="12" height="6.5" rx="1" stroke="white" stroke-width="2"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">EdTech Navigator</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="teachers.html">For Teachers</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="admin.html" class="active">For Administrators</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Resources for Administrators &amp; Policymakers</h1>
+      <p class="hero-sub">Strategic guidance, policy frameworks, and enterprise solutions for educational technology leadership</p>
+    </div>
+  </section>
+
+  <div class="page-body">
+
+    <!-- ── SEARCH BAR ── -->
+    <div class="search-bar-wrapper">
+      <div class="search-bar-inner">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8.5" cy="8.5" r="5.5" stroke="#99A1AF" stroke-width="1.67"/>
+            <line x1="13.5" y1="13.5" x2="17" y2="17" stroke="#99A1AF" stroke-width="1.67" stroke-linecap="round"/>
+          </svg>
+          <input class="search-input" type="text" placeholder="Search for policies, case studies, or solutions..." />
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+
+    <!-- ── CONTENT AREA ── -->
+    <div class="content-area">
+
+      <!-- Tab Navigation -->
+      <nav class="tab-nav" role="tablist" aria-label="Content sections">
+        <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="solutions">Solutions</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="policy">Policy</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="case-studies">Case Studies</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="resources">Resources</button>
+      </nav>
+
+      <!-- ── SOLUTIONS TAB ── -->
+      <div id="tab-solutions" class="tab-panel active" role="tabpanel">
+        <h2 class="section-title">Enterprise Ed Tech Solutions</h2>
+
+        <div class="solution-cards">
+
+          <!-- Schoology -->
+          <div class="solution-card">
+            <div class="card-header">
+              <h3 class="card-title">Schoology</h3>
+              <div class="card-tags">
+                <span class="tag tag-dark">Infrastructure</span>
+                <span class="tag tag-light">District-wide</span>
+                <span class="tag tag-gray">Enterprise</span>
+              </div>
+            </div>
+            <p class="card-desc">Schoology is a powerful learning management system (LMS) that empowers school and district administrators to streamline curriculum delivery, assessment, and communication across all classrooms. Designed for scalability, Schoology gives administrators full visibility into instructional activity while supporting teachers and students with an intuitive, easy-to-use platform.</p>
+            <div class="card-features">
+              <p class="features-label">Key Features:</p>
+              <div class="feature-pills">
+                <span class="feature-pill">Curriculum Management</span>
+                <span class="feature-pill">Integration Ready</span>
+                <span class="feature-pill">Assessment Tools</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-primary">Request Demo</button>
+              <button class="btn-secondary">Download Spec Sheet</button>
+            </div>
+          </div>
+
+          <!-- Newsela -->
+          <div class="solution-card">
+            <div class="card-header">
+              <h3 class="card-title">Newsela</h3>
+              <div class="card-tags">
+                <span class="tag tag-dark">Instruction</span>
+                <span class="tag tag-light">District-wide</span>
+                <span class="tag tag-gray">Enterprise</span>
+              </div>
+            </div>
+            <p class="card-desc">Newsela is a dynamic content platform that brings current events, primary sources, and informational texts into the classroom across all subject areas. With its unique text-leveling technology, Newsela allows administrators to support literacy school-wide while giving teachers the flexibility to meet every student where they are.</p>
+            <div class="card-features">
+              <p class="features-label">Key Features:</p>
+              <div class="feature-pills">
+                <span class="feature-pill">Differentiation</span>
+                <span class="feature-pill">Standards Alignment</span>
+                <span class="feature-pill">Assessment</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-primary">Request Demo</button>
+              <button class="btn-secondary">Download Spec Sheet</button>
+            </div>
+          </div>
+
+          <!-- Lexia Core5 -->
+          <div class="solution-card">
+            <div class="card-header">
+              <h3 class="card-title">Lexia Core5</h3>
+              <div class="card-tags">
+                <span class="tag tag-dark">Literacy</span>
+                <span class="tag tag-light">K-12</span>
+                <span class="tag tag-gray">Annual License</span>
+              </div>
+            </div>
+            <p class="card-desc">Lexia Core5 is a research-backed adaptive reading program that provides personalized literacy instruction for students in grades Pre-K–5. Built on the science of reading, Lexia Core5 helps administrators ensure every student receives targeted support to build strong foundational literacy skills, while giving teachers and leaders real-time data to drive intervention decisions.</p>
+            <div class="card-features">
+              <p class="features-label">Key Features:</p>
+              <div class="feature-pills">
+                <span class="feature-pill">Adaptive Learning</span>
+                <span class="feature-pill">Standards Alignment</span>
+                <span class="feature-pill">Progress Tracking</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-primary">Request Demo</button>
+              <button class="btn-secondary">Download Spec Sheet</button>
+            </div>
+          </div>
+
+        </div><!-- /solution-cards -->
+
+        <!-- Need Help Card -->
+        <div class="help-card">
+          <h3 class="help-card-title">Need Help Choosing?</h3>
+          <p class="help-card-desc">Our team of ed tech consultants can help you evaluate solutions based on your district's specific needs, budget, and goals.</p>
+          <button class="btn-white">Schedule Consultation</button>
+        </div>
+
+      </div><!-- /tab-solutions -->
+
+
+      <!-- ── POLICY TAB ── -->
+      <div id="tab-policy" class="tab-panel" role="tabpanel">
+        <h2 class="section-title">Policy &amp; Implementation Guides</h2>
+
+        <div class="policy-guides">
+
+          <!-- Ed Tech Procurement -->
+          <div class="policy-card">
+            <div class="policy-card-header">
+              <div class="policy-icon">
+                <!-- document icon -->
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="6.67" width="16" height="18.67" rx="1" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="policy-card-meta">
+                <h3 class="policy-card-title">Ed Tech Procurement Best Practices</h3>
+                <span class="tag-outline">Procurement</span>
+              </div>
+            </div>
+            <p class="policy-card-desc">Guidelines for evaluating, budgeting, and purchasing educational technology at scale.</p>
+            <button class="btn-read-guide">Read Guide</button>
+          </div>
+
+          <!-- Data Privacy -->
+          <div class="policy-card">
+            <div class="policy-card-header">
+              <div class="policy-icon">
+                <!-- shield icon -->
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.33 5.33h21.34v13.34c0 5-4.67 9.33-10.67 10.66C10 28 5.33 23.67 5.33 18.67V5.33z" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="policy-card-meta">
+                <h3 class="policy-card-title">Data Privacy &amp; FERPA Compliance</h3>
+                <span class="tag-outline">Privacy &amp; Security</span>
+              </div>
+            </div>
+            <p class="policy-card-desc">Understanding legal requirements and best practices for student data protection.</p>
+            <button class="btn-read-guide">Read Guide</button>
+          </div>
+
+          <!-- Professional Development -->
+          <div class="policy-card">
+            <div class="policy-card-header">
+              <div class="policy-icon">
+                <!-- people icon -->
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10.67" cy="9.33" cx="10.67" cy="9.33" r="5.33" stroke="white" stroke-width="2.67"/>
+                  <path d="M2.67 28h16v-4c0-3-2.67-5.33-8-5.33S2.67 21 2.67 24v4z" stroke="white" stroke-width="2.67"/>
+                  <circle cx="25.33" cy="9.33" r="4" stroke="white" stroke-width="2.67"/>
+                  <path d="M29.33 28h-8v-3c0-2.4 1.33-4.4 4-5.33" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="policy-card-meta">
+                <h3 class="policy-card-title">Professional Development for Technology Integration</h3>
+                <span class="tag-outline">Training</span>
+              </div>
+            </div>
+            <p class="policy-card-desc">Strategies for training staff and ensuring successful technology adoption.</p>
+            <button class="btn-read-guide">Read Guide</button>
+          </div>
+
+          <!-- Measuring ROI -->
+          <div class="policy-card">
+            <div class="policy-card-header">
+              <div class="policy-icon">
+                <!-- chart icon -->
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2.67" y="9.33" width="26.67" height="13.33" rx="1" stroke="white" stroke-width="2.67"/>
+                  <rect x="21.33" y="9.33" width="8" height="8" rx="1" stroke="white" stroke-width="2.67"/>
+                </svg>
+              </div>
+              <div class="policy-card-meta">
+                <h3 class="policy-card-title">Measuring Ed Tech ROI</h3>
+                <span class="tag-outline">Analytics</span>
+              </div>
+            </div>
+            <p class="policy-card-desc">Frameworks for evaluating the effectiveness and return on investment of ed tech initiatives.</p>
+            <button class="btn-read-guide">Read Guide</button>
+          </div>
+
+        </div><!-- /policy-guides -->
+
+        <!-- Key Considerations -->
+        <div class="considerations-card">
+          <h2 class="considerations-title">Key Considerations for Ed Tech Adoption</h2>
+          <div class="considerations-list">
+
+            <div class="consideration-item">
+              <div class="consideration-num">1</div>
+              <div class="consideration-text">
+                <p class="consideration-heading">Align with Educational Goals</p>
+                <p class="consideration-desc">Ensure technology investments support your district's strategic academic objectives.</p>
+              </div>
+            </div>
+
+            <div class="consideration-item">
+              <div class="consideration-num">2</div>
+              <div class="consideration-text">
+                <p class="consideration-heading">Prioritize Data Privacy</p>
+                <p class="consideration-desc">Verify FERPA compliance and establish clear data governance policies.</p>
+              </div>
+            </div>
+
+            <div class="consideration-item">
+              <div class="consideration-num">3</div>
+              <div class="consideration-text">
+                <p class="consideration-heading">Plan for Professional Development</p>
+                <p class="consideration-desc">Budget adequate resources for training and ongoing teacher support.</p>
+              </div>
+            </div>
+
+            <div class="consideration-item">
+              <div class="consideration-num">4</div>
+              <div class="consideration-text">
+                <p class="consideration-heading">Ensure Equity of Access</p>
+                <p class="consideration-desc">Address the digital divide by providing devices and connectivity for all students.</p>
+              </div>
+            </div>
+
+            <div class="consideration-item">
+              <div class="consideration-num">5</div>
+              <div class="consideration-text">
+                <p class="consideration-heading">Establish Metrics for Success</p>
+                <p class="consideration-desc">Define clear KPIs to measure the impact of technology initiatives.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /tab-policy -->
+
+
+      <!-- ── CASE STUDIES TAB ── -->
+      <div id="tab-case-studies" class="tab-panel" role="tabpanel">
+        <h2 class="section-title">District Case Studies</h2>
+
+        <div class="case-study-cards">
+
+          <!-- Springfield -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <div class="case-card-left">
+                <h3 class="case-card-title">Springfield Unified School District</h3>
+                <p class="case-card-students">15,000 students</p>
+              </div>
+              <span class="tag tag-dark">1:1 Device Implementation</span>
+            </div>
+            <p class="case-card-desc">Successful rollout of district-wide 1:1 device program with comprehensive teacher training and parent support.</p>
+            <div class="outcome-banner">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.67" y="5.83" width="16.67" height="8.33" rx="0.5" stroke="#008236" stroke-width="1.67"/>
+                <rect x="13.33" y="5.83" width="5" height="5" rx="0.5" stroke="#008236" stroke-width="1.67"/>
+              </svg>
+              <span class="outcome-text">Outcome: 40% increase in student engagement</span>
+            </div>
+            <button class="btn-case">Read Full Case Study</button>
+          </div>
+
+          <!-- Riverside -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <div class="case-card-left">
+                <h3 class="case-card-title">Riverside County Schools</h3>
+                <p class="case-card-students">28,000 students</p>
+              </div>
+              <span class="tag tag-dark">Blended Learning Adoption</span>
+            </div>
+            <p class="case-card-desc">Implemented blended learning model across middle schools with focus on personalized learning paths.</p>
+            <div class="outcome-banner">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.67" y="5.83" width="16.67" height="8.33" rx="0.5" stroke="#008236" stroke-width="1.67"/>
+                <rect x="13.33" y="5.83" width="5" height="5" rx="0.5" stroke="#008236" stroke-width="1.67"/>
+              </svg>
+              <span class="outcome-text">Outcome: 25% improvement in test scores</span>
+            </div>
+            <button class="btn-case">Read Full Case Study</button>
+          </div>
+
+        </div><!-- /case-study-cards -->
+
+        <!-- Share Story Card -->
+        <div class="share-card">
+          <h3 class="share-card-title">Share Your Success Story</h3>
+          <p class="share-card-desc">Help other districts learn from your ed tech implementation experiences.</p>
+          <button class="btn-gradient">Submit Case Study</button>
+        </div>
+
+      </div><!-- /tab-case-studies -->
+
+
+      <!-- ── RESOURCES TAB ── -->
+      <div id="tab-resources" class="tab-panel" role="tabpanel">
+        <h2 class="section-title">Resources</h2>
+        <div class="resources-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="6" width="32" height="36" rx="3" stroke="#D1D5DC" stroke-width="3"/>
+            <line x1="16" y1="18" x2="32" y2="18" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
+            <line x1="16" y1="26" x2="28" y2="26" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
+            <line x1="16" y1="34" x2="24" y2="34" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <p>Additional resources are coming soon. Check back for curated guides and toolkits.</p>
+        </div>
+      </div>
+
+    </div><!-- /content-area -->
+  </div><!-- /page-body -->
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-body">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="5" width="20" height="10" rx="1" stroke="white" stroke-width="2"/>
+              <rect x="6" y="12.5" width="12" height="6.5" rx="1" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">EdTech Navigator</span>
+        </div>
+        <p class="footer-tagline">Empowering educators, parents, and administrators with curated ed tech resources.</p>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-nav-title">Resources</p>
+        <div class="footer-nav-links">
+          <a href="teachers.html">For Teachers</a>
+          <a href="parents.html">For Parents</a>
+          <a href="admin.html">For Administrators</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 EdTech Navigator. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
