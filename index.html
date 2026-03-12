@@ -80,13 +80,15 @@
     /* ── HERO ── */
     .hero {
       position: relative;
-      min-height: 368px;
+      min-height: 100dvh;
+      max-height: 100dvh;
       background: linear-gradient(135deg, #4F39F6 0%, #9810FA 50%, #155DFC 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       padding: 63px 32px 48px;
+      box-sizing: border-box;
     }
 
     .hero-blobs {
@@ -160,7 +162,57 @@
       line-height: 1.625;
       letter-spacing: 0.07px;
       max-width: 606px;
-      margin: 0 auto;
+      margin: 0 auto 36px;
+    }
+
+    .hero-nav-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .hero-nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .hero-nav-btn-teachers {
+      background: white;
+      color: #4F39F6;
+    }
+
+    .hero-nav-btn-parents {
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.70);
+      color: white;
+    }
+
+    .hero-nav-btn-parents:hover {
+      background: rgba(255,255,255,0.30);
+    }
+
+    .hero-nav-btn-admin {
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.70);
+      color: white;
+    }
+
+    .hero-nav-btn-admin:hover {
+      background: rgba(255,255,255,0.30);
     }
 
     /* ── CHOOSE YOUR PATH ── */
@@ -719,6 +771,32 @@
       <div class="hero-badge">Trusted by educators</div>
       <h1 class="hero-title">EdTech Navigator</h1>
       <p class="hero-sub">Your comprehensive guide to educational technology tools, implementation strategies, and peer insights</p>
+      <div class="hero-nav-buttons">
+        <a href="teachers.html" class="hero-nav-btn hero-nav-btn-teachers">
+          <svg width="18" height="18" fill="none" viewBox="0 0 32 32">
+            <rect x="3" y="6" width="26" height="20" rx="2" stroke="#4F39F6" stroke-width="2.67"/>
+            <line x1="3" y1="13" x2="29" y2="13" stroke="#4F39F6" stroke-width="2.67"/>
+            <line x1="11" y1="13" x2="11" y2="26" stroke="#4F39F6" stroke-width="2.67"/>
+          </svg>
+          For Teachers
+        </a>
+        <a href="parents.html" class="hero-nav-btn hero-nav-btn-parents">
+          <svg width="18" height="18" fill="none" viewBox="0 0 32 32">
+            <circle cx="12" cy="10" r="5" stroke="white" stroke-width="2.67"/>
+            <path d="M4 28c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+            <path d="M22 14l2.5 2.5L29 11" stroke="white" stroke-width="2.67" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          For Parents
+        </a>
+        <a href="admin.html" class="hero-nav-btn hero-nav-btn-admin">
+          <svg width="18" height="18" fill="none" viewBox="0 0 32 32">
+            <rect x="4" y="18" width="7" height="11" rx="1" stroke="white" stroke-width="2.67"/>
+            <rect x="12.5" y="12" width="7" height="17" rx="1" stroke="white" stroke-width="2.67"/>
+            <rect x="21" y="5" width="7" height="24" rx="1" stroke="white" stroke-width="2.67"/>
+          </svg>
+          For Administrators
+        </a>
+      </div>
     </div>
   </section>
 
