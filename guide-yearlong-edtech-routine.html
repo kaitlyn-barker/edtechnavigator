@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Building a Year-Long EdTech Routine – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blue: #1D4E89;
+      --blue-mid: #3B82C4;
+      --blue-light: #EBF3FB;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --teal: #2A9D8F;
+      --gold: #D4A017;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #93c5fd; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--blue-mid); background: var(--blue-light); }
+    .card.gold { border-left: 4px solid var(--gold); background: #fdf8ec; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .quarter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
+    @media (max-width: 560px) { .quarter-grid { grid-template-columns: 1fr; } }
+    .quarter-card { border-radius: 10px; padding: 1.1rem 1.2rem; border: 1px solid var(--border); background: var(--white); }
+    .quarter-card .q-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-mid); margin-bottom: 0.4rem; }
+    .quarter-card h3 { margin: 0 0 0.6rem; font-size: 0.95rem; color: var(--navy); }
+    .quarter-card ul { padding-left: 1.1rem; }
+    .quarter-card li { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+    th { background: var(--blue); color: white; padding: 0.6rem 1rem; text-align: left; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--bg); }
+    .eval-row { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+    .eval-row:last-child { border-bottom: none; }
+    .eval-icon { font-size: 1.6rem; width: 40px; flex-shrink: 0; }
+    .eval-body strong { display: block; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .eval-body p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--blue-mid); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Intermediate Guide</div>
+    <h1>Building a Year-Long EdTech Routine That Actually Lasts</h1>
+    <div class="meta">
+      <span>⏱ 22 min read</span>
+      <span>📚 All grade levels</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="teachers.html">← Back to Teacher Resources</a>
+  <div class="card accent">
+    <strong>Prerequisites:</strong> This guide assumes you've already used at least 2–3 EdTech tools consistently and feel comfortable managing a digital assignment in your LMS. If you're just starting out, begin with <em>EdTech 101: Your First Steps</em> and then come back here.
+    <br/><br/>
+    <strong>What you'll learn:</strong>
+    <ul style="margin: 0.4rem 0 0; padding-left: 1.25rem;">
+      <li>How to build a sustainable weekly EdTech routine</li>
+      <li>How to plan tool integration across an entire school year by quarter</li>
+      <li>A framework for evaluating whether a tool is actually working</li>
+      <li>How to avoid "shiny object syndrome" — the trap of constantly switching tools</li>
+      <li>How to advocate for tools with your admin and colleagues</li>
+    </ul>
+  </div>
+  <h2>Why Most EdTech Integration Fails (And How to Avoid It)</h2>
+  <p>The biggest reason teachers abandon EdTech tools isn't that the tools are bad — it's that integration wasn't planned. A tool adopted in September that has no clear role in how you teach becomes background noise by November. The teachers who succeed with EdTech treat it like curriculum: intentionally planned, regularly revisited, and openly evaluated.</p>
+  <p>This guide gives you a framework for exactly that.</p>
+  <h2>The Core Principle: Fewer Tools, Used Deeply</h2>
+  <p>Research on technology integration consistently shows that depth of use matters more than breadth. A teacher who uses Google Classroom, IXL, and Nearpod — and knows them inside out — will outperform a teacher juggling twelve tools superficially. Set a maximum of five active tools at any given time and stick to it.</p>
+  <div class="card gold">
+    <strong>🎯 The Rule of Five:</strong><br/>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>1 LMS (Google Classroom, Schoology, Canvas)</li>
+      <li>1 Adaptive practice tool (IXL, Khan Academy, Lexia)</li>
+      <li>1 Engagement/participation tool (Nearpod, Kahoot, Flip)</li>
+      <li>1 Communication tool (ClassDojo, Remind)</li>
+      <li>1 Creation/project tool (Canva, Book Creator, Google Slides)</li>
+    </ul>
+    Master these before adding anything new.
+  </div>
+  <h2>Planning by Quarter: A Year-Long Framework</h2>
+  <p>Think about your EdTech integration in four quarter-length phases, each with a distinct focus:</p>
+  <div class="quarter-grid">
+    <div class="quarter-card">
+      <div class="q-label">Quarter 1 · Aug–Oct</div>
+      <h3>🛠 Build &amp; Establish</h3>
+      <ul>
+        <li>Set up LMS and all platforms</li>
+        <li>Teach digital citizenship expectations</li>
+        <li>Establish routines for device use</li>
+        <li>Introduce ONE adaptive tool</li>
+        <li>Run first parent communication</li>
+      </ul>
+    </div>
+    <div class="quarter-card">
+      <div class="q-label">Quarter 2 · Nov–Jan</div>
+      <h3>📊 Deepen &amp; Differentiate</h3>
+      <ul>
+        <li>Use data from adaptive tools to form groups</li>
+        <li>Introduce blended learning stations</li>
+        <li>Add one engagement tool</li>
+        <li>Begin tiered digital assignments</li>
+        <li>First tool evaluation check-in</li>
+      </ul>
+    </div>
+    <div class="quarter-card">
+      <div class="q-label">Quarter 3 · Feb–Mar</div>
+      <h3>🎨 Create &amp; Express</h3>
+      <ul>
+        <li>Introduce a student creation tool</li>
+        <li>Launch a digital portfolio or showcase</li>
+        <li>Student-led digital projects</li>
+        <li>Peer review using digital tools</li>
+        <li>Share work with a real audience</li>
+      </ul>
+    </div>
+    <div class="quarter-card">
+      <div class="q-label">Quarter 4 · Apr–Jun</div>
+      <h3>🔄 Reflect &amp; Refine</h3>
+      <ul>
+        <li>Student surveys on tool effectiveness</li>
+        <li>Final portfolio or capstone project</li>
+        <li>Drop any tools that didn't work</li>
+        <li>Research new tools for next year</li>
+        <li>Share successes with colleagues</li>
+      </ul>
+    </div>
+  </div>
+  <h2>A Sustainable Weekly Routine</h2>
+  <p>Sustainability is everything. Here's a template weekly routine that integrates EdTech without it consuming your planning time:</p>
+  <table>
+    <tr><th>Day</th><th>EdTech Integration</th><th>Estimated Prep Time</th></tr>
+    <tr><td>Monday</td><td>Whole-class warmup using an interactive tool (Nearpod, Kahoot, or Mentimeter). Sets the week's energy and surfaces prior knowledge.</td><td>10 min</td></tr>
+    <tr><td>Tuesday</td><td>Independent adaptive practice time (IXL, Khan Academy, or Lexia). You circulate and pull small groups based on last week's data.</td><td>5 min (review dashboard)</td></tr>
+    <tr><td>Wednesday</td><td>Digital creation or project work. Students use tools like Canva, Google Slides, or Book Creator for ongoing projects.</td><td>15 min (set up task)</td></tr>
+    <tr><td>Thursday</td><td>Blended station rotation if applicable; otherwise, a live digital assessment (Google Form exit ticket).</td><td>5–10 min</td></tr>
+    <tr><td>Friday</td><td>Review game (Kahoot/Quizlet Live) and share-out of student digital work. Light and fun end to the week.</td><td>10 min</td></tr>
+  </table>
+  <p>Total additional planning time per week: approximately 45–50 minutes, most of which you're already spending in some form. The key is batching it — plan all five days at once on Sunday or Monday morning, rather than scrambling daily.</p>
+  <h2>Evaluating Whether a Tool Is Working</h2>
+  <p>Approximately every 6–8 weeks, do a quick evaluation of each active tool. Ask these five questions:</p>
+  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin: 0.5rem 0 1.5rem;">
+    <div class="eval-row">
+      <div class="eval-icon">📈</div>
+      <div class="eval-body">
+        <strong>Is it improving a measurable outcome?</strong>
+        <p>Look at assessment data before and after using the tool. Are scores improving? Is engagement higher? Is more student work being completed?</p>
+      </div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-icon">⏱</div>
+      <div class="eval-body">
+        <strong>Is it saving or costing me time?</strong>
+        <p>A tool that takes 30 minutes to set up for 10 minutes of learning value isn't sustainable. The best tools should reduce your workload over time, not add to it.</p>
+      </div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-icon">🎓</div>
+      <div class="eval-body">
+        <strong>Are students actually learning, or just completing?</strong>
+        <p>Students can become expert "clickers" without retaining anything. Check whether what they do on the tool transfers to other contexts — class discussions, written work, assessments.</p>
+      </div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-icon">💬</div>
+      <div class="eval-body">
+        <strong>What do students say about it?</strong>
+        <p>Run a 5-minute anonymous survey every quarter. Ask: "Which tools help you learn best? Which ones feel like a waste of time?" Students will surprise you with their honesty.</p>
+      </div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-icon">🔒</div>
+      <div class="eval-body">
+        <strong>Are there any privacy or access concerns?</strong>
+        <p>Has the tool changed its data policies? Do any students lack reliable access at home? Does it still meet district requirements? Check annually at minimum.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Avoiding "Shiny Object Syndrome"</h2>
+  <p>Every year, new EdTech tools launch with enormous buzz. Administrators share articles, colleagues rave at PD days, and suddenly you feel like your current tools are obsolete. This is shiny object syndrome, and it's one of the biggest barriers to sustainable EdTech integration.</p>
+  <p>Here's how to handle it:</p>
+  <ul>
+    <li><strong>Apply your evaluation framework first.</strong> Before replacing any current tool, run through the five evaluation questions. If your current tool is working, there's no need to switch.</li>
+    <li><strong>Trial new tools before committing.</strong> Most platforms offer free trials. Run a new tool with one class or one lesson before rolling it out everywhere.</li>
+    <li><strong>Set a tool adoption rule for yourself:</strong> "I will only add a new tool if I'm removing one that isn't working."</li>
+    <li><strong>Wait for peer validation.</strong> If a tool is genuinely valuable, colleagues in your grade-level team will be using it successfully within a semester. Let others debug the early issues.</li>
+  </ul>
+  <h2>How to Advocate for the Tools You Need</h2>
+  <p>Sometimes you'll identify a tool that would genuinely help your students — but it costs money, requires admin approval, or needs district-level IT sign-off. Here's how to make that case effectively:</p>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Come with data, not enthusiasm</strong>
+        Administrators respond to evidence. Bring usage data from a free trial, student performance comparisons, or peer research from similar schools. "Students loved it" is less persuasive than "85% of students who used this for 6 weeks improved their reading fluency score by 1.5 grade levels."
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Connect it to a school-wide goal</strong>
+        Find the language your school uses in its improvement plan — "closing the achievement gap," "increasing student engagement," "strengthening data-driven instruction" — and show how the tool addresses it directly.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Propose a small pilot first</strong>
+        Instead of asking for a school-wide license, ask to pilot the tool in your classroom or with your grade-level team. A successful pilot is the most persuasive argument for broader adoption.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Address privacy and IT concerns proactively</strong>
+        Before your meeting, check whether the tool is FERPA/COPPA compliant, whether it's on a state approved-vendor list, and what data it collects. Showing you've done your homework builds trust and removes a common barrier.
+      </div>
+    </li>
+  </ol>
+  <div class="card accent">
+    <strong>✅ End-of-Year EdTech Reflection Checklist:</strong>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>Reviewed student performance data across all active tools</li>
+      <li>Surveyed students about their tool preferences</li>
+      <li>Identified which tools to keep, drop, or replace for next year</li>
+      <li>Documented 2–3 lessons that worked exceptionally well with technology</li>
+      <li>Shared at least one success story with a colleague or at a PD session</li>
+      <li>Set one new EdTech goal for the coming school year</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

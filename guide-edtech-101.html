@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EdTech 101 for Teachers – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #2D6A4F;
+      --green-mid: #52B788;
+      --green-light: #e8f5ee;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --teal: #2A9D8F;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #b7f0d1; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--green-mid); background: var(--green-light); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+    .vocab-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.1rem; }
+    .vocab-card .term { font-weight: 700; color: var(--green); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
+    .vocab-card p { font-size: 0.87rem; color: var(--muted); margin: 0; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--green-mid); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+    .starter-pack { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 1rem 0 1.5rem; }
+    .starter-pack-header { background: var(--green); color: white; padding: 0.75rem 1.25rem; font-weight: 600; font-size: 0.95rem; }
+    .starter-tool { display: flex; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .starter-tool:last-child { border-bottom: none; }
+    .starter-tool .emoji { font-size: 1.5rem; width: 36px; flex-shrink: 0; }
+    .starter-tool strong { display: block; color: var(--navy); font-size: 0.95rem; }
+    .starter-tool span { color: var(--muted); font-size: 0.85rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    .myth-row { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .myth-row:last-child { border-bottom: none; }
+    .myth-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; flex-shrink: 0; margin-top: 2px; }
+    .myth-label.myth { background: #fee2e2; color: #7f1d1d; }
+    .myth-label.truth { background: #d1fae5; color: #065f46; }
+    .myth-content { font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Beginner Guide</div>
+    <h1>EdTech 101: Your First Steps as a Tech-Integrated Teacher</h1>
+    <div class="meta">
+      <span>⏱ 18 min read</span>
+      <span>📚 All grade levels</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="teachers.html">← Back to Teacher Resources</a>
+  <div class="card accent">
+    <strong>This guide is for you if:</strong>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>You're brand new to using technology in your classroom</li>
+      <li>You've used one or two tools but feel unsure about where to start or how to expand</li>
+      <li>You want a low-pressure, step-by-step introduction before diving into the more specific guides</li>
+    </ul>
+    <br/>
+    No tech background required. If you can send an email, you can do this.
+  </div>
+  <h2>The Honest Truth About EdTech</h2>
+  <p>Technology doesn't make you a better teacher automatically. A poorly designed lesson on a $1,000 tablet is still a poorly designed lesson. What EdTech does well is help you do more of what good teachers already do: give timely feedback, reach every student, communicate with families, and make learning active and visible.</p>
+  <p>Start small. Integrate one new tool at a time. Give it at least three weeks before deciding whether it works for your classroom.</p>
+  <h2>Key Terms You'll Hear (and What They Actually Mean)</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card"><div class="term">LMS</div><p>Learning Management System — your digital classroom hub. Examples: Google Classroom, Schoology, Canvas. You post assignments, students submit work, and you communicate all in one place.</p></div>
+    <div class="vocab-card"><div class="term">Adaptive Learning</div><p>When a digital tool adjusts automatically based on a student's responses. If they get questions right, the difficulty increases. If they struggle, the tool offers easier problems or hints.</p></div>
+    <div class="vocab-card"><div class="term">Blended Learning</div><p>A mix of in-person teaching and digital activities. Students are physically in your classroom — they're just doing some learning on a device.</p></div>
+    <div class="vocab-card"><div class="term">EdTech</div><p>Short for "educational technology." Any digital tool, app, or platform used to support teaching and learning.</p></div>
+    <div class="vocab-card"><div class="term">Formative Assessment</div><p>Checking for understanding during learning (not just at the end). Many EdTech tools make this easy with instant polling, quizzes, or activity data.</p></div>
+    <div class="vocab-card"><div class="term">Digital Citizenship</div><p>Teaching students how to use technology responsibly, ethically, and safely. Part of your job as a tech-integrated teacher is modeling this.</p></div>
+  </div>
+  <h2>Common Myths About EdTech (Busted)</h2>
+  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin: 0.5rem 0 1.5rem;">
+    <div class="myth-row">
+      <div class="myth-label myth">Myth</div>
+      <div class="myth-content">"I need to be a tech expert to use EdTech tools."</div>
+    </div>
+    <div class="myth-row">
+      <div class="myth-label truth">Truth</div>
+      <div class="myth-content">Most classroom EdTech tools are designed for non-technical users. If you can use YouTube or order something online, you already have the skills needed for 90% of these platforms.</div>
+    </div>
+    <div class="myth-row">
+      <div class="myth-label myth">Myth</div>
+      <div class="myth-content">"Screen time is always bad for students."</div>
+    </div>
+    <div class="myth-row">
+      <div class="myth-label truth">Truth</div>
+      <div class="myth-content">Passive screen time (watching videos for entertainment) is very different from interactive screen time (writing, creating, problem-solving on a device). Educational screen time used with purpose is not inherently harmful.</div>
+    </div>
+    <div class="myth-row">
+      <div class="myth-label myth">Myth</div>
+      <div class="myth-content">"I have to use technology every single day to be a good modern teacher."</div>
+    </div>
+    <div class="myth-row">
+      <div class="myth-label truth">Truth</div>
+      <div class="myth-content">Integration, not saturation, is the goal. Using one tool consistently and well is far more effective than rotating through 10 tools haphazardly. Some of the best lessons involve no devices at all.</div>
+    </div>
+  </div>
+  <h2>Your EdTech Starter Pack</h2>
+  <p>Don't try to learn everything at once. Here are the six most teacher-friendly tools to learn in your first semester, in the order most teachers find useful:</p>
+  <div class="starter-pack">
+    <div class="starter-pack-header">Starter Pack: Tools to Learn First</div>
+    <div class="starter-tool">
+      <div class="emoji">📋</div>
+      <div>
+        <strong>1. Google Classroom (or your school's LMS)</strong>
+        <span>Start here. This is your command center — where you post assignments, share materials, and communicate with students. Learn to post an assignment and grade a submission before anything else.</span>
+      </div>
+    </div>
+    <div class="starter-tool">
+      <div class="emoji">📊</div>
+      <div>
+        <strong>2. Google Forms</strong>
+        <span>Use it for quick exit tickets, surveys, and quizzes. Responses collect automatically in a spreadsheet, giving you instant data on who understood the lesson. Free and easy to learn in under an hour.</span>
+      </div>
+    </div>
+    <div class="starter-tool">
+      <div class="emoji">🎮</div>
+      <div>
+        <strong>3. Kahoot or Quizlet Live</strong>
+        <span>Game-based review tools that take 10 minutes to set up. Students join on any device and compete in a live quiz. Instant classroom energy — use it once a week for vocabulary or content review.</span>
+      </div>
+    </div>
+    <div class="starter-tool">
+      <div class="emoji">📱</div>
+      <div>
+        <strong>4. ClassDojo or Remind</strong>
+        <span>Communication tools for staying in touch with parents and students. ClassDojo is better for elementary (behavior, portfolios); Remind is better for middle and high school (text-style messaging).</span>
+      </div>
+    </div>
+    <div class="starter-tool">
+      <div class="emoji">📹</div>
+      <div>
+        <strong>5. Flipgrid (now Flip)</strong>
+        <span>Students record short video responses to a prompt. Great for speaking practice, project introductions, or showing their thinking. You view responses on a class dashboard.</span>
+      </div>
+    </div>
+    <div class="starter-tool">
+      <div class="emoji">📚</div>
+      <div>
+        <strong>6. One adaptive practice tool</strong>
+        <span>Choose one based on your subject: IXL for math/ELA, Khan Academy for math/science, Lexia for reading (K–5), or Newsela for reading across subjects. These run themselves — you monitor the data dashboard.</span>
+      </div>
+    </div>
+  </div>
+  <h2>Your First Month: A Simple Plan</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Week 1: Set up your LMS</strong>
+        Create your Google Classroom (or Schoology) course. Add students. Post one assignment — even just a "Welcome back!" Google Form questionnaire. Get comfortable with the basics.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Week 2: Try your first formative assessment tool</strong>
+        Use Google Forms as an exit ticket at the end of one lesson. Pose one question: "What's one thing you learned today? What's one thing you're still confused about?" Read the responses before the next class.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Week 3: Add a fun review activity</strong>
+        Run a Kahoot or Quizlet Live game as a review before a quiz. Give students 10 minutes. Watch the engagement level. Decide if it's worth repeating.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Week 4: Connect with families</strong>
+        Set up ClassDojo or Remind and invite parents. Send one message — a photo of student work, a weekly update, or a preview of what's coming up. Build the communication habit early.
+      </div>
+    </li>
+  </ol>
+  <h2>Privacy and Safety: What You Need to Know</h2>
+  <p>Before using any EdTech tool with students, check these three things:</p>
+  <ul>
+    <li><strong>Is it on your district's approved list?</strong> Many districts maintain a list of approved platforms. Start there — it saves you time and ensures the tool meets FERPA and COPPA requirements.</li>
+    <li><strong>Does it collect student data?</strong> Avoid free tools that monetize student data. Stick with established platforms with clear privacy policies.</li>
+    <li><strong>Do you have parent permission if required?</strong> For students under 13, some tools require explicit parent consent. Check with your district's tech coordinator.</li>
+  </ul>
+  <div class="card accent">
+    <strong>✅ Before You Close This Guide — Three Action Items:</strong>
+    <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>Log into your LMS (Google Classroom, Schoology, etc.) and post one thing — a resource, a link, or an assignment.</li>
+      <li>Pick one tool from the Starter Pack you haven't tried yet and watch a 5-minute intro video on YouTube.</li>
+      <li>Read one more guide from this site — try <em>Getting Started with Blended Learning</em> for a natural next step.</li>
+    </ol>
+  </div>
+  <h2>Next Steps</h2>
+  <p>Once you're using 2–3 tools consistently and feel confident in your LMS, move on to our <strong>Intermediate Guide: Building a Year-Long EdTech Routine</strong> to learn how to integrate technology across units in a sustainable, purposeful way.</p>
+</div>
+</body>
+</html>
