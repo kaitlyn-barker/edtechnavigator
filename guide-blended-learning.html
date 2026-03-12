@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Getting Started with Blended Learning – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --teal: #2A9D8F;
+      --teal-light: #e6f5f3;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --yellow: #F4A261;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, #2A4E6B 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #6EE7D4; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--teal); background: var(--teal-light); }
+    .card.warn { border-left: 4px solid var(--yellow); background: #fff9f2; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; color: var(--text); }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .tool-chip { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; font-size: 0.88rem; }
+    .tool-chip strong { display: block; color: var(--navy); margin-bottom: 0.2rem; }
+    .tool-chip span { color: var(--muted); font-size: 0.82rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+    th { background: var(--navy); color: white; padding: 0.6rem 1rem; text-align: left; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--bg); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Beginner Guide</div>
+    <h1>Getting Started with Blended Learning</h1>
+    <div class="meta">
+      <span>⏱ 15 min read</span>
+      <span>📚 All grade levels</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="teachers.html">← Back to Teacher Resources</a>
+  <div class="card accent">
+    <strong>What you'll learn in this guide:</strong>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>What blended learning actually means (and what it's not)</li>
+      <li>The most beginner-friendly blended learning models</li>
+      <li>How to run your very first blended lesson</li>
+      <li>Free tools to get started today</li>
+    </ul>
+  </div>
+  <h2>What Is Blended Learning?</h2>
+  <p>Blended learning is simply a mix of face-to-face teaching and online learning activities. It does <em>not</em> mean replacing you as the teacher — it means adding digital tools to support, extend, or differentiate what you're already doing in the classroom.</p>
+  <p>Think of it this way: if you've ever had students watch a video on an iPad and then discussed it together as a class, you've already done blended learning. The goal is to be intentional about when and why you use the technology.</p>
+  <div class="card warn">
+    <strong>⚠️ Common Misconception</strong><br/>
+    Blended learning is not the same as remote learning. Students are still physically in your classroom — they're just doing some of their learning on a device. You stay in the room and keep teaching!
+  </div>
+  <h2>The Two Easiest Models to Start With</h2>
+  <p>There are many blended learning models, but these two are the most beginner-friendly:</p>
+  <h3>1. Station Rotation</h3>
+  <p>Divide your class into small groups. Each group rotates through a series of "stations" — for example, one station works with you directly, one station does independent reading, and one station uses a learning app like IXL or Lexia. Students spend about 15–20 minutes at each station, then rotate.</p>
+  <h3>2. Flipped Classroom (Lite Version)</h3>
+  <p>Assign a short video for students to watch at home (or during a free period) to introduce a new concept. Then use your in-class time for discussion, practice, and projects instead of lecture. If students don't have internet at home, build in device time at school for the video portion.</p>
+  <h2>Your First Blended Lesson: Step by Step</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Choose one lesson to experiment with</strong>
+        Pick a lesson where students typically need some independent practice — maybe a math skill or a reading comprehension activity. Don't overhaul everything at once.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Find or create a short digital activity</strong>
+        Use a free tool (see below) to add a digital component. A 5-minute Khan Academy video or a short IXL practice set is plenty to start.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Plan your groups</strong>
+        Split students into 2–3 groups. Decide which group works with you first, and which group starts on the digital activity. Keep groups between 5–8 students for manageability.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Set clear expectations before you start</strong>
+        Tell students exactly what they should do at each station, what to do if they finish early, and how to get help without interrupting you. A visual anchor chart on the board helps.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Run it and take notes</strong>
+        Don't aim for perfection the first time. Jot down what worked and what felt chaotic. Your second attempt will be much smoother.
+      </div>
+    </li>
+  </ol>
+  <h2>Beginner-Friendly Tools to Explore</h2>
+  <div class="tools-grid">
+    <div class="tool-chip"><strong>Khan Academy</strong><span>Free video lessons + practice for all grades</span></div>
+    <div class="tool-chip"><strong>Google Slides</strong><span>Build interactive lesson decks with links &amp; activities</span></div>
+    <div class="tool-chip"><strong>Padlet</strong><span>Digital bulletin board for student responses</span></div>
+    <div class="tool-chip"><strong>Nearpod</strong><span>Interactive lessons with real-time student responses</span></div>
+    <div class="tool-chip"><strong>Seesaw</strong><span>Digital portfolios, great for K–5</span></div>
+    <div class="tool-chip"><strong>Screencastify</strong><span>Record short instructional videos of yourself</span></div>
+  </div>
+  <h2>Managing the Room During Blended Lessons</h2>
+  <p>One of the biggest worries teachers have is: "What do I do if students need help and I'm busy with a small group?" Here are some practical solutions:</p>
+  <ul>
+    <li><strong>The 3-Before-Me rule:</strong> Students must ask 3 classmates before they can interrupt the teacher's small group.</li>
+    <li><strong>A "Help" signal:</strong> A red solo cup or sticky note on a desk signals that a student is stuck. You can visually scan the room and address it during a transition.</li>
+    <li><strong>A "What to do if I finish early" list:</strong> Post it on the board or add it to your lesson slide so students are never idle.</li>
+    <li><strong>Anchor activities:</strong> Every station should have a "bonus" extension task so faster students stay productively occupied.</li>
+  </ul>
+  <h2>Quick-Start Schedule: A 60-Minute Blended Lesson</h2>
+  <table>
+    <tr><th>Time</th><th>Activity</th></tr>
+    <tr><td>0–5 min</td><td>Whole-class launch — introduce the topic and explain station expectations</td></tr>
+    <tr><td>5–25 min</td><td>Station Rotation Round 1 (Group A with teacher, Group B on device, Group C independent)</td></tr>
+    <tr><td>25–45 min</td><td>Station Rotation Round 2 — groups rotate</td></tr>
+    <tr><td>45–55 min</td><td>Station Rotation Round 3 — final group with teacher</td></tr>
+    <tr><td>55–60 min</td><td>Whole-class debrief — share out, address questions</td></tr>
+  </table>
+  <div class="card accent">
+    <strong>✅ You're ready to try blended learning when you can answer these three questions:</strong>
+    <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>What will each group of students be doing at each station?</li>
+      <li>What's the learning goal for the digital portion?</li>
+      <li>How will I know if the digital activity worked? (quiz, observation, exit ticket)</li>
+    </ol>
+  </div>
+  <h2>Next Steps</h2>
+  <p>Once you've run 2–3 blended lessons and feel comfortable, try our <strong>Intermediate Guide: Differentiating Instruction Using Digital Tools</strong> to learn how to tailor digital activities to individual student needs based on data.</p>
+</div>
+</body>
+</html>

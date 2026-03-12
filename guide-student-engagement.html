@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maximizing Student Engagement with Digital Tools – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --coral: #E76F51;
+      --coral-light: #fff0eb;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --teal: #2A9D8F;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, #7d2a12 0%, var(--coral) 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #fcd5c5; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--coral); background: var(--coral-light); }
+    .card.teal { border-left: 4px solid var(--teal); background: #e6f5f3; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .strategy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+    .strategy-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; }
+    .strategy-card .emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .strategy-card strong { display: block; color: var(--navy); margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .strategy-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
+    @media (max-width: 560px) { .dos-donts { grid-template-columns: 1fr; } }
+    .do-box, .dont-box { border-radius: 8px; padding: 1rem 1.1rem; }
+    .do-box { background: #d1fae5; border: 1px solid #6ee7b7; }
+    .dont-box { background: #fee2e2; border: 1px solid #fca5a5; }
+    .do-box strong { color: #065f46; }
+    .dont-box strong { color: #7f1d1d; }
+    .do-box li, .dont-box li { font-size: 0.87rem; margin-bottom: 0.35rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    .tools-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+    .tools-table th { background: var(--navy); color: white; padding: 0.6rem 1rem; text-align: left; }
+    .tools-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .tools-table tr:last-child td { border-bottom: none; }
+    .tools-table tr:nth-child(even) td { background: var(--bg); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Beginner Guide</div>
+    <h1>Maximizing Student Engagement with Digital Tools</h1>
+    <div class="meta">
+      <span>⏱ 12 min read</span>
+      <span>📚 All grade levels</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="teachers.html">← Back to Teacher Resources</a>
+  <div class="card accent">
+    <strong>What you'll learn in this guide:</strong>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>Why digital tools don't automatically create engagement</li>
+      <li>The key ingredients of genuinely engaging digital activities</li>
+      <li>Five concrete strategies to boost engagement today</li>
+      <li>Tools that are proven student favorites by grade band</li>
+    </ul>
+  </div>
+  <h2>The Engagement Myth</h2>
+  <p>Many teachers assume that handing students a device automatically increases engagement. It doesn't. Students can be just as disengaged on a tablet as they are during a lecture — they're just better at hiding it. True engagement means students are <em>thinking hard</em>, not just clicking through.</p>
+  <p>The good news: digital tools, when used intentionally, are exceptionally good at creating the conditions for real engagement. This guide shows you exactly how.</p>
+  <h2>What Actually Drives Student Engagement?</h2>
+  <p>Research consistently identifies three core conditions for student engagement. Use these as your lens when evaluating any digital tool or activity:</p>
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <div class="emoji">🎯</div>
+      <strong>Choice &amp; Autonomy</strong>
+      <p>Students engage more when they have some control over how or what they learn, even if it's just choosing between two activity formats.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="emoji">🏆</div>
+      <strong>Challenge &amp; Progress</strong>
+      <p>Tasks that are slightly above current ability — but achievable — create a motivating "flow state." Too easy = boredom. Too hard = shutdown.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="emoji">🤝</div>
+      <strong>Connection &amp; Audience</strong>
+      <p>Students try harder when their work matters to someone — a real audience, a classmate, a younger student, or even a public display.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="emoji">⚡</div>
+      <strong>Immediate Feedback</strong>
+      <p>Digital tools excel here. Students know instantly if they're right or wrong, which is far more motivating than waiting a week for a graded paper.</p>
+    </div>
+  </div>
+  <h2>5 Strategies to Boost Engagement Right Now</h2>
+  <h3>Strategy 1: Add a Real-Audience Moment</h3>
+  <p>Have students create something digital — a slideshow, a short video, a digital poster — and share it with someone beyond the classroom. Options include a class blog (using Google Sites), a Flipgrid video shown to parents, or a digital book created in Book Creator for a younger class. The act of creating <em>for an audience</em> dramatically raises the quality and motivation of student work.</p>
+  <h3>Strategy 2: Use Gamification Thoughtfully</h3>
+  <p>Gamification means adding game elements (points, badges, leaderboards, challenges) to non-game activities. It works — but only when the underlying task is meaningful. Don't rely on points alone. The best gamified EdTech tools (like Classcraft or even IXL's streaks) tie rewards to actual learning progress, not just time on task.</p>
+  <p>A simple, free gamification trick: use Quizlet Live or Gimkit for review games that take 10 minutes and generate genuine excitement, especially in grades 4–10.</p>
+  <h3>Strategy 3: Give Students Voice in the Format</h3>
+  <p>Instead of assigning "write a paragraph about the water cycle," try "show what you know about the water cycle — you can write a Google Doc, make a Slides presentation, record a Flipgrid video, or draw a diagram in Jamboard." You'll get the same evidence of learning, but with significantly more student buy-in.</p>
+  <h3>Strategy 4: Make Collaboration Visible</h3>
+  <p>Collaborative digital tools — where multiple students can contribute simultaneously — raise engagement because students see each other's thinking in real time. Try a shared Padlet board, a collaborative Google Doc, or a Jamboard where groups brainstorm together. The visibility of classmates' contributions pushes every student to contribute.</p>
+  <h3>Strategy 5: Use Live Response Tools for Whole-Class Engagement</h3>
+  <p>Tools like Kahoot, Nearpod, Mentimeter, or Poll Everywhere let every student respond simultaneously — not just the three students with their hands up. When 100% of students are responding, 100% of students are thinking. Use these for warmups, exit tickets, quick checks for understanding, or vocabulary review.</p>
+  <h2>The Do's and Don'ts of Digital Engagement</h2>
+  <div class="dos-donts">
+    <div class="do-box">
+      <strong>✅ Do this</strong>
+      <ul style="margin-top: 0.5rem; padding-left: 1.1rem;">
+        <li>Give clear instructions before devices open</li>
+        <li>Connect digital tasks to real-world or personal relevance</li>
+        <li>Celebrate student work publicly (with permission)</li>
+        <li>Mix digital and non-digital activities in the same lesson</li>
+        <li>Build in brief breaks from screens</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <strong>❌ Avoid this</strong>
+      <ul style="margin-top: 0.5rem; padding-left: 1.1rem;">
+        <li>Assigning digital activities with no clear goal</li>
+        <li>Using devices as a "busy work" filler</li>
+        <li>Relying on a single tool for every lesson</li>
+        <li>Ignoring what the data tells you about engagement</li>
+        <li>Screen time without a concrete product or outcome</li>
+      </ul>
+    </div>
+  </div>
+  <h2>High-Engagement Tools by Grade Band</h2>
+  <table class="tools-table">
+    <tr><th>Grade Band</th><th>High-Engagement Tools</th><th>Why Students Love Them</th></tr>
+    <tr>
+      <td>K–2</td>
+      <td>Seesaw, Epic!, ClassDojo Stories</td>
+      <td>Visual, audio-friendly, celebrates their work with families</td>
+    </tr>
+    <tr>
+      <td>3–5</td>
+      <td>Flipgrid, Kahoot, Book Creator, IXL</td>
+      <td>Voice and video expression, game-style progress, creative output</td>
+    </tr>
+    <tr>
+      <td>6–8</td>
+      <td>Gimkit, Nearpod, Canva, Padlet</td>
+      <td>Competitive review games, collaborative boards, real design tools</td>
+    </tr>
+    <tr>
+      <td>9–12</td>
+      <td>Mentimeter, Desmos, Google Workspace, Newsela</td>
+      <td>Professional-grade tools, data visualization, real-world text</td>
+    </tr>
+  </table>
+  <div class="card teal">
+    <strong>✅ The 3-Question Engagement Check</strong><br/>
+    Before assigning any digital activity, ask yourself:<br/>
+    <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>What will students <em>think hard about</em> during this task?</li>
+      <li>How will they know how they're doing (feedback)?</li>
+      <li>Who cares about the outcome of this work (audience or purpose)?</li>
+    </ol>
+    If you can answer all three, the activity is likely to drive real engagement.
+  </div>
+  <h2>Next Steps</h2>
+  <p>If you're ready to move from engagement basics to more targeted instruction, check out our <strong>Intermediate Guide: Differentiating Instruction Using Digital Tools</strong> to learn how to use student data to personalize digital activities for every learner in your classroom.</p>
+</div>
+</body>
+</html>
