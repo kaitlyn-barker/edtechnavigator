@@ -423,11 +423,7 @@
     }
 
     /* ── GUIDES TAB ── */
-    .guides-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .guides-list { display: flex; flex-direction: column; gap: 24px; }
 
     .guide-card {
       background: white;
@@ -436,7 +432,14 @@
       padding: 32px;
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .guide-card-left {
+      display: flex;
+      align-items: flex-start;
       gap: 24px;
+      flex: 1;
     }
 
     .guide-icon {
@@ -451,26 +454,85 @@
     .guide-body {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .guide-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 400;
       color: #101828;
-      line-height: 28px;
+      line-height: 32px;
+      letter-spacing: 0.07px;
     }
 
-    .guide-pill {
-      display: inline-block;
-      border: 1px solid rgba(0,0,0,0.10);
+    .guide-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .guide-read-time {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 20px;
+    }
+
+    .guide-level-pill {
+      padding: 2px 8px;
       border-radius: 9999px;
-      padding: 2px 9px;
+      border: 1px solid rgba(0,0,0,0.10);
       font-size: 12px;
       font-weight: 500;
       color: #0A0A0A;
       line-height: 16px;
-      width: fit-content;
+    }
+
+    .btn-guide {
+      height: 36px;
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .btn-guide:hover { background: rgba(0,0,0,0.05); }
+
+    /* ── GUIDES CTA BANNER ── */
+    .guides-cta {
+      background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+      border-radius: 16px;
+      border: 1px solid #86EFAC;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 8px;
+    }
+
+    .guides-cta-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+
+    .guides-cta-sub {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 22px;
     }
 
     /* ── TIPS SECTION ── */
@@ -678,6 +740,8 @@
     @media (max-width: 680px) {
       .tabs { width: 100%; }
       .tools-grid { grid-template-columns: 1fr; }
+      .guide-card { flex-direction: column; }
+      .btn-guide { align-self: flex-start; }
     }
 
     @media (max-width: 560px) {
@@ -1078,60 +1142,130 @@
       <div class="tab-panel" id="panel-guides">
         <h2 class="section-title">Parent Guides</h2>
 
+        <!-- New to Ed Tech Banner -->
+        <div class="guides-cta">
+          <div class="guides-cta-title">New to ed tech at home?</div>
+          <p class="guides-cta-sub">Start with our beginner-friendly guides to confidently support your child's learning with digital tools.</p>
+        </div>
+
         <div class="guides-list">
 
           <!-- Guide 1 -->
           <div class="guide-card">
-            <div class="guide-icon">
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <path d="M8 4h10.67L26.67 12v16a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="white" stroke-width="2.67" stroke-linejoin="round"/>
-              </svg>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <path d="M8 4h10.67L26.67 12v16a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="white" stroke-width="2.67" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Understanding Screen Time Guidelines</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">20 min read</span>
+                  <span class="guide-level-pill">Digital Wellness</span>
+                </div>
+              </div>
             </div>
-            <div class="guide-body">
-              <div class="guide-title">Understanding Screen Time Guidelines</div>
-              <span class="guide-pill">Digital Wellness</span>
-            </div>
+            <a href="guide-parent-screen-time.html"><button class="btn-guide">Read Guide</button></a>
           </div>
 
           <!-- Guide 2 -->
           <div class="guide-card">
-            <div class="guide-icon">
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <path d="M4 8h24M4 16h24M4 24h16" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
-              </svg>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <path d="M4 8h24M4 16h24M4 24h16" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Supporting Your Child's Learning At Home</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">15 min read</span>
+                  <span class="guide-level-pill">Learning Support</span>
+                </div>
+              </div>
             </div>
-            <div class="guide-body">
-              <div class="guide-title">Supporting Your Child's Learning At Home</div>
-              <span class="guide-pill">Learning Support</span>
-            </div>
+            <a href="guide-parent-learning-at-home.html"><button class="btn-guide">Read Guide</button></a>
           </div>
 
           <!-- Guide 3 -->
           <div class="guide-card">
-            <div class="guide-icon">
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <rect x="8" y="2.67" width="16" height="16" rx="2" stroke="white" stroke-width="2.67"/>
-                <path d="M6 24h20M10 28h12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
-              </svg>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="8" y="2.67" width="16" height="16" rx="2" stroke="white" stroke-width="2.67"/>
+                  <path d="M6 24h20M10 28h12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Choosing Age-Appropriate Ed Tech Tools</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">18 min read</span>
+                  <span class="guide-level-pill">Tool Selection</span>
+                </div>
+              </div>
             </div>
-            <div class="guide-body">
-              <div class="guide-title">Choosing Age-Appropriate Ed Tech Tools</div>
-              <span class="guide-pill">Tool Selection</span>
-            </div>
+            <a href="guide-parent-choosing-tools.html"><button class="btn-guide">Read Guide</button></a>
           </div>
 
           <!-- Guide 4 -->
           <div class="guide-card">
-            <div class="guide-icon">
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <rect x="2.67" y="2.67" width="26.67" height="26.67" rx="2" stroke="white" stroke-width="2.67"/>
-                <path d="M10 16h12M16 10v12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
-              </svg>
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="2.67" y="2.67" width="26.67" height="26.67" rx="2" stroke="white" stroke-width="2.67"/>
+                  <path d="M10 16h12M16 10v12" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Monitoring Your Child's Progress</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">16 min read</span>
+                  <span class="guide-level-pill">Parental Involvement</span>
+                </div>
+              </div>
             </div>
-            <div class="guide-body">
-              <div class="guide-title">Monitoring Your Child's Progress</div>
-              <span class="guide-pill">Parental Involvement</span>
+            <a href="guide-parent-monitoring-progress.html"><button class="btn-guide">Read Guide</button></a>
+          </div>
+
+          <!-- Guide 5 -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <circle cx="16" cy="13.33" r="8" stroke="white" stroke-width="2.67"/>
+                  <path d="M12 24h8M14 28h4" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Beginner's Guide to Using Ed Tech at Home</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">12 min read</span>
+                  <span class="guide-level-pill">Beginner</span>
+                </div>
+              </div>
             </div>
+            <a href="guide-parent-beginner.html"><button class="btn-guide">Read Guide</button></a>
+          </div>
+
+          <!-- Guide 6 -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+                  <rect x="2.67" y="2.67" width="26.67" height="26.67" rx="2" stroke="white" stroke-width="2.67"/>
+                  <path d="M8 24V18M16 24V8M24 24V14" stroke="white" stroke-width="2.67" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="guide-body">
+                <div class="guide-title">Intermediate Guide to Using Ed Tech at Home</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">18 min read</span>
+                  <span class="guide-level-pill">Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <a href="guide-parent-intermediate.html"><button class="btn-guide">Read Guide</button></a>
           </div>
 
         </div>
@@ -1305,16 +1439,22 @@
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
+    function activateTab(tabName) {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      const btn = [...tabBtns].find(b => b.dataset.tab === tabName);
+      if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected', 'true'); }
+      const panel = document.getElementById('panel-' + tabName);
+      if (panel) panel.classList.add('active');
+    }
+
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.tab;
-        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-        tabPanels.forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        document.getElementById('panel-' + target).classList.add('active');
-      });
+      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
     });
+
+    // Activate tab based on URL hash (e.g. parents.html#guides)
+    if (window.location.hash === '#guides') activateTab('guides');
+    else if (window.location.hash === '#faq') activateTab('faq');
 
     // ── FAQ accordion ─────────────────────────────────────────────
     document.querySelectorAll('.faq-question').forEach(btn => {
