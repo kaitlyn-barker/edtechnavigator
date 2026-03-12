@@ -181,38 +181,32 @@
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.60);
+      color: white;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
       white-space: nowrap;
     }
 
+    .hero-nav-btn svg { transition: stroke 0.22s ease; }
+
     .hero-nav-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    }
-
-    .hero-nav-btn-teachers {
-      background: white;
-      color: #4F39F6;
-    }
-
-    .hero-nav-btn-parents {
-      background: rgba(255,255,255,0.18);
-      border: 2px solid rgba(255,255,255,0.70);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.30);
+      border-color: transparent;
       color: white;
+    }
+
+    .hero-nav-btn-teachers:hover {
+      background: linear-gradient(135deg, #155DFC 0%, #4F39F6 50%, #9810FA 100%);
     }
 
     .hero-nav-btn-parents:hover {
-      background: rgba(255,255,255,0.30);
-    }
-
-    .hero-nav-btn-admin {
-      background: rgba(255,255,255,0.18);
-      border: 2px solid rgba(255,255,255,0.70);
-      color: white;
+      background: linear-gradient(135deg, #00A63E 0%, #009966 50%, #009689 100%);
     }
 
     .hero-nav-btn-admin:hover {
-      background: rgba(255,255,255,0.30);
+      background: linear-gradient(135deg, #9810FA 0%, #7F22FE 50%, #4F39F6 100%);
     }
 
     /* ── CHOOSE YOUR PATH ── */
@@ -774,9 +768,9 @@
       <div class="hero-nav-buttons">
         <a href="teachers.html" class="hero-nav-btn hero-nav-btn-teachers">
           <svg width="18" height="18" fill="none" viewBox="0 0 32 32">
-            <rect x="3" y="6" width="26" height="20" rx="2" stroke="#4F39F6" stroke-width="2.67"/>
-            <line x1="3" y1="13" x2="29" y2="13" stroke="#4F39F6" stroke-width="2.67"/>
-            <line x1="11" y1="13" x2="11" y2="26" stroke="#4F39F6" stroke-width="2.67"/>
+            <rect x="3" y="6" width="26" height="20" rx="2" stroke="white" stroke-width="2.67"/>
+            <line x1="3" y1="13" x2="29" y2="13" stroke="white" stroke-width="2.67"/>
+            <line x1="11" y1="13" x2="11" y2="26" stroke="white" stroke-width="2.67"/>
           </svg>
           For Teachers
         </a>
