@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beginner's Guide to Using Ed Tech at Home – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #2D6A4F;
+      --green-mid: #52B788;
+      --green-light: #e8f5ee;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --teal: #2A9D8F;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #b7f0d1; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--green-mid); background: var(--green-light); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.93rem; }
+    th { background: var(--green); color: white; padding: 0.6rem 1rem; text-align: left; font-weight: 600; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8fafb; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--green-mid); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+    .faq-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 1rem 0 1.5rem; }
+    .faq-item { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.95rem; }
+    .faq-a { font-size: 0.93rem; color: var(--text); margin: 0; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.4rem 0; font-size: 0.97rem; }
+    .checklist li::before { content: "☐"; font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; color: var(--green-mid); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Beginner Guide</div>
+    <h1>Beginner's Guide to Using Ed Tech at Home</h1>
+    <div class="meta">
+      <span>⏱ 12 min read</span>
+      <span>👨‍👩‍👧 New to ed tech</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="parents.html#guides">← Back to Parent Resources</a>
+
+  <div class="card accent">
+    <strong>This guide is for you if:</strong>
+    <ul style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>The world of educational technology feels unfamiliar or overwhelming</li>
+      <li>You want to support your child's learning at home but aren't sure where to start</li>
+      <li>You'd like step-by-step guidance with no tech experience required</li>
+    </ul>
+    <br/>
+    By the end, you'll know exactly how to pick one tool, get it set up, and use it confidently with your child.
+  </div>
+
+  <h2>Start With Just One Tool</h2>
+  <p>The most common mistake parents make when getting started is trying too many things at once. Pick one platform, get comfortable with it, and stick with it for at least a month before adding anything new.</p>
+  <p>Not sure where to start? Here's the simplest recommendation for each age group:</p>
+  <table>
+    <thead>
+      <tr><th>Child's Grade</th><th>Start Here</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PreK – K</td><td>Khan Academy Kids (free, no account needed to browse)</td></tr>
+      <tr><td>Grades 1–5</td><td>Khan Academy (free, excellent math and reading)</td></tr>
+      <tr><td>Grades 6–12</td><td>Khan Academy (covers all subjects through college prep)</td></tr>
+    </tbody>
+  </table>
+  <p>Khan Academy is free, curriculum-aligned, safe, and used by millions of families. It's the best starting point for almost every family.</p>
+
+  <h2>Step-by-Step: Setting Up Khan Academy at Home</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Go to khanacademy.org</strong>
+        Open your web browser and type khanacademy.org into the address bar.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Create a free parent account</strong>
+        Click "Sign up" in the top right corner. Choose "Parent" when asked who you are. Enter your email address and create a password.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Add your child</strong>
+        After logging in, look for "Add a child" in your parent dashboard. Enter your child's name and grade level. Khan Academy will create a learner profile for them.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Let your child log in on their own</strong>
+        Your child can sign in using the account you created for them. You can set this up on any device — phone, tablet, or computer.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Pick a starting point together</strong>
+        Browse to your child's grade level and pick one subject to start with. Math is usually the easiest starting point because progress is clear and measurable.
+      </div>
+    </li>
+  </ol>
+
+  <h2>What to Expect in the First Week</h2>
+  <ul>
+    <li>Your child may feel resistant at first — that's normal. Stick to short sessions (10–15 minutes).</li>
+    <li>Some concepts will feel too easy; others may be surprisingly hard. That's okay — the platform adapts.</li>
+    <li>You don't need to sit next to them the whole time, but check in to see how it's going.</li>
+    <li>By the end of the first week, you should have a sense of which subjects your child engages with most.</li>
+  </ul>
+
+  <h2>Common Beginner Questions</h2>
+  <div class="faq-block">
+    <div class="faq-item">
+      <div class="faq-q">Does my child need their own email address to sign up?</div>
+      <p class="faq-a">No. When you create a child account from your parent dashboard, they can log in without an email address — they use a username and password you set up together.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my child doesn't want to do it?</div>
+      <p class="faq-a">Try framing it as "let's try this together" for the first session. Sitting beside your child the first time makes a big difference. Many kids warm up once they see the game-like elements and discover they can earn points and badges.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to buy anything?</div>
+      <p class="faq-a">No. Khan Academy is completely free. Most of the tools recommended on this site have a free tier that's sufficient for home use.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my child is already ahead of grade level?</div>
+      <p class="faq-a">Khan Academy allows you to work above grade level. Just navigate to a higher grade and start exploring.</p>
+    </div>
+  </div>
+
+  <h2>Your First-Week Checklist</h2>
+  <ul class="checklist">
+    <li>Chose one platform to start with</li>
+    <li>Created a parent account</li>
+    <li>Set up a child profile</li>
+    <li>Completed one session together</li>
+    <li>Established a regular time for practice (even 10 minutes/day)</li>
+    <li>Checked in with your child about how it felt</li>
+  </ul>
+  <p><strong>That's it. You're doing it.</strong></p>
+
+  <h2>Next Steps</h2>
+  <p>Once you and your child have a consistent routine and feel comfortable with one platform, move on to our <strong>Intermediate Guide: Building on the Basics</strong> to diversify tools, dig into progress data, and keep your child engaged over time.</p>
+</div>
+</body>
+</html>

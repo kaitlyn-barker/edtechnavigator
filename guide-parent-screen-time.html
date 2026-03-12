@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding Screen Time Guidelines – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #2D6A4F;
+      --green-mid: #52B788;
+      --green-light: #e8f5ee;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --teal: #2A9D8F;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--teal); }
+    .hero { background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #b7f0d1; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--green-mid); background: var(--green-light); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.93rem; }
+    th { background: var(--green); color: white; padding: 0.6rem 1rem; text-align: left; font-weight: 600; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8fafb; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--green-mid); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Digital Wellness</div>
+    <h1>Understanding Screen Time Guidelines</h1>
+    <div class="meta">
+      <span>⏱ 20 min read</span>
+      <span>👨‍👩‍👧 All parents</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="parents.html#guides">← Back to Parent Resources</a>
+
+  <div class="card accent">
+    <strong>Overview</strong>
+    <p style="margin: 0.5rem 0 0;">Screen time isn't one-size-fits-all — what matters most is the quality of the experience, not just the clock. This guide helps you understand current expert recommendations, how to think about educational vs. passive screen time, and practical ways to create balance at home.</p>
+  </div>
+
+  <h2>What the Experts Say</h2>
+  <p><strong>American Academy of Pediatrics (AAP) Recommendations:</strong></p>
+  <table>
+    <thead>
+      <tr><th>Age Range</th><th>Recommendation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Under 18–24 months</td><td>Avoid screen time (except video chatting)</td></tr>
+      <tr><td>18–24 months</td><td>Introduce only with a parent watching together</td></tr>
+      <tr><td>2–5 years</td><td>Limit to 1 hour/day of high-quality content</td></tr>
+      <tr><td>6 years and older</td><td>Set consistent, reasonable limits — prioritize sleep, physical activity, and social time</td></tr>
+    </tbody>
+  </table>
+  <p>These guidelines apply to all screens combined — TV, tablets, phones, and computers.</p>
+
+  <h2>Educational vs. Passive Screen Time</h2>
+  <p>Not all screen time works the same way in your child's brain. Here's a quick way to think about it:</p>
+  <p><strong>Passive screen time</strong> (watching videos, scrolling, streaming) tends to be more entertaining than enriching. It rarely requires your child to think, respond, or create.</p>
+  <p><strong>Active/educational screen time</strong> (using platforms like Khan Academy, Prodigy Math, or Epic!) requires your child to read, problem-solve, and make decisions. It's more cognitively engaging and, when it aligns with school curriculum, can meaningfully support learning.</p>
+  <div class="card accent">
+    <strong>A helpful rule of thumb:</strong> If your child is clicking, reading, writing, or building something — that's active engagement. If they're just watching, set a shorter timer.
+  </div>
+
+  <h2>Signs That Screen Time is Working Well</h2>
+  <ul>
+    <li>Your child can explain what they were doing ("I was practicing multiplication on Prodigy")</li>
+    <li>They're excited to show you their progress or a problem they solved</li>
+    <li>Schoolwork isn't suffering and sleep isn't disrupted</li>
+    <li>They're still engaging in non-screen activities — play, reading physical books, outdoor time</li>
+  </ul>
+
+  <h2>Signs It May Be Time to Reassess</h2>
+  <ul>
+    <li>Meltdowns when devices are taken away that seem out of proportion</li>
+    <li>Declining interest in activities they used to enjoy</li>
+    <li>Difficulty sleeping, or asking for screens right before bed</li>
+    <li>Schoolwork slipping or homework being rushed through to get to screen time</li>
+  </ul>
+
+  <h2>Practical Tips for Setting Screen Time Boundaries</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Set a consistent schedule</strong>
+        Designate times for educational screen use (e.g., 30 minutes after school) so it feels predictable, not like a prize.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Use built-in tools</strong>
+        Most devices have screen time management features. Apple Screen Time, Google Family Link, and Amazon Parent Dashboard all allow you to set daily limits by app category.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Create tech-free zones</strong>
+        Bedrooms and dinner tables are good places to start. This isn't about punishment — it's about building habits.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Watch together sometimes</strong>
+        When you sit with your child on an educational platform, you reinforce the learning and stay connected to what they're doing.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>End with a transition, not a cliff</strong>
+        Give 5-minute warnings before screen time ends to reduce frustration.
+      </div>
+    </li>
+  </ol>
+
+  <h2>Helpful Resources</h2>
+  <ul>
+    <li><strong>Common Sense Media</strong> (commonsensemedia.org) — screen time tips by age, app reviews, and family media planning tools</li>
+    <li><strong>American Academy of Pediatrics</strong> (healthychildren.org) — official recommendations and research</li>
+    <li>Your child's school or pediatrician — can offer personalized guidance based on your child's needs</li>
+  </ul>
+
+  <div class="card accent">
+    <strong>✅ Before You Close This Guide — Three Action Items:</strong>
+    <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem;">
+      <li>Check your child's current screen habits for one week — note how much is passive vs. active.</li>
+      <li>Set up one tech-free zone or time in your home this week.</li>
+      <li>Read our <em>Supporting Your Child's Learning At Home</em> guide for practical tips on making screen time more productive.</li>
+    </ol>
+  </div>
+</div>
+</body>
+</html>
