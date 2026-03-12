@@ -979,7 +979,13 @@
 
     const RELEVANCE_BADGE = { High: '', Medium: ' style="background:#F0F9FF;"' };
 
+    const MOBILE_SVG_T = `<svg width="14" height="14" fill="none" viewBox="0 0 16 16" style="flex-shrink:0;">
+      <rect x="4" y="1" width="8" height="14" rx="1.5" stroke="#7C3AED" stroke-width="1.33"/>
+      <circle cx="8" cy="12.5" r="0.75" fill="#7C3AED"/>
+    </svg>`;
+
     function buildTeacherCard(tool) {
+      const isMobile = /iOS|Android/i.test(tool.platforms);
       return `
         <div class="tool-card">
           <div class="tool-header">
@@ -989,6 +995,7 @@
           <div class="tool-rating">
             ${STAR_SVG}
             <span class="rating-score">${tool.teacherRelevant === 'High' ? 'Top Pick' : 'Recommended'}</span>
+            ${isMobile ? `<span style="display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;color:#7C3AED;font-weight:500;">${MOBILE_SVG_T} iOS &amp; Android</span>` : ''}
           </div>
           <p class="tool-desc">${tool.description}</p>
           <div class="tool-meta">

@@ -1033,8 +1033,14 @@
       <path d="M4 8h8M4 5.5h8M4 10.5h5" stroke="#1447E6" stroke-width="1.33" stroke-linecap="round"/>
     </svg>`;
 
+    const MOBILE_SVG = `<svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+      <rect x="4" y="1" width="8" height="14" rx="1.5" stroke="#7C3AED" stroke-width="1.33"/>
+      <circle cx="8" cy="12.5" r="0.75" fill="#7C3AED"/>
+    </svg>`;
+
     function buildParentCard(tool) {
       const hasDashboard = tool.intendedUsers.includes('Parents');
+      const isMobile = /iOS|Android/i.test(tool.platforms);
       return `
         <div class="tool-card">
           <div class="tool-header">
@@ -1044,13 +1050,14 @@
               <span class="tag-age">${tool.gradeLevels}</span>
             </div>
           </div>
-          <p class="tool-desc">${tool.description} Subjects: ${tool.subjects.join(', ')}. Pricing: ${tool.pricingModel}.</p>
+          <p class="tool-desc">${tool.description} Subjects: ${tool.subjects.join(', ')}.</p>
           <div class="tool-badges">
             <div class="badge-safety">
               ${SHIELD_SVG}
               <span class="badge-safety-text">Safety: ${tool.parentRelevant === 'High' ? 'Excellent' : 'Good'}</span>
             </div>
             ${hasDashboard ? `<div class="badge-dashboard">${DASH_SVG}<span class="badge-dashboard-text">Parent Dashboard Available</span></div>` : ''}
+            ${isMobile ? `<div class="badge-dashboard" style="background:#F5F3FF;"><span style="display:flex;align-items:center;gap:6px;">${MOBILE_SVG}<span class="badge-dashboard-text" style="color:#7C3AED;">Available on iOS &amp; Android</span></span></div>` : ''}
           </div>
           <a class="btn-learn-more" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Learn More</a>
         </div>`;
