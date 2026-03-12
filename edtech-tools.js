@@ -153,7 +153,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free; Hub premium",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "Low",
+    teacherRelevant: "High",
     adminRelevant: "High",
     description: "School-home messaging and announcements platform."
   },
@@ -271,7 +271,7 @@ const EDTECH_TOOLS = [
     pricingModel: "School/District license",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "Low",
+    teacherRelevant: "High",
     adminRelevant: "High",
     description: "Unified school-home communication platform."
   },
@@ -290,7 +290,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free and paid plans",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "Low",
+    teacherRelevant: "High",
     adminRelevant: "Low",
     description: "Family communication platform with multilingual translation support."
   },
