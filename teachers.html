@@ -1054,6 +1054,13 @@
       <!-- GUIDES PANEL -->
       <div class="tab-panel" id="panel-guides">
         <h2 class="section-title">Implementation Guides</h2>
+
+        <!-- New to EdTech Banner -->
+        <div class="guides-cta">
+          <div class="guides-cta-title">New to EdTech?</div>
+          <p class="guides-cta-sub">Start with our beginner-friendly guides to learn the basics of integrating technology into your classroom.</p>
+        </div>
+
         <div class="guides-list">
 
           <!-- Guide 1 -->
@@ -1153,12 +1160,6 @@
 
         </div>
 
-        <!-- CTA Banner -->
-        <div class="guides-cta">
-          <div class="guides-cta-title">New to EdTech?</div>
-          <p class="guides-cta-sub">Start with our beginner-friendly guides to learn the basics of integrating technology into your classroom.</p>
-          <button class="btn-cta-outline">Browse Beginner Guides</button>
-        </div>
 
       </div>
 
@@ -1353,16 +1354,22 @@
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
+    function activateTab(tabName) {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      const btn = [...tabBtns].find(b => b.dataset.tab === tabName);
+      if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected', 'true'); }
+      const panel = document.getElementById('panel-' + tabName);
+      if (panel) panel.classList.add('active');
+    }
+
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.tab;
-        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-        tabPanels.forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        document.getElementById('panel-' + target).classList.add('active');
-      });
+      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
     });
+
+    // Activate tab based on URL hash (e.g. teachers.html#guides)
+    if (window.location.hash === '#guides') activateTab('guides');
+    else if (window.location.hash === '#reviews') activateTab('reviews');
 
     // ── Tool database rendering ───────────────────────────────────
     const STAR_SVG = `<svg class="star-icon" viewBox="0 0 20 20" fill="none">
