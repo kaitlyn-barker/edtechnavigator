@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Differentiating Instruction Using Digital Tools – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --purple: #6B4EAB;
+      --purple-light: #f0ebff;
+      --navy: #1a2e44;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --orange: #E76F51;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #2A9D8F; text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: #2A9D8F; }
+    .hero { background: linear-gradient(135deg, #3d1f7a 0%, #6B4EAB 100%); color: white; padding: 3.5rem 2rem 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #c4b5f4; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin-bottom: 1rem; }
+    .meta { display: flex; gap: 1.5rem; font-size: 0.85rem; opacity: 0.75; flex-wrap: wrap; }
+    .layout { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
+    .card.accent { border-left: 4px solid var(--purple); background: var(--purple-light); }
+    .card.warn { border-left: 4px solid var(--orange); background: #fff5f2; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 1.25rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.97rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { font-size: 0.97rem; margin-bottom: 0.4rem; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+    @media (max-width: 600px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-card { border-radius: 8px; padding: 1rem 1.1rem; }
+    .tier-card.below { background: #fef3c7; border: 1px solid #fcd34d; }
+    .tier-card.on { background: #d1fae5; border: 1px solid #6ee7b7; }
+    .tier-card.above { background: #dbeafe; border: 1px solid #93c5fd; }
+    .tier-card strong { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .tier-card ul { padding-left: 1.1rem; }
+    .tier-card li { font-size: 0.85rem; margin-bottom: 0.3rem; }
+    .tool-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .tool-row:last-child { border-bottom: none; }
+    .tool-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .tool-info strong { display: block; color: var(--navy); font-size: 0.95rem; }
+    .tool-info span { color: var(--muted); font-size: 0.85rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+    th { background: var(--navy); color: white; padding: 0.6rem 1rem; text-align: left; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--bg); }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: #2A9D8F; text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">EdTech Navigator</a>
+  <a href="teachers.html">For Teachers</a>
+  <a href="parents.html">For Parents</a>
+  <a href="admin.html">For Administrators</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Intermediate Guide</div>
+    <h1>Differentiating Instruction Using Digital Tools</h1>
+    <div class="meta">
+      <span>⏱ 20 min read</span>
+      <span>📚 All grade levels</span>
+      <span>🗓 Updated 2026</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <a class="back-link" href="teachers.html">← Back to Teacher Resources</a>
+  <div class="card accent">
+    <strong>Prerequisites:</strong> Before diving in, it helps to have already tried some form of blended learning — like station rotations — and feel comfortable managing students on devices. If you haven't, check out our <em>Getting Started with Blended Learning</em> guide first.
+    <br/><br/>
+    <strong>What you'll learn:</strong>
+    <ul style="margin: 0.4rem 0 0; padding-left: 1.25rem;">
+      <li>How to use data from EdTech tools to identify student needs</li>
+      <li>The three tiers of differentiation and how to address each digitally</li>
+      <li>Specific platforms built for differentiation</li>
+      <li>How to manage differentiated digital tasks without overwhelming yourself</li>
+    </ul>
+  </div>
+  <h2>Why Digital Tools Make Differentiation More Manageable</h2>
+  <p>Differentiation — meeting every student at their individual learning level — is one of the most powerful teaching practices out there. It's also one of the most time-consuming to execute manually. You can only create so many versions of a worksheet.</p>
+  <p>This is where EdTech genuinely earns its place. Many platforms automatically adjust difficulty based on how a student is performing, provide you with data dashboards showing exactly where each student is struggling, and let you assign different tasks to different students in just a few clicks.</p>
+  <h2>Step 1: Know Your Three Tiers</h2>
+  <p>When differentiating, think about your students in three broad groups at any given time. These groupings shift constantly — a student might be below grade level in fractions but above grade level in geometry.</p>
+  <div class="tier-grid">
+    <div class="tier-card below">
+      <strong>🟡 Approaching Grade Level</strong>
+      <ul>
+        <li>Need scaffolded support</li>
+        <li>Benefit from extra practice on foundational skills</li>
+        <li>May need audio support or visual cues</li>
+      </ul>
+    </div>
+    <div class="tier-card on">
+      <strong>🟢 At Grade Level</strong>
+      <ul>
+        <li>Core curriculum is the right fit</li>
+        <li>Benefit from variety in how they practice</li>
+        <li>Good candidates for peer collaboration</li>
+      </ul>
+    </div>
+    <div class="tier-card above">
+      <strong>🔵 Above Grade Level</strong>
+      <ul>
+        <li>Need extension and enrichment</li>
+        <li>Risk disengagement if under-challenged</li>
+        <li>Benefit from open-ended, creative tasks</li>
+      </ul>
+    </div>
+  </div>
+  <h2>Step 2: Use Your Data Dashboard Before Assigning</h2>
+  <p>Most EdTech platforms generate performance reports automatically. Before you assign the next digital activity, spend 5–10 minutes reading your data. Here's what to look for:</p>
+  <ul>
+    <li><strong>Mastery percentage by skill:</strong> Which skills are students consistently getting below 70%? That signals a gap to address before moving on.</li>
+    <li><strong>Time on task:</strong> A student who finishes very quickly may need a harder version; one who takes much longer may need scaffolding.</li>
+    <li><strong>Individual student reports:</strong> Platforms like IXL and Lexia Core5 show a detailed breakdown per student — use these once a week, not every day.</li>
+  </ul>
+  <div class="card warn">
+    <strong>⚠️ Data Overload Warning</strong><br/>
+    You do not need to review every data point. Pick one or two metrics that matter most to your current unit. Weekly check-ins are enough — daily data review burns teachers out quickly.
+  </div>
+  <h2>Step 3: Assign Differentiated Digital Tasks</h2>
+  <p>Once you know who needs what, here's how to act on it using digital tools:</p>
+  <ol class="steps">
+    <li>
+      <div class="step-body">
+        <strong>Use adaptive platforms for automatic differentiation</strong>
+        Tools like IXL, Lexia Core5, and Khan Academy adjust difficulty in real time based on student responses. Assign the platform, not a specific level — let the algorithm do the differentiation work for you.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Create tiered assignments in Google Classroom or Schoology</strong>
+        Both platforms let you assign the same task to specific students or groups. Create two versions of a worksheet (one with sentence starters, one without) and assign each to the right group. Students only see their version.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Use flexible choice boards</strong>
+        A choice board is a 3×3 grid of activity options at varying complexity levels. Post it digitally in your LMS. Students choose tasks that match their readiness. Tools like Google Slides or Canva make them easy to design.
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <strong>Provide scaffolded supports within the digital task itself</strong>
+        Embed audio instructions using tools like Nearpod or Book Creator, add glossary hyperlinks for vocabulary support, or include worked example videos for students who need a model.
+      </div>
+    </li>
+  </ol>
+  <h2>Best Platforms for Differentiation</h2>
+  <div>
+    <div class="tool-row">
+      <div class="tool-icon">📊</div>
+      <div class="tool-info">
+        <strong>IXL Learning</strong>
+        <span>Adaptive math and ELA practice with a real-time diagnostic that places each student at their exact skill level. The "SmartScore" system ensures mastery before progressing. Best for: targeted skill practice in math and reading.</span>
+      </div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-icon">📖</div>
+      <div class="tool-info">
+        <strong>Lexia Core5 Reading</strong>
+        <span>Auto-adaptive reading program that adjusts pacing, scaffolding, and skill focus for each student. Teacher dashboard shows exactly which foundational skills need intervention. Best for: K–5 reading differentiation.</span>
+      </div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-icon">📰</div>
+      <div class="tool-info">
+        <strong>Newsela</strong>
+        <span>News articles available at five Lexile levels. You can assign the same article at different reading levels simultaneously — great for whole-class discussion with differentiated text. Best for: ELA, social studies, science reading.</span>
+      </div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-icon">🎯</div>
+      <div class="tool-info">
+        <strong>Khan Academy</strong>
+        <span>Free adaptive math and SAT prep. The "Mastery Challenge" feature sequences skills individually for each student. Teacher dashboard shows progress at a class and individual level. Best for: math intervention and enrichment.</span>
+      </div>
+    </div>
+  </div>
+  <h2>Sample Differentiated Week at a Glance</h2>
+  <table>
+    <tr><th>Day</th><th>Approaching</th><th>At Grade Level</th><th>Above Grade Level</th></tr>
+    <tr>
+      <td>Mon</td>
+      <td>Lexia Core5 focused skill session (teacher monitors)</td>
+      <td>Newsela article at grade Lexile + annotation task</td>
+      <td>Newsela at advanced Lexile + written response</td>
+    </tr>
+    <tr>
+      <td>Wed</td>
+      <td>Khan Academy remediation videos + guided practice</td>
+      <td>IXL SmartScore challenge for current unit</td>
+      <td>IXL above-grade extension set + explanation recording</td>
+    </tr>
+    <tr>
+      <td>Fri</td>
+      <td>Small group with teacher using digital whiteboard</td>
+      <td>Choice board (pick 3 of 9 activities)</td>
+      <td>Open-ended digital project (Canva, Slides, or video)</td>
+    </tr>
+  </table>
+  <div class="card accent">
+    <strong>✅ Differentiation Checklist Before the Week Begins:</strong>
+    <ul style="margin: 0.4rem 0 0; padding-left: 1.25rem;">
+      <li>Reviewed last week's data dashboard (10 min)</li>
+      <li>Identified 2–3 students who need intervention and 2–3 who need extension</li>
+      <li>Assigned appropriate platform or task to each group in LMS</li>
+      <li>Prepared one scaffolded version and one enrichment version of key tasks</li>
+      <li>Scheduled at least one small-group pull session with the students who need the most support</li>
+    </ul>
+  </div>
+  <h2>Next Steps</h2>
+  <p>Once you're comfortable using data to guide your digital differentiation, explore our guide on <strong>Maximizing Student Engagement with Digital Tools</strong> — because meeting students at their level is only powerful if they're actually motivated to engage.</p>
+</div>
+</body>
+</html>
