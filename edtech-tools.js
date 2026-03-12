@@ -153,7 +153,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free; Hub premium",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "High",
+    teacherRelevant: "Low",
     adminRelevant: "High",
     description: "School-home messaging and announcements platform."
   },
@@ -231,7 +231,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free and paid editions",
     rating: 5,
     parentRelevant: "Low",
-    teacherRelevant: "High",
+    teacherRelevant: "Low",
     adminRelevant: "High",
     description: "Productivity suite including Docs, Drive, Meet, and Classroom integration."
   },
@@ -250,7 +250,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free and paid education plans",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "High",
+    teacherRelevant: "Low",
     adminRelevant: "High",
     description: "Productivity suite with Office apps, Teams, and collaboration tools."
   },
@@ -271,7 +271,7 @@ const EDTECH_TOOLS = [
     pricingModel: "School/District license",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "High",
+    teacherRelevant: "Low",
     adminRelevant: "High",
     description: "Unified school-home communication platform."
   },
@@ -290,7 +290,7 @@ const EDTECH_TOOLS = [
     pricingModel: "Free and paid plans",
     rating: 4,
     parentRelevant: "Low",
-    teacherRelevant: "High",
+    teacherRelevant: "Low",
     adminRelevant: "Low",
     description: "Family communication platform with multilingual translation support."
   },
