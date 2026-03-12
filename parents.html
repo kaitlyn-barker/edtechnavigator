@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Parents – EdTech Navigator</title>
   <script src="edtech-tools.js"></script>
+  <script src="filter-sort.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -940,6 +941,9 @@
       <!-- TOOLS PANEL -->
       <div class="tab-panel active" id="panel-tools">
 
+        <!-- FILTER BAR -->
+        <div id="parent-filterbar"></div>
+
         <!-- Personalized recommendations (shown after onboarding) -->
         <div id="p-rec-section" style="display:none">
           <div class="p-rec-header">
@@ -1267,11 +1271,16 @@
         </div>`;
     }
 
+    // ── Filter state (populated by FilterBar) ────────────────────
+    let parentFilterState = null;
+
     function renderParentTools(query) {
       const grid  = document.getElementById('parent-tools-grid');
       const noRes = document.getElementById('parent-no-results');
       const base  = getToolsForAudience('Parents');
-      const results = filterTools(base, query);
+      const results = parentFilterState
+        ? applyFiltersAndSort(base, query, parentFilterState)
+        : filterTools(base, query);
 
       if (results.length === 0) {
         grid.innerHTML = '';
@@ -1289,6 +1298,20 @@
     searchBtn.addEventListener('click', () => renderParentTools(searchInput.value));
     searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderParentTools(searchInput.value); });
     searchInput.addEventListener('input', () => renderParentTools(searchInput.value));
+
+    // ── Initialize Filter Bar ─────────────────────────────────────
+    (function initParentFilterBar() {
+      const base = getToolsForAudience('Parents');
+      const cats = [...new Set(base.map(t => t.category))].sort();
+      new FilterBar({
+        container:  'parent-filterbar',
+        categories: cats,
+        onChange: function (state) {
+          parentFilterState = state;
+          renderParentTools(searchInput.value);
+        }
+      });
+    })();
   </script>
 
   <script src="edtech-tools.js"></script>
