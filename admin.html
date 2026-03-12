@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Administrators – EdTech Navigator</title>
   <script src="edtech-tools.js"></script>
+  <script src="filter-sort.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -840,6 +841,9 @@
       <div id="tab-solutions" class="tab-panel active" role="tabpanel">
         <h2 class="section-title">Enterprise Ed Tech Solutions</h2>
 
+        <!-- FILTER BAR -->
+        <div id="admin-filterbar"></div>
+
         <div class="solution-cards" id="admin-tools-list">
           <!-- populated by JS -->
         </div>
@@ -1139,11 +1143,16 @@
         </div>`;
     }
 
+    // ── Filter state (populated by FilterBar) ────────────────────
+    let adminFilterState = null;
+
     function renderAdminTools(query) {
       const list  = document.getElementById('admin-tools-list');
       const noRes = document.getElementById('admin-no-results');
       const base  = getToolsForAudience('Admins');
-      const results = filterTools(base, query);
+      const results = adminFilterState
+        ? applyFiltersAndSort(base, query, adminFilterState)
+        : filterTools(base, query);
 
       if (results.length === 0) {
         list.innerHTML = '';
@@ -1161,6 +1170,20 @@
     searchBtn.addEventListener('click', () => renderAdminTools(searchInput.value));
     searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderAdminTools(searchInput.value); });
     searchInput.addEventListener('input', () => renderAdminTools(searchInput.value));
+
+    // ── Initialize Filter Bar ─────────────────────────────────────
+    (function initAdminFilterBar() {
+      const base = getToolsForAudience('Admins');
+      const cats = [...new Set(base.map(t => t.category))].sort();
+      new FilterBar({
+        container:  'admin-filterbar',
+        categories: cats,
+        onChange: function (state) {
+          adminFilterState = state;
+          renderAdminTools(searchInput.value);
+        }
+      });
+    })();
   </script>
 </body>
 </html>

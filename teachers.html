@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Teachers – EdTech Navigator</title>
   <script src="edtech-tools.js"></script>
+  <script src="filter-sort.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1037,6 +1038,9 @@
       <!-- TOOLS PANEL -->
       <div class="tab-panel active" id="panel-tools">
 
+        <!-- FILTER BAR -->
+        <div id="teacher-filterbar"></div>
+
         <!-- RECOMMENDED FOR YOU (populated by JS when prefs are set) -->
         <div id="recommended-section" style="display:none;"></div>
 
@@ -1360,11 +1364,16 @@
         </div>`;
     }
 
+    // ── Filter state (populated by FilterBar) ────────────────────
+    let teacherFilterState = null;
+
     function renderTeacherTools(query) {
       const list    = document.getElementById('teacher-tools-list');
       const noRes   = document.getElementById('teacher-no-results');
       const base    = getToolsForAudience('Teachers');
-      const results = filterTools(base, query);
+      const results = teacherFilterState
+        ? applyFiltersAndSort(base, query, teacherFilterState)
+        : filterTools(base, query);
 
       if (results.length === 0) {
         list.innerHTML = '';
@@ -1385,6 +1394,20 @@
     searchBtn.addEventListener('click', () => renderTeacherTools(searchInput.value));
     searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderTeacherTools(searchInput.value); });
     searchInput.addEventListener('input', () => renderTeacherTools(searchInput.value));
+
+    // ── Initialize Filter Bar ─────────────────────────────────────
+    (function initTeacherFilterBar() {
+      const base = getToolsForAudience('Teachers');
+      const cats = [...new Set(base.map(t => t.category))].sort();
+      new FilterBar({
+        container:  'teacher-filterbar',
+        categories: cats,
+        onChange: function (state) {
+          teacherFilterState = state;
+          renderTeacherTools(searchInput.value);
+        }
+      });
+    })();
 
     // ── ONBOARDING & PERSONALIZED RECOMMENDATIONS ─────────────────
 
