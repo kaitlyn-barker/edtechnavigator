@@ -699,6 +699,261 @@
       line-height: 20px;
     }
 
+    /* ── ONBOARDING MODAL ── */
+    .onboarding-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 24, 40, 0.55);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .onboarding-modal {
+      background: white;
+      border-radius: 20px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.30);
+    }
+
+    .onboarding-modal-header {
+      background: linear-gradient(135deg, #155DFC 0%, #4F39F6 50%, #9810FA 100%);
+      padding: 32px 32px 28px;
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+    }
+
+    .onboarding-header-icon {
+      width: 56px; height: 56px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .onboarding-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: white;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+
+    .onboarding-sub {
+      font-size: 15px;
+      font-weight: 400;
+      color: #DBEAFE;
+      line-height: 1.55;
+    }
+
+    .onboarding-body {
+      padding: 28px 32px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .onboarding-question label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #101828;
+      margin-bottom: 10px;
+    }
+
+    .onboarding-question label span {
+      font-weight: 400;
+      color: #99A1AF;
+      font-size: 13px;
+    }
+
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 16px;
+      border-radius: 9999px;
+      border: 1.5px solid #E5E7EB;
+      background: white;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      line-height: 20px;
+    }
+
+    .chip:hover {
+      border-color: #4F39F6;
+      color: #4F39F6;
+      background: #F5F3FF;
+    }
+
+    .chip.selected {
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      border-color: transparent;
+      color: white;
+    }
+
+    .chip.selected:hover { opacity: 0.88; }
+
+    .onboarding-footer {
+      padding: 20px 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-onboarding-submit {
+      width: 100%;
+      height: 48px;
+      background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%);
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      box-shadow: 0 4px 6px -1px rgba(79, 57, 246, 0.30);
+    }
+
+    .btn-onboarding-submit:hover { opacity: 0.88; }
+
+    .onboarding-footer-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-onboarding-skip,
+    .btn-onboarding-reset {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+
+    .btn-onboarding-skip { color: #6A7282; }
+    .btn-onboarding-skip:hover { color: #374151; }
+    .btn-onboarding-reset { color: #DC2626; }
+    .btn-onboarding-reset:hover { color: #991B1B; }
+
+    /* ── RECOMMENDED SECTION ── */
+    .recommended-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .recommended-banner {
+      background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
+      border: 1px solid #C7D7FD;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .recommended-banner-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .recommended-banner-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #101828;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .recommended-banner-sub {
+      font-size: 13px;
+      color: #4A5565;
+    }
+
+    .pref-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pref-tag {
+      background: #EEF2FF;
+      border: 1px solid #C7D7FD;
+      border-radius: 9999px;
+      padding: 2px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #4F39F6;
+    }
+
+    .btn-edit-prefs {
+      height: 34px;
+      padding: 0 14px;
+      background: white;
+      border: 1.5px solid #4F39F6;
+      border-radius: 10px;
+      color: #4F39F6;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-edit-prefs:hover { background: #F5F3FF; }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-divider-line {
+      flex: 1;
+      height: 1px;
+      background: #E5E7EB;
+    }
+
+    .section-divider-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: #99A1AF;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .tabs { width: 100%; }
@@ -781,7 +1036,11 @@
 
       <!-- TOOLS PANEL -->
       <div class="tab-panel active" id="panel-tools">
-        <h2 class="section-title">Featured Ed Tech Tools</h2>
+
+        <!-- RECOMMENDED FOR YOU (populated by JS when prefs are set) -->
+        <div id="recommended-section" style="display:none;"></div>
+
+        <h2 class="section-title" id="all-tools-title">Featured Ed Tech Tools</h2>
         <div class="tools-list" id="teacher-tools-list">
           <!-- populated by JS -->
         </div>
@@ -956,6 +1215,97 @@
     </div>
   </footer>
 
+  <!-- ── ONBOARDING MODAL ── -->
+  <div
+    id="onboarding-overlay"
+    class="onboarding-overlay"
+    style="display:none;"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="onboarding-modal-title"
+  >
+    <div class="onboarding-modal">
+
+      <!-- Header -->
+      <div class="onboarding-modal-header">
+        <div class="onboarding-header-icon">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+            <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2 class="onboarding-title" id="onboarding-modal-title">Personalize Your Tools</h2>
+        <p class="onboarding-sub">Tell us about your classroom so we can surface the right EdTech tools for you.</p>
+      </div>
+
+      <!-- Body -->
+      <div class="onboarding-body">
+
+        <!-- Q1: Grade Level -->
+        <div class="onboarding-question">
+          <label for="grade-chips">
+            What grade do you teach?
+            <span>(select one)</span>
+          </label>
+          <div class="chip-group" id="grade-chips" role="group" aria-label="Grade level">
+            <button class="chip" type="button" data-value="K-2">K–2</button>
+            <button class="chip" type="button" data-value="3-5">3–5</button>
+            <button class="chip" type="button" data-value="6-8">6–8</button>
+            <button class="chip" type="button" data-value="9-12">9–12</button>
+          </div>
+        </div>
+
+        <!-- Q2: Content Areas -->
+        <div class="onboarding-question">
+          <label for="subject-chips">
+            What content areas should the tools serve?
+            <span>(select all that apply)</span>
+          </label>
+          <div class="chip-group" id="subject-chips" role="group" aria-label="Content areas">
+            <button class="chip" type="button" data-value="ELA">ELA / Reading</button>
+            <button class="chip" type="button" data-value="Math">Math</button>
+            <button class="chip" type="button" data-value="Science">Science</button>
+            <button class="chip" type="button" data-value="Social Studies">Social Studies</button>
+            <button class="chip" type="button" data-value="Computer Science">Computer Science</button>
+            <button class="chip" type="button" data-value="SEL">SEL</button>
+            <button class="chip" type="button" data-value="World Languages">World Languages</button>
+            <button class="chip" type="button" data-value="All">All Subjects</button>
+          </div>
+        </div>
+
+        <!-- Q3: Instructional Goals -->
+        <div class="onboarding-question">
+          <label for="goal-chips">
+            What are your instructional goals?
+            <span>(select all that apply)</span>
+          </label>
+          <div class="chip-group" id="goal-chips" role="group" aria-label="Instructional goals">
+            <button class="chip" type="button" data-value="gamification">Gamification</button>
+            <button class="chip" type="button" data-value="differentiation">Differentiation</button>
+            <button class="chip" type="button" data-value="extension">Extension / Enrichment</button>
+            <button class="chip" type="button" data-value="assessment">Assessment &amp; Data</button>
+            <button class="chip" type="button" data-value="creativity">Creativity &amp; Media</button>
+            <button class="chip" type="button" data-value="sel">Social Emotional Learning</button>
+            <button class="chip" type="button" data-value="special-ed">Special Education</button>
+            <button class="chip" type="button" data-value="literacy">Reading &amp; Literacy</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="onboarding-footer">
+        <button class="btn-onboarding-submit" id="btn-onboarding-submit" type="button">
+          Find My Tools
+        </button>
+        <div class="onboarding-footer-links">
+          <button class="btn-onboarding-skip" id="btn-onboarding-skip" type="button">Skip for now</button>
+          <button class="btn-onboarding-reset" id="btn-onboarding-reset" type="button" style="display:none;">Reset Preferences</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <script>
     // ── Tab switcher ──────────────────────────────────────────────
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -1035,6 +1385,298 @@
     searchBtn.addEventListener('click', () => renderTeacherTools(searchInput.value));
     searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') renderTeacherTools(searchInput.value); });
     searchInput.addEventListener('input', () => renderTeacherTools(searchInput.value));
+
+    // ── ONBOARDING & PERSONALIZED RECOMMENDATIONS ─────────────────
+
+    const PREFS_KEY = 'edtech_teacher_prefs_v1';
+
+    function loadPrefs() {
+      try { return JSON.parse(localStorage.getItem(PREFS_KEY)) || null; }
+      catch { return null; }
+    }
+
+    function savePrefs(prefs) {
+      localStorage.setItem(PREFS_KEY, JSON.stringify(prefs));
+    }
+
+    function clearPrefs() {
+      localStorage.removeItem(PREFS_KEY);
+    }
+
+    // ── Chip helpers ──────────────────────────────────────────────
+
+    function getSelectedChips(groupId) {
+      return Array.from(document.querySelectorAll('#' + groupId + ' .chip.selected'))
+        .map(c => c.dataset.value);
+    }
+
+    function setSelectedChips(groupId, values) {
+      document.querySelectorAll('#' + groupId + ' .chip').forEach(c => {
+        c.classList.toggle('selected', values.includes(c.dataset.value));
+      });
+    }
+
+    function initGradeChips() {
+      document.querySelectorAll('#grade-chips .chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('#grade-chips .chip').forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+        });
+      });
+    }
+
+    function initMultiChips(groupId) {
+      document.querySelectorAll('#' + groupId + ' .chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          if (groupId === 'subject-chips' && chip.dataset.value === 'All') {
+            document.querySelectorAll('#subject-chips .chip').forEach(c => c.classList.remove('selected'));
+            chip.classList.add('selected');
+          } else if (groupId === 'subject-chips') {
+            const allChip = document.querySelector('#subject-chips .chip[data-value="All"]');
+            if (allChip) allChip.classList.remove('selected');
+            chip.classList.toggle('selected');
+          } else {
+            chip.classList.toggle('selected');
+          }
+        });
+      });
+    }
+
+    // ── Modal ─────────────────────────────────────────────────────
+
+    function showOnboarding(isEditing) {
+      document.getElementById('btn-onboarding-reset').style.display = isEditing ? 'inline' : 'none';
+      document.getElementById('onboarding-overlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideOnboarding() {
+      document.getElementById('onboarding-overlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function populateChipsFromPrefs(prefs) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      if (prefs.grade)    setSelectedChips('grade-chips',   [prefs.grade]);
+      if (prefs.subjects) setSelectedChips('subject-chips', prefs.subjects);
+      if (prefs.goals)    setSelectedChips('goal-chips',    prefs.goals);
+    }
+
+    function collectPrefsFromForm() {
+      return {
+        grade:    getSelectedChips('grade-chips')[0] || null,
+        subjects: getSelectedChips('subject-chips'),
+        goals:    getSelectedChips('goal-chips')
+      };
+    }
+
+    // ── Grade matching ────────────────────────────────────────────
+
+    function parseGradeRange(gradeLevels) {
+      const s = gradeLevels.replace(/\s*\(.*?\)/g, '').trim().toLowerCase();
+      const m = s.match(/^(prek|k|\d+)[-\u2013](\d+|k)$/);
+      if (!m) return [-1, 12];
+      const gn = g => g === 'prek' ? -1 : g === 'k' ? 0 : parseInt(g);
+      return [gn(m[1]), gn(m[2])];
+    }
+
+    function gradeMatches(toolGradeLevels, teacherGrade) {
+      const ranges = { 'K-2': [0, 2], '3-5': [3, 5], '6-8': [6, 8], '9-12': [9, 12] };
+      const [tMin, tMax] = ranges[teacherGrade] || [0, 12];
+      const [toolMin, toolMax] = parseGradeRange(toolGradeLevels);
+      return toolMin <= tMax && toolMax >= tMin;
+    }
+
+    // ── Subject matching ──────────────────────────────────────────
+
+    function subjectMatches(toolSubjects, selectedSubjects) {
+      if (!selectedSubjects || selectedSubjects.length === 0) return true;
+      if (selectedSubjects.includes('All')) return true;
+      if (toolSubjects.includes('All')) return true;
+      return toolSubjects.some(s => {
+        if (selectedSubjects.includes(s)) return true;
+        if (s === 'Reading' && selectedSubjects.includes('ELA')) return true;
+        if (s === 'STEM' && (selectedSubjects.includes('Math') || selectedSubjects.includes('Science'))) return true;
+        return false;
+      });
+    }
+
+    // ── Goal matching ─────────────────────────────────────────────
+
+    const GOAL_MATCHERS = {
+      gamification:    t => t.category === 'Gamification' || t.subcategory.toLowerCase().includes('game'),
+      differentiation: t => {
+        const sub  = t.subcategory.toLowerCase();
+        const desc = t.description.toLowerCase();
+        return sub.includes('adaptive') || sub.includes('leveled') || sub.includes('diagnostic') ||
+               sub.includes('differentiat') || sub.includes('personalized') || sub.includes('intervention') ||
+               desc.includes('adaptive') || desc.includes('adjustable') || desc.includes('reading level');
+      },
+      extension:   t => t.category === 'Advanced & Enrichment',
+      assessment:  t => t.category === 'Assessment & Data',
+      creativity:  t => t.category === 'Creativity & Media',
+      sel:         t => t.category === 'Social Emotional Learning',
+      'special-ed':t => t.category === 'Special Ed & Accessibility',
+      literacy:    t => t.category === 'Reading & Literacy' || t.category === 'ELA & Writing'
+    };
+
+    function goalMatches(tool, selectedGoals) {
+      if (!selectedGoals || selectedGoals.length === 0) return false;
+      return selectedGoals.some(g => GOAL_MATCHERS[g] && GOAL_MATCHERS[g](tool));
+    }
+
+    // ── Scoring & recommendations ─────────────────────────────────
+
+    function getRecommendedTools(prefs) {
+      if (!prefs || !prefs.grade) return [];
+
+      const hasSubjects = prefs.subjects && prefs.subjects.length > 0;
+      const hasGoals    = prefs.goals    && prefs.goals.length > 0;
+
+      const filtered = getToolsForAudience('Teachers').filter(t => {
+        if (!gradeMatches(t.gradeLevels, prefs.grade)) return false;
+        if (hasSubjects && !subjectMatches(t.subjects, prefs.subjects)) return false;
+        return true;
+      });
+
+      if (filtered.length === 0) return [];
+
+      const scored = filtered.map(t => {
+        let score = 0;
+        if (hasGoals && goalMatches(t, prefs.goals)) score += 3;
+        score += t.teacherRelevant === 'High' ? 2 : 1;
+        return { tool: t, score };
+      });
+
+      return scored
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 5)
+        .map(({ tool }) => tool);
+    }
+
+    // ── Render recommended section ────────────────────────────────
+
+    const GOAL_LABELS = {
+      gamification: 'Gamification', differentiation: 'Differentiation',
+      extension: 'Extension / Enrichment', assessment: 'Assessment',
+      creativity: 'Creativity', sel: 'SEL', 'special-ed': 'Special Ed', literacy: 'Literacy'
+    };
+
+    function renderRecommendedSection(prefs) {
+      const section  = document.getElementById('recommended-section');
+      const allTitle = document.getElementById('all-tools-title');
+
+      if (!prefs || !prefs.grade) {
+        section.style.display = 'none';
+        allTitle.textContent = 'Featured Ed Tech Tools';
+        return;
+      }
+
+      const tools = getRecommendedTools(prefs);
+
+      if (tools.length === 0) {
+        section.style.display = 'none';
+        allTitle.textContent = 'Featured Ed Tech Tools';
+        return;
+      }
+
+      // Build preference tag pills
+      const gradePill    = `<span class="pref-tag">Grades ${prefs.grade}</span>`;
+      const subjectPills = (prefs.subjects || []).map(s => `<span class="pref-tag">${s}</span>`).join('');
+      const goalPills    = (prefs.goals    || []).map(g => `<span class="pref-tag">${GOAL_LABELS[g] || g}</span>`).join('');
+
+      const STAR_SMALL = `<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.27l-4.78 2.51.91-5.32L2.27 7.62l5.34-.78L10 2z" fill="#4F39F6"/>
+      </svg>`;
+
+      section.innerHTML = `
+        <div class="recommended-banner">
+          <div class="recommended-banner-left">
+            <div class="recommended-banner-title">${STAR_SMALL} Recommended for You</div>
+            <div class="recommended-banner-sub">Personalized based on your teaching profile</div>
+            <div class="pref-tags">${gradePill}${subjectPills}${goalPills}</div>
+          </div>
+          <button class="btn-edit-prefs" id="btn-edit-prefs-inline" type="button" aria-label="Edit onboarding preferences">Edit Preferences</button>
+        </div>
+        <div class="tools-list" id="recommended-tools-list">
+          ${tools.map(buildTeacherCard).join('')}
+        </div>
+        <div class="section-divider" aria-hidden="true">
+          <div class="section-divider-line"></div>
+          <span class="section-divider-text">All Tools</span>
+          <div class="section-divider-line"></div>
+        </div>
+      `;
+
+      section.style.display  = 'flex';
+      section.style.flexDirection = 'column';
+      section.style.gap = '20px';
+
+      document.getElementById('btn-edit-prefs-inline').addEventListener('click', () => {
+        populateChipsFromPrefs(prefs);
+        showOnboarding(true);
+      });
+
+      allTitle.textContent = 'All Tools';
+    }
+
+    // ── Init onboarding ───────────────────────────────────────────
+
+    function initOnboarding() {
+      initGradeChips();
+      initMultiChips('subject-chips');
+      initMultiChips('goal-chips');
+
+      // Submit
+      document.getElementById('btn-onboarding-submit').addEventListener('click', () => {
+        const prefs = collectPrefsFromForm();
+        if (!prefs.grade) {
+          // Flash the grade group to prompt selection
+          const grp = document.getElementById('grade-chips');
+          grp.style.outline = '2px solid #DC2626';
+          grp.style.borderRadius = '8px';
+          grp.style.padding = '4px';
+          setTimeout(() => { grp.style.outline = ''; grp.style.padding = ''; }, 1800);
+          return;
+        }
+        savePrefs(prefs);
+        hideOnboarding();
+        renderRecommendedSection(prefs);
+      });
+
+      // Skip
+      document.getElementById('btn-onboarding-skip').addEventListener('click', hideOnboarding);
+
+      // Reset
+      document.getElementById('btn-onboarding-reset').addEventListener('click', () => {
+        clearPrefs();
+        hideOnboarding();
+        renderRecommendedSection(null);
+        document.querySelectorAll('.chip.selected').forEach(c => c.classList.remove('selected'));
+      });
+
+      // Close on backdrop click
+      document.getElementById('onboarding-overlay').addEventListener('click', e => {
+        if (e.target.id === 'onboarding-overlay') hideOnboarding();
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && document.getElementById('onboarding-overlay').style.display !== 'none') {
+          hideOnboarding();
+        }
+      });
+
+      // Load saved prefs or show onboarding
+      const savedPrefs = loadPrefs();
+      if (savedPrefs) {
+        renderRecommendedSection(savedPrefs);
+      } else {
+        showOnboarding(false);
+      }
+    }
+
+    initOnboarding();
   </script>
 
 </body>
