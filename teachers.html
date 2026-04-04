@@ -1391,11 +1391,7 @@
             <div class="tool-name">${tool.name}</div>
             <span class="tool-category">${tool.subcategory}</span>
           </div>
-          <div class="tool-rating">
-            ${STAR_SVG}
-            <span class="rating-score">${tool.teacherRelevant === 'High' ? 'Top Pick' : 'Recommended'}</span>
-            ${isMobile ? `<span style="display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;color:#7C3AED;font-weight:500;">${MOBILE_SVG_T} iOS &amp; Android</span>` : ''}
-          </div>
+          ${isMobile ? `<div class="tool-rating"><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#7C3AED;font-weight:500;">${MOBILE_SVG_T} iOS &amp; Android</span></div>` : ''}
           <p class="tool-desc">${tool.description}</p>
           <div class="tool-meta">
             <span><span class="label">Grade: </span><span class="value">${tool.gradeLevels}</span></span>
