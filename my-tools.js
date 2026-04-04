@@ -8,7 +8,7 @@ const MY_TOOLS_KEY = 'edtech_my_tools_v1';
 
 function getMyToolIds() {
   try { return JSON.parse(localStorage.getItem(MY_TOOLS_KEY)) || []; }
-  catch { return []; }
+  catch (e) { return []; }
 }
 
 function _saveMyToolIds(ids) {

@@ -1734,6 +1734,10 @@
       section.style.flexDirection = 'column';
       section.style.gap = '20px';
 
+      // Wire up save buttons for the newly rendered recommended cards
+      syncSaveButtons('recommended-tools-list');
+      initSaveButtons('recommended-tools-list');
+
       document.getElementById('btn-edit-prefs-inline').addEventListener('click', () => {
         populateChipsFromPrefs(prefs);
         showOnboarding(true);
