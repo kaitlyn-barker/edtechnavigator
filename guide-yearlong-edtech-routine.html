@@ -22,10 +22,58 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
-    nav a.logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--teal); text-decoration: none; }
-    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { color: var(--teal); }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.50);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4F39F6 0%, #9810FA 100%);
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 28px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #364153;
+      text-decoration: none;
+      border-radius: 10px;
+      line-height: 24px;
+      transition: background 0.15s;
+    }
+    .nav-links a:hover { background: rgba(15,22,35,0.05); }
     .hero { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%); color: white; padding: 3.5rem 2rem 3rem; }
     .hero-inner { max-width: 760px; margin: 0 auto; }
     .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 0.8rem; margin-bottom: 1.2rem; }
@@ -68,10 +116,19 @@
 </head>
 <body>
 <nav>
-  <a class="logo" href="index.html">EdTech Navigator</a>
-  <a href="teachers.html">For Teachers</a>
-  <a href="parents.html">For Parents</a>
-  <a href="admin.html">For Administrators</a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h10M4 18h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">EdTech Navigator</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="teachers.html">For Teachers</a></li>
+    <li><a href="parents.html">For Parents</a></li>
+    <li><a href="admin.html">For Administrators</a></li>
+  </ul>
 </nav>
 <div class="hero">
   <div class="hero-inner">
