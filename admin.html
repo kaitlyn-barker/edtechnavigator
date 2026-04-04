@@ -6,6 +6,7 @@
   <title>For Administrators – EdTech Navigator</title>
   <script src="edtech-tools.js"></script>
   <script src="filter-sort.js"></script>
+  <script src="my-tools.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -89,6 +90,25 @@
     }
 
     .nav-links a.active:hover { background: linear-gradient(90deg, #4F39F6 0%, #9810FA 100%); }
+
+    .nav-links a { display: flex; align-items: center; gap: 6px; }
+
+    .my-list-count {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      background: #4F39F6;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 9999px;
+      line-height: 1;
+    }
+
+    .nav-links a.active .my-list-count { background: rgba(255,255,255,0.30); }
 
     /* ── HERO ── */
     .hero {
@@ -379,6 +399,32 @@
 
     .btn-primary:hover { opacity: 0.9; }
     .btn-secondary:hover { background: #F9FAFB; }
+
+    .btn-save-tool {
+      height: 36px;
+      padding: 0 14px;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 10px;
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .btn-save-tool:hover { background: #F9FAFB; }
+
+    .btn-save-tool--saved {
+      background: #F5F3FF;
+      border-color: #7C3AED;
+      color: #7C3AED;
+    }
+
+    .btn-save-tool--saved:hover { background: #EDE9FE; }
 
     /* ── NEED HELP CARD ── */
     .help-card {
@@ -795,6 +841,12 @@
       <li><a href="teachers.html">For Teachers</a></li>
       <li><a href="parents.html">For Parents</a></li>
       <li><a href="admin.html" class="active">For Administrators</a></li>
+      <li>
+        <a href="account.html">
+          My List
+          <span class="my-list-count" aria-label="saved tools count"></span>
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -1089,6 +1141,7 @@
           <a href="teachers.html">For Teachers</a>
           <a href="parents.html">For Parents</a>
           <a href="admin.html">For Administrators</a>
+          <a href="account.html">My Tools List</a>
         </div>
       </div>
     </div>
@@ -1138,7 +1191,7 @@
           </div>
           <div class="card-actions">
             <a class="btn-primary" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Visit Website</a>
-            <button class="btn-secondary">Save to List</button>
+            <button class="btn-save-tool" data-tool-id="${tool.id}">Save to My List</button>
           </div>
         </div>`;
     }
@@ -1160,10 +1213,15 @@
       } else {
         list.innerHTML = results.map(buildAdminCard).join('');
         noRes.style.display = 'none';
+        syncSaveButtons('admin-tools-list');
       }
     }
 
     renderAdminTools('');
+
+    // Save button event delegation
+    initSaveButtons('admin-tools-list');
+    updateMyListBadge();
 
     const searchInput = document.querySelector('.search-input');
     const searchBtn   = document.querySelector('.search-btn');
