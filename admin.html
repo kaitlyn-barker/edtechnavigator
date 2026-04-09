@@ -1295,17 +1295,736 @@
 
       <!-- ── RESOURCES TAB ── -->
       <div id="tab-resources" class="tab-panel" role="tabpanel">
-        <h2 class="section-title">Resources</h2>
-        <div class="resources-placeholder">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="6" width="32" height="36" rx="3" stroke="#D1D5DC" stroke-width="3"/>
-            <line x1="16" y1="18" x2="32" y2="18" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
-            <line x1="16" y1="26" x2="28" y2="26" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
-            <line x1="16" y1="34" x2="24" y2="34" stroke="#D1D5DC" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <p>Additional resources are coming soon. Check back for curated guides and toolkits.</p>
+
+        <!-- Intro -->
+        <div class="eval-intro">
+          <h2 class="eval-intro-title">Ed Tech Evaluation Checklists</h2>
+          <p>Use these six checklists to rigorously evaluate any ed tech tool before adoption. Each checklist targets a critical dimension of responsible purchasing. Assign each checklist to the appropriate team lead and use the progress tracker to monitor completion.</p>
         </div>
-      </div>
+
+        <!-- Jump nav -->
+        <nav class="eval-jump-nav" aria-label="Jump to checklist">
+          <a href="#cl1">1. Academic Evidence</a>
+          <a href="#cl2">2. Data Privacy</a>
+          <a href="#cl3">3. Equity &amp; Access</a>
+          <a href="#cl4">4. Procurement &amp; Cost</a>
+          <a href="#cl5">5. Implementation &amp; Support</a>
+          <a href="#cl6">6. Curriculum Alignment</a>
+          <a href="#cl-summary">Summary Table</a>
+        </nav>
+
+        <!-- Print bar -->
+        <div class="eval-print-bar">
+          <button class="btn-primary" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+        <!-- ===== CHECKLIST 1: Academic Evidence ===== -->
+        <div class="eval-card" id="cl1">
+          <div class="eval-card-header eval-header-blue">
+            <h3>Checklist 1: Academic Evidence</h3>
+            <p>Does the tool have credible, independent evidence that it works for students like ours?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-1">0 of 14 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-blue" id="epf-1" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Research &amp; Evidence</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-1" data-eg="eg1">
+              <label for="c1-1">The vendor provides peer-reviewed research (not just internal white papers or testimonials) supporting the tool's effectiveness.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-2" data-eg="eg1">
+              <label for="c1-2">The research was conducted with student populations similar to ours (grade level, demographics, learning needs).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-3" data-eg="eg1">
+              <label for="c1-3">The tool has been reviewed by an independent source:</label>
+              <div class="eval-sub-items">
+                <div class="eval-item">
+                  <input type="checkbox" id="c1-3a" data-eg="eg1">
+                  <label for="c1-3a">What Works Clearinghouse &mdash; <a href="https://ies.ed.gov/ncee/wwc" target="_blank" rel="noopener">ies.ed.gov/ncee/wwc</a></label>
+                </div>
+                <div class="eval-item">
+                  <input type="checkbox" id="c1-3b" data-eg="eg1">
+                  <label for="c1-3b">Evidence for ESSA &mdash; <a href="https://evidenceforessa.org" target="_blank" rel="noopener">evidenceforessa.org</a></label>
+                </div>
+                <div class="eval-item">
+                  <input type="checkbox" id="c1-3c" data-eg="eg1">
+                  <label for="c1-3c">Common Sense Education &mdash; <a href="https://commonsense.org/education" target="_blank" rel="noopener">commonsense.org/education</a></label>
+                </div>
+                <div class="eval-item">
+                  <input type="checkbox" id="c1-3d" data-eg="eg1">
+                  <label for="c1-3d">EdReports (for curriculum-based tools) &mdash; <a href="https://edreports.org" target="_blank" rel="noopener">edreports.org</a></label>
+                </div>
+              </div>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-4" data-eg="eg1">
+              <label for="c1-4">The tool's evidence meets ESSA Tier standards (Strong, Moderate, or Promising) if federal or state funding is being used.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-5" data-eg="eg1">
+              <label for="c1-5">Independent reviews confirm the tool delivers measurable student learning outcomes.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Alignment to Goals</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-6" data-eg="eg1">
+              <label for="c1-6">We have clearly defined the instructional or operational problem this tool is meant to solve.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-7" data-eg="eg1">
+              <label for="c1-7">The tool directly addresses that identified problem &mdash; we are not adopting it because it is new or trending.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-8" data-eg="eg1">
+              <label for="c1-8">The tool aligns with our district's strategic plan and instructional priorities.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-9" data-eg="eg1">
+              <label for="c1-9">Teachers and instructional coaches have been consulted and agree the tool addresses a real classroom need.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Pilot &amp; Evaluation</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-10" data-eg="eg1">
+              <label for="c1-10">We have conducted or plan to conduct a structured pilot before full-scale adoption.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-11" data-eg="eg1">
+              <label for="c1-11">We have defined clear, measurable success criteria for the pilot.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-12" data-eg="eg1">
+              <label for="c1-12">We have a plan to collect and analyze data from the pilot (not just anecdotal feedback).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c1-13" data-eg="eg1">
+              <label for="c1-13">A go/no-go decision point has been established after the pilot period.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Curriculum Director</span>
+            <button class="btn-secondary" onclick="evalReset('eg1')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== CHECKLIST 2: Data Privacy ===== -->
+        <div class="eval-card" id="cl2">
+          <div class="eval-card-header eval-header-teal">
+            <h3>Checklist 2: Data Privacy</h3>
+            <p>Is student data protected legally and ethically?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-2">0 of 19 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-teal" id="epf-2" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Legal Compliance</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-1" data-eg="eg2">
+              <label for="c2-1">The vendor's data practices comply with FERPA (Family Educational Rights and Privacy Act).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-2" data-eg="eg2">
+              <label for="c2-2">The vendor's data practices comply with COPPA (Children's Online Privacy Protection Act) if used with students under 13.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-3" data-eg="eg2">
+              <label for="c2-3">The vendor's data practices comply with applicable state student data privacy laws.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-4" data-eg="eg2">
+              <label for="c2-4">The vendor does not sell student data to third parties.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-5" data-eg="eg2">
+              <label for="c2-5">The vendor does not use student data for targeted advertising.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Privacy Agreement</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-6" data-eg="eg2">
+              <label for="c2-6">The vendor has signed our district's Data Privacy Agreement (DPA).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-7" data-eg="eg2">
+              <label for="c2-7">OR the vendor has signed the SDPC National Data Privacy Agreement (NDPA) &mdash; <a href="https://sdpc.a4l.org" target="_blank" rel="noopener">sdpc.a4l.org</a></label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-8" data-eg="eg2">
+              <label for="c2-8">The signed DPA clearly specifies what data is collected, how it is used, and how long it is retained.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-9" data-eg="eg2">
+              <label for="c2-9">The DPA includes a process for data deletion upon contract termination.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-10" data-eg="eg2">
+              <label for="c2-10">The DPA assigns clear responsibility in the event of a data breach.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Privacy Evaluation</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-11" data-eg="eg2">
+              <label for="c2-11">The tool has been reviewed using Common Sense Education's Privacy Evaluation Hub &mdash; <a href="https://commonsense.org/education/privacy" target="_blank" rel="noopener">commonsense.org/education/privacy</a></label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-12" data-eg="eg2">
+              <label for="c2-12">The tool received an acceptable Privacy Rating from Common Sense Education.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-13" data-eg="eg2">
+              <label for="c2-13">The vendor's privacy policy is publicly available, clearly written, and current.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-14" data-eg="eg2">
+              <label for="c2-14">The privacy policy has been reviewed by our district's legal or compliance staff.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Security Practices</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-15" data-eg="eg2">
+              <label for="c2-15">The vendor uses data encryption (in transit and at rest).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-16" data-eg="eg2">
+              <label for="c2-16">The vendor has a documented security policy and incident response plan.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-17" data-eg="eg2">
+              <label for="c2-17">The vendor has not had any known data breaches, OR has disclosed past breaches and demonstrated remediation.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-18" data-eg="eg2">
+              <label for="c2-18">The tool uses secure authentication (e.g., single sign-on compatible with our district systems).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-19" data-eg="eg2">
+              <label for="c2-19">Role-based access controls are in place (not all users can access all data).</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Data Governance</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-20" data-eg="eg2">
+              <label for="c2-20">Our district has a current data governance policy that covers this type of tool.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-21" data-eg="eg2">
+              <label for="c2-21">Staff who will use this tool have been trained on data privacy responsibilities.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c2-22" data-eg="eg2">
+              <label for="c2-22">Parents/guardians can be clearly informed about what data is collected and why.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Technology Director / Privacy Officer</span>
+            <button class="btn-secondary" onclick="evalReset('eg2')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== CHECKLIST 3: Equity & Access ===== -->
+        <div class="eval-card" id="cl3">
+          <div class="eval-card-header eval-header-purple">
+            <h3>Checklist 3: Equity &amp; Access</h3>
+            <p>Does the tool work for ALL students, regardless of device, language, ability, or background?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-3">0 of 22 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-purple" id="epf-3" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Device &amp; Connectivity Access</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-1" data-eg="eg3">
+              <label for="c3-1">The tool works on the devices our students have access to (Chromebook, tablet, phone, etc.).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-2" data-eg="eg3">
+              <label for="c3-2">The tool functions adequately on lower-bandwidth connections.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-3" data-eg="eg3">
+              <label for="c3-3">The tool is usable on mobile devices for students who primarily access the internet via smartphone.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-4" data-eg="eg3">
+              <label for="c3-4">The tool does not require home broadband that students may not have.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-5" data-eg="eg3">
+              <label for="c3-5">If home access is required, our district has a plan to provide connectivity for students who need it.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Language Access</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-6" data-eg="eg3">
+              <label for="c3-6">The tool is available in all languages spoken by our student population.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-7" data-eg="eg3">
+              <label for="c3-7">Student-facing instructions, navigation, and content are available in those languages &mdash; not just the interface.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-8" data-eg="eg3">
+              <label for="c3-8">Family-facing features (notifications, reports, communications) are available in home languages.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-9" data-eg="eg3">
+              <label for="c3-9">The tool has been reviewed for appropriateness for English Language Learners (ELL/EL students).</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Accessibility &amp; Disability Inclusion</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-10" data-eg="eg3">
+              <label for="c3-10">The tool meets WCAG 2.1 Level AA accessibility standards.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-11" data-eg="eg3">
+              <label for="c3-11">The tool is compatible with screen readers (e.g., JAWS, NVDA, VoiceOver).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-12" data-eg="eg3">
+              <label for="c3-12">The tool supports keyboard-only navigation (for students who cannot use a mouse).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-13" data-eg="eg3">
+              <label for="c3-13">The tool includes captioning or transcripts for all video and audio content.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-14" data-eg="eg3">
+              <label for="c3-14">The tool has been reviewed by our district's special education or accessibility team.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-15" data-eg="eg3">
+              <label for="c3-15">The vendor can provide a Voluntary Product Accessibility Template (VPAT) documenting accessibility compliance.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Cultural Responsiveness</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-16" data-eg="eg3">
+              <label for="c3-16">The content within the tool reflects diverse identities, cultures, and experiences.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-17" data-eg="eg3">
+              <label for="c3-17">The tool avoids stereotyping or culturally biased representations.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-18" data-eg="eg3">
+              <label for="c3-18">The tool has been reviewed for cultural responsiveness by relevant staff or community members.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Algorithmic Fairness (for AI / Adaptive Tools)</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-19" data-eg="eg3">
+              <label for="c3-19">If the tool uses AI or adaptive algorithms, the vendor has provided evidence of bias testing.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-20" data-eg="eg3">
+              <label for="c3-20">The vendor can explain how the algorithm makes decisions that affect students.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-21" data-eg="eg3">
+              <label for="c3-21">There is no evidence the tool's algorithm disadvantages students based on race, gender, language, or disability status.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c3-22" data-eg="eg3">
+              <label for="c3-22">Students and teachers can override or contextualize algorithmic recommendations.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Equity Officer / Special Education Director</span>
+            <button class="btn-secondary" onclick="evalReset('eg3')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== CHECKLIST 4: Procurement & Cost ===== -->
+        <div class="eval-card" id="cl4">
+          <div class="eval-card-header eval-header-green">
+            <h3>Checklist 4: Procurement &amp; Cost</h3>
+            <p>Is this a sound financial decision with appropriate vendor vetting?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-4">0 of 19 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-green" id="epf-4" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Total Cost of Ownership</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-1" data-eg="eg4">
+              <label for="c4-1">We have calculated the total cost of ownership, not just the per-seat or annual license cost.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-2" data-eg="eg4">
+              <label for="c4-2">Training and professional development costs have been budgeted.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-3" data-eg="eg4">
+              <label for="c4-3">Technical integration and setup costs have been accounted for.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-4" data-eg="eg4">
+              <label for="c4-4">Ongoing technical support costs are understood.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-5" data-eg="eg4">
+              <label for="c4-5">Renewal pricing and potential price escalation limits are specified in the contract.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Contract Terms</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-6" data-eg="eg4">
+              <label for="c4-6">The contract includes clear terms for cancellation or non-renewal.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-7" data-eg="eg4">
+              <label for="c4-7">The contract specifies what happens to our data if we end the relationship.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-8" data-eg="eg4">
+              <label for="c4-8">The contract does not include auto-renewal clauses without adequate notice.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-9" data-eg="eg4">
+              <label for="c4-9">The contract has been reviewed by our district's legal counsel or procurement officer.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-10" data-eg="eg4">
+              <label for="c4-10">A data privacy agreement is attached to or incorporated into the contract.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Funding &amp; Compliance</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-11" data-eg="eg4">
+              <label for="c4-11">We have identified the funding source for this purchase (e.g., Title I, Title IV-A, E-Rate, general operating budget).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-12" data-eg="eg4">
+              <label for="c4-12">If using federal funds, the tool meets the evidence requirements for that funding stream (ESSA Tiers).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-13" data-eg="eg4">
+              <label for="c4-13">The purchase complies with our district's procurement policies and bid thresholds.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-14" data-eg="eg4">
+              <label for="c4-14">The vendor is on any required state or cooperative purchasing contract if competitive bidding is required.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Vendor Vetting</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-15" data-eg="eg4">
+              <label for="c4-15">The vendor is an established company with a track record in K-12 education.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-16" data-eg="eg4">
+              <label for="c4-16">The vendor has provided references from districts of similar size, demographics, and context.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-17" data-eg="eg4">
+              <label for="c4-17">We have contacted at least two reference districts and asked substantive questions.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-18" data-eg="eg4">
+              <label for="c4-18">We have searched for any news reports about the vendor regarding data breaches, legal issues, or bankruptcy.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c4-19" data-eg="eg4">
+              <label for="c4-19">The vendor has a clear plan for what happens to our data if they go out of business or are acquired.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Procurement / Finance Officer</span>
+            <button class="btn-secondary" onclick="evalReset('eg4')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== CHECKLIST 5: Implementation & Support ===== -->
+        <div class="eval-card" id="cl5">
+          <div class="eval-card-header eval-header-orange">
+            <h3>Checklist 5: Implementation &amp; Support</h3>
+            <p>Can we actually deploy and use this tool well?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-5">0 of 24 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-orange" id="epf-5" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Teacher Readiness</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-1" data-eg="eg5">
+              <label for="c5-1">Teachers who will use this tool have been involved in the evaluation process.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-2" data-eg="eg5">
+              <label for="c5-2">Teachers have had the opportunity to try the tool before district adoption.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-3" data-eg="eg5">
+              <label for="c5-3">Teachers have expressed genuine support for or openness to the tool.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-4" data-eg="eg5">
+              <label for="c5-4">We have assessed the level of digital literacy required to use the tool effectively.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-5" data-eg="eg5">
+              <label for="c5-5">Teachers at varying technology comfort levels have tested the tool.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Professional Development</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-6" data-eg="eg5">
+              <label for="c5-6">A professional development plan is in place before the tool is deployed.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-7" data-eg="eg5">
+              <label for="c5-7">The vendor provides quality onboarding training (live, not just pre-recorded tutorials).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-8" data-eg="eg5">
+              <label for="c5-8">Ongoing training and coaching support is available beyond initial onboarding.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-9" data-eg="eg5">
+              <label for="c5-9">Designated staff (instructional coaches, technology coaches) are prepared to provide ongoing support.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-10" data-eg="eg5">
+              <label for="c5-10">PD is scheduled at a realistic time &mdash; not a one-day training and done.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Technical Integration</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-11" data-eg="eg5">
+              <label for="c5-11">The tool integrates with our existing systems (SIS, LMS, SSO).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-12" data-eg="eg5">
+              <label for="c5-12">The tool meets our district's interoperability standards (e.g., Ed-Fi, IMS Global/1EdTech).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-13" data-eg="eg5">
+              <label for="c5-13">Our IT team has reviewed and approved the technical requirements.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-14" data-eg="eg5">
+              <label for="c5-14">A rollout timeline has been developed with realistic milestones.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-15" data-eg="eg5">
+              <label for="c5-15">A technical point of contact at the vendor has been identified.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Ongoing Support</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-16" data-eg="eg5">
+              <label for="c5-16">The vendor provides responsive technical support with a defined response time SLA in the contract.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-17" data-eg="eg5">
+              <label for="c5-17">A dedicated account manager or customer success manager is assigned to our district.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-18" data-eg="eg5">
+              <label for="c5-18">There is a clear process for reporting bugs or requesting features.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-19" data-eg="eg5">
+              <label for="c5-19">The vendor provides regular product updates and communicates changes in advance.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Evaluation &amp; Sustainability</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-20" data-eg="eg5">
+              <label for="c5-20">We have a plan to evaluate the tool's effectiveness after 6 months and 1 year of use.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-21" data-eg="eg5">
+              <label for="c5-21">Success metrics are defined and tied to student outcomes, not just usage or engagement data.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-22" data-eg="eg5">
+              <label for="c5-22">A designated administrator is responsible for monitoring the tool's continued value.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-23" data-eg="eg5">
+              <label for="c5-23">There is a process to sunset the tool if it is not meeting expectations.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c5-24" data-eg="eg5">
+              <label for="c5-24">Renewal decisions will be made based on evidence, not vendor relationship or sunk cost.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Instructional Technology Coordinator</span>
+            <button class="btn-secondary" onclick="evalReset('eg5')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== CHECKLIST 6: Curriculum Alignment ===== -->
+        <div class="eval-card" id="cl6">
+          <div class="eval-card-header eval-header-red">
+            <h3>Checklist 6: Curriculum Alignment</h3>
+            <p>Does the tool align to what we teach, at the depth and rigor we expect?</p>
+          </div>
+          <div class="eval-progress-wrap">
+            <div class="eval-progress-label" id="epl-6">0 of 15 items checked (0%)</div>
+            <div class="eval-progress-bg">
+              <div class="eval-progress-fill eval-fill-red" id="epf-6" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Standards Alignment</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-1" data-eg="eg6">
+              <label for="c6-1">The tool is aligned to the standards our district uses (Common Core, state standards, etc.).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-2" data-eg="eg6">
+              <label for="c6-2">Alignment claims have been independently verified &mdash; not just reported by the vendor.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-3" data-eg="eg6">
+              <label for="c6-3">The tool has been reviewed by EdReports &mdash; <a href="https://edreports.org" target="_blank" rel="noopener">edreports.org</a> (for curriculum tools).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-4" data-eg="eg6">
+              <label for="c6-4">Alignment is deep and meaningful &mdash; not just surface-level keyword matching.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-5" data-eg="eg6">
+              <label for="c6-5">The tool covers the scope and sequence expected for the grade levels and subjects intended.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Instructional Quality</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-6" data-eg="eg6">
+              <label for="c6-6">The tool reflects evidence-based instructional practices (e.g., spaced practice, formative feedback, explicit instruction where appropriate).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-7" data-eg="eg6">
+              <label for="c6-7">The tool requires students to think critically &mdash; not just click through or answer low-level recall questions.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-8" data-eg="eg6">
+              <label for="c6-8">The tool provides meaningful, actionable feedback to students (not just right/wrong).</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-9" data-eg="eg6">
+              <label for="c6-9">The tool supports differentiation for students above and below grade level.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-10" data-eg="eg6">
+              <label for="c6-10">The tool complements &mdash; rather than replaces &mdash; quality teacher instruction.</label>
+            </div>
+          </div>
+          <div class="eval-section">
+            <h4>Assessment &amp; Data</h4>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-11" data-eg="eg6">
+              <label for="c6-11">The tool provides actionable data reports for teachers and administrators.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-12" data-eg="eg6">
+              <label for="c6-12">Data is presented in a format teachers can realistically use to inform instruction.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-13" data-eg="eg6">
+              <label for="c6-13">The tool's assessment items are aligned to the rigor expected on state and local assessments.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-14" data-eg="eg6">
+              <label for="c6-14">The tool's data can be exported and integrated into our district's data systems.</label>
+            </div>
+            <div class="eval-item">
+              <input type="checkbox" id="c6-15" data-eg="eg6">
+              <label for="c6-15">We have a plan for how teachers will be supported in using the data the tool generates.</label>
+            </div>
+          </div>
+          <div class="eval-card-footer">
+            <span><strong>Recommended Lead:</strong> Curriculum Director</span>
+            <button class="btn-secondary" onclick="evalReset('eg6')">Reset Checklist</button>
+          </div>
+        </div>
+
+        <!-- ===== SUMMARY TABLE ===== -->
+        <div class="eval-summary" id="cl-summary">
+          <h3>Evaluation Summary</h3>
+          <table class="eval-table">
+            <thead>
+              <tr>
+                <th>Checklist</th>
+                <th>Key Focus</th>
+                <th>Who Should Lead</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#cl1">1 &mdash; Academic Evidence</a></td>
+                <td>Does it work? Is there proof?</td>
+                <td>Curriculum Director</td>
+              </tr>
+              <tr>
+                <td><a href="#cl2">2 &mdash; Data Privacy</a></td>
+                <td>Is student data protected legally and ethically?</td>
+                <td>Technology Director / Privacy Officer</td>
+              </tr>
+              <tr>
+                <td><a href="#cl3">3 &mdash; Equity &amp; Access</a></td>
+                <td>Does it work for ALL students?</td>
+                <td>Equity Officer / SpEd Director</td>
+              </tr>
+              <tr>
+                <td><a href="#cl4">4 &mdash; Procurement &amp; Cost</a></td>
+                <td>Is this a sound financial decision?</td>
+                <td>Procurement / Finance Officer</td>
+              </tr>
+              <tr>
+                <td><a href="#cl5">5 &mdash; Implementation &amp; Support</a></td>
+                <td>Can we actually use it well?</td>
+                <td>Instructional Technology Coordinator</td>
+              </tr>
+              <tr>
+                <td><a href="#cl6">6 &mdash; Curriculum Alignment</a></td>
+                <td>Does it align to what we teach?</td>
+                <td>Curriculum Director</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div><!-- /tab-resources -->
 
     </div><!-- /content-area -->
   </div><!-- /page-body -->
@@ -1429,6 +2148,39 @@
           adminFilterState = state;
           renderAdminTools(searchInput.value);
         }
+      });
+    })();
+
+    // ── Eval Checklists (Resources Tab) ─────────────────────────────────────────────────────
+    (function() {
+      var evalGroups = {
+        eg1: { bar: 'epf-1', label: 'epl-1' },
+        eg2: { bar: 'epf-2', label: 'epl-2' },
+        eg3: { bar: 'epf-3', label: 'epl-3' },
+        eg4: { bar: 'epf-4', label: 'epl-4' },
+        eg5: { bar: 'epf-5', label: 'epl-5' },
+        eg6: { bar: 'epf-6', label: 'epl-6' },
+      };
+
+      function evalUpdate(g) {
+        var all = document.querySelectorAll('input[data-eg="' + g + '"]');
+        var done = document.querySelectorAll('input[data-eg="' + g + '"]:checked').length;
+        var total = all.length;
+        var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+        document.getElementById(evalGroups[g].bar).style.width = pct + '%';
+        document.getElementById(evalGroups[g].label).textContent = done + ' of ' + total + ' items checked (' + pct + '%)';
+      }
+
+      window.evalReset = function(g) {
+        document.querySelectorAll('input[data-eg="' + g + '"]').forEach(function(cb) { cb.checked = false; });
+        evalUpdate(g);
+      };
+
+      Object.keys(evalGroups).forEach(function(g) {
+        evalUpdate(g);
+        document.querySelectorAll('input[data-eg="' + g + '"]').forEach(function(cb) {
+          cb.addEventListener('change', function() { evalUpdate(g); });
+        });
       });
     })();
   </script>
