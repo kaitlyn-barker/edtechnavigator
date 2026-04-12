@@ -547,6 +547,128 @@
 
     .btn-read-guide:hover { background: #F9FAFB; }
 
+    /* ── GUIDES LIST (Policy tab) ── */
+    .guides-cta {
+      background: linear-gradient(135deg, #FAF5FF 0%, #EEF2FF 100%);
+      border-radius: 16px;
+      border: 1px solid #E9D4FF;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .guides-cta-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+      margin-bottom: 12px;
+    }
+
+    .guides-cta-sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 29.25px;
+    }
+
+    .guides-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+
+    .guide-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+      padding: 32px;
+      height: 130px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .guide-card-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .guide-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #AD46FF 0%, #4F39F6 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+    }
+
+    .guide-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .guide-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #101828;
+      line-height: 32px;
+      letter-spacing: 0.07px;
+    }
+
+    .guide-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .guide-read-time {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4A5565;
+      line-height: 20px;
+    }
+
+    .guide-level-pill {
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(0,0,0,0.10);
+      font-size: 12px;
+      font-weight: 500;
+      color: #0A0A0A;
+      line-height: 16px;
+    }
+
+    .btn-guide {
+      height: 36px;
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      color: #0A0A0A;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: background 0.15s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-guide:hover { background: rgba(0,0,0,0.05); }
+
+    @media (max-width: 600px) {
+      .guide-card { flex-direction: column; height: auto; }
+      .btn-guide { align-self: flex-start; }
+    }
+
     /* ── KEY CONSIDERATIONS ── */
     .considerations-card {
       background: white;
@@ -1103,85 +1225,97 @@
       <div id="tab-policy" class="tab-panel" role="tabpanel">
         <h2 class="section-title">Policy &amp; Implementation Guides</h2>
 
-        <div class="policy-guides">
+        <!-- Intro CTA -->
+        <div class="guides-cta">
+          <div class="guides-cta-title">Implementation Guides for Administrators</div>
+          <p class="guides-cta-sub">In-depth guides to help you lead district-wide ed tech strategy, ensure compliance, and maximize impact.</p>
+        </div>
 
-          <!-- Ed Tech Procurement -->
-          <div class="policy-card">
-            <div class="policy-card-header">
-              <div class="policy-icon">
-                <!-- document icon -->
+        <div class="guides-list">
+
+          <!-- Guide: Procurement -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="8" y="6.67" width="16" height="18.67" rx="1" stroke="white" stroke-width="2.67"/>
+                  <line x1="11.33" y1="13.33" x2="20.67" y2="13.33" stroke="white" stroke-width="2"/>
+                  <line x1="11.33" y1="17.33" x2="18" y2="17.33" stroke="white" stroke-width="2"/>
                 </svg>
               </div>
-              <div class="policy-card-meta">
-                <h3 class="policy-card-title">Ed Tech Procurement Best Practices</h3>
-                <span class="tag-outline">Procurement</span>
+              <div class="guide-body">
+                <div class="guide-title">Ed Tech Procurement Best Practices</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">25 min read</span>
+                  <span class="guide-level-pill">Procurement</span>
+                </div>
               </div>
             </div>
-            <p class="policy-card-desc">Guidelines for evaluating, budgeting, and purchasing educational technology at scale.</p>
-            <button class="btn-read-guide">Read Guide</button>
+            <a href="guide-admin-procurement.html" class="btn-guide">Read Guide</a>
           </div>
 
-          <!-- Data Privacy -->
-          <div class="policy-card">
-            <div class="policy-card-header">
-              <div class="policy-icon">
-                <!-- shield icon -->
+          <!-- Guide: Data Privacy -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.33 5.33h21.34v13.34c0 5-4.67 9.33-10.67 10.66C10 28 5.33 23.67 5.33 18.67V5.33z" stroke="white" stroke-width="2.67"/>
                 </svg>
               </div>
-              <div class="policy-card-meta">
-                <h3 class="policy-card-title">Data Privacy &amp; FERPA Compliance</h3>
-                <span class="tag-outline">Privacy &amp; Security</span>
+              <div class="guide-body">
+                <div class="guide-title">Data Privacy &amp; FERPA Compliance</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">25 min read</span>
+                  <span class="guide-level-pill">Privacy &amp; Security</span>
+                </div>
               </div>
             </div>
-            <p class="policy-card-desc">Understanding legal requirements and best practices for student data protection.</p>
-            <button class="btn-read-guide">Read Guide</button>
+            <a href="guide-admin-data-privacy.html" class="btn-guide">Read Guide</a>
           </div>
 
-          <!-- Professional Development -->
-          <div class="policy-card">
-            <div class="policy-card-header">
-              <div class="policy-icon">
-                <!-- people icon -->
+          <!-- Guide: Professional Development -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="10.67" cy="9.33" cx="10.67" cy="9.33" r="5.33" stroke="white" stroke-width="2.67"/>
+                  <circle cx="10.67" cy="9.33" r="5.33" stroke="white" stroke-width="2.67"/>
                   <path d="M2.67 28h16v-4c0-3-2.67-5.33-8-5.33S2.67 21 2.67 24v4z" stroke="white" stroke-width="2.67"/>
                   <circle cx="25.33" cy="9.33" r="4" stroke="white" stroke-width="2.67"/>
                   <path d="M29.33 28h-8v-3c0-2.4 1.33-4.4 4-5.33" stroke="white" stroke-width="2.67"/>
                 </svg>
               </div>
-              <div class="policy-card-meta">
-                <h3 class="policy-card-title">Professional Development for Technology Integration</h3>
-                <span class="tag-outline">Training</span>
+              <div class="guide-body">
+                <div class="guide-title">Professional Development for Technology Integration</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">20 min read</span>
+                  <span class="guide-level-pill">Training</span>
+                </div>
               </div>
             </div>
-            <p class="policy-card-desc">Strategies for training staff and ensuring successful technology adoption.</p>
-            <button class="btn-read-guide">Read Guide</button>
+            <a href="guide-admin-professional-development.html" class="btn-guide">Read Guide</a>
           </div>
 
-          <!-- Measuring ROI -->
-          <div class="policy-card">
-            <div class="policy-card-header">
-              <div class="policy-icon">
-                <!-- chart icon -->
+          <!-- Guide: Measuring ROI -->
+          <div class="guide-card">
+            <div class="guide-card-left">
+              <div class="guide-icon">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2.67" y="9.33" width="26.67" height="13.33" rx="1" stroke="white" stroke-width="2.67"/>
-                  <rect x="21.33" y="9.33" width="8" height="8" rx="1" stroke="white" stroke-width="2.67"/>
+                  <polyline points="4,24 10,16 16,20 22,10 28,6" stroke="white" stroke-width="2.67" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                  <line x1="4" y1="28" x2="28" y2="28" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="policy-card-meta">
-                <h3 class="policy-card-title">Measuring Ed Tech ROI</h3>
-                <span class="tag-outline">Analytics</span>
+              <div class="guide-body">
+                <div class="guide-title">Measuring Ed Tech ROI</div>
+                <div class="guide-meta">
+                  <span class="guide-read-time">18 min read</span>
+                  <span class="guide-level-pill">Analytics</span>
+                </div>
               </div>
             </div>
-            <p class="policy-card-desc">Frameworks for evaluating the effectiveness and return on investment of ed tech initiatives.</p>
-            <button class="btn-read-guide">Read Guide</button>
+            <a href="guide-admin-roi.html" class="btn-guide">Read Guide</a>
           </div>
 
-        </div><!-- /policy-guides -->
+        </div><!-- /guides-list -->
 
         <!-- Key Considerations -->
         <div class="considerations-card">
