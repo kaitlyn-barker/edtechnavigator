@@ -967,6 +967,56 @@
     .btn-onboarding-reset { color: #DC2626; }
     .btn-onboarding-reset:hover { color: #991B1B; }
 
+    /* ── QUESTIONNAIRE NUDGE BANNER ──────────────────────────────── */
+    .questionnaire-nudge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: #F0FDF4;
+      border: 1.5px solid #86EFAC;
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+    }
+    .questionnaire-nudge-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .questionnaire-nudge-icon {
+      width: 40px; height: 40px;
+      background: #DCFCE7;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .questionnaire-nudge h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #14532D;
+      margin: 0 0 2px;
+    }
+    .questionnaire-nudge p {
+      font-size: 13px;
+      color: #166534;
+      margin: 0;
+    }
+    .btn-nudge-questionnaire {
+      background: #00A63E;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-nudge-questionnaire:hover { background: #008f35; }
+
     /* ── PERSONALIZED REC SECTION ─────────────────────────────── */
     .p-rec-header {
       display: flex; align-items: flex-start;
@@ -1179,6 +1229,24 @@
           </div>
           <div class="tools-grid" id="p-rec-grid"></div>
           <div class="p-rec-divider"></div>
+        </div>
+
+        <!-- Questionnaire nudge (shown when user skipped onboarding) -->
+        <div id="p-questionnaire-nudge" class="questionnaire-nudge" style="display:none;">
+          <div class="questionnaire-nudge-text">
+            <div class="questionnaire-nudge-icon">
+              <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
+                <circle cx="11" cy="11" r="9" stroke="#00A63E" stroke-width="2"/>
+                <path d="M8.5 9a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 4" stroke="#00A63E" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="11" cy="16.5" r="1" fill="#00A63E"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Get Personalized Recommendations</h3>
+              <p>Answer a few quick questions to see tools tailored to your child's grade and learning needs.</p>
+            </div>
+          </div>
+          <button class="btn-nudge-questionnaire" id="btn-nudge-open-questionnaire" type="button">Take the Questionnaire</button>
         </div>
 
         <h2 class="section-title" id="p-all-tools-title">Recommended for Families</h2>
@@ -1884,6 +1952,7 @@
       }
       savePrefs(prefs);
       hideOnboarding();
+      document.getElementById('p-questionnaire-nudge').style.display = 'none';
       renderRecs(prefs);
     });
 
@@ -1891,6 +1960,7 @@
     document.getElementById('btn-onboarding-skip').addEventListener('click', () => {
       localStorage.setItem(SKIPPED_KEY, '1');
       hideOnboarding();
+      document.getElementById('p-questionnaire-nudge').style.display = 'flex';
     });
 
     // Reset (inside modal when editing)
@@ -1899,6 +1969,7 @@
       document.querySelectorAll('.chip.selected').forEach(c => c.classList.remove('selected'));
       hideOnboarding();
       hideRecs();
+      document.getElementById('p-questionnaire-nudge').style.display = 'none';
     });
 
     // Close on backdrop click
@@ -1927,12 +1998,20 @@
       hideRecs();
     });
 
+    // Questionnaire nudge button
+    document.getElementById('btn-nudge-open-questionnaire').addEventListener('click', () => {
+      document.getElementById('p-questionnaire-nudge').style.display = 'none';
+      showOnboarding(false);
+    });
+
     // On load: restore prefs or show onboarding
     const savedPrefs = loadPrefs();
     if (savedPrefs) {
       populateChipsFromPrefs(savedPrefs);
       renderRecs(savedPrefs);
-    } else if (!localStorage.getItem(SKIPPED_KEY)) {
+    } else if (localStorage.getItem(SKIPPED_KEY)) {
+      document.getElementById('p-questionnaire-nudge').style.display = 'flex';
+    } else {
       showOnboarding(false);
     }
 

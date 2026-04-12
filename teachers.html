@@ -907,6 +907,56 @@
     .btn-onboarding-reset { color: #DC2626; }
     .btn-onboarding-reset:hover { color: #991B1B; }
 
+    /* ── QUESTIONNAIRE NUDGE BANNER ──────────────────────────────── */
+    .questionnaire-nudge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: #F5F3FF;
+      border: 1.5px solid #C4B5FD;
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+    }
+    .questionnaire-nudge-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .questionnaire-nudge-icon {
+      width: 40px; height: 40px;
+      background: #EDE9FE;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .questionnaire-nudge h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2E1065;
+      margin: 0 0 2px;
+    }
+    .questionnaire-nudge p {
+      font-size: 13px;
+      color: #4C1D95;
+      margin: 0;
+    }
+    .btn-nudge-questionnaire {
+      background: #4F39F6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-nudge-questionnaire:hover { background: #3b28e0; }
+
     /* ── RECOMMENDED SECTION ── */
     .recommended-section {
       display: flex;
@@ -1095,6 +1145,24 @@
 
         <!-- RECOMMENDED FOR YOU (populated by JS when prefs are set) -->
         <div id="recommended-section" style="display:none;"></div>
+
+        <!-- Questionnaire nudge (shown when user skipped onboarding) -->
+        <div id="t-questionnaire-nudge" class="questionnaire-nudge" style="display:none;">
+          <div class="questionnaire-nudge-text">
+            <div class="questionnaire-nudge-icon">
+              <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
+                <circle cx="11" cy="11" r="9" stroke="#4F39F6" stroke-width="2"/>
+                <path d="M8.5 9a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 4" stroke="#4F39F6" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="11" cy="16.5" r="1" fill="#4F39F6"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Get Personalized Tool Recommendations</h3>
+              <p>Answer a few quick questions to see tools matched to your grade level and instructional goals.</p>
+            </div>
+          </div>
+          <button class="btn-nudge-questionnaire" id="btn-nudge-open-questionnaire" type="button">Take the Questionnaire</button>
+        </div>
 
         <h2 class="section-title" id="all-tools-title">Featured Ed Tech Tools</h2>
         <div class="tools-list" id="teacher-tools-list">
@@ -1511,6 +1579,7 @@
     // ── ONBOARDING & PERSONALIZED RECOMMENDATIONS ─────────────────
 
     const PREFS_KEY = 'edtech_teacher_prefs_v1';
+    const SKIPPED_KEY = 'edtech_teacher_skipped';
 
     function loadPrefs() {
       try { return JSON.parse(localStorage.getItem(PREFS_KEY)) || null; }
@@ -1519,10 +1588,12 @@
 
     function savePrefs(prefs) {
       localStorage.setItem(PREFS_KEY, JSON.stringify(prefs));
+      localStorage.removeItem(SKIPPED_KEY);
     }
 
     function clearPrefs() {
       localStorage.removeItem(PREFS_KEY);
+      localStorage.removeItem(SKIPPED_KEY);
     }
 
     // ── Chip helpers ──────────────────────────────────────────────
@@ -1775,17 +1846,23 @@
         }
         savePrefs(prefs);
         hideOnboarding();
+        document.getElementById('t-questionnaire-nudge').style.display = 'none';
         renderRecommendedSection(prefs);
       });
 
       // Skip
-      document.getElementById('btn-onboarding-skip').addEventListener('click', hideOnboarding);
+      document.getElementById('btn-onboarding-skip').addEventListener('click', () => {
+        localStorage.setItem(SKIPPED_KEY, '1');
+        hideOnboarding();
+        document.getElementById('t-questionnaire-nudge').style.display = 'flex';
+      });
 
       // Reset
       document.getElementById('btn-onboarding-reset').addEventListener('click', () => {
         clearPrefs();
         hideOnboarding();
         renderRecommendedSection(null);
+        document.getElementById('t-questionnaire-nudge').style.display = 'none';
         document.querySelectorAll('.chip.selected').forEach(c => c.classList.remove('selected'));
       });
 
@@ -1801,10 +1878,18 @@
         }
       });
 
+      // Questionnaire nudge button
+      document.getElementById('btn-nudge-open-questionnaire').addEventListener('click', () => {
+        document.getElementById('t-questionnaire-nudge').style.display = 'none';
+        showOnboarding(false);
+      });
+
       // Load saved prefs or show onboarding
       const savedPrefs = loadPrefs();
       if (savedPrefs) {
         renderRecommendedSection(savedPrefs);
+      } else if (localStorage.getItem(SKIPPED_KEY)) {
+        document.getElementById('t-questionnaire-nudge').style.display = 'flex';
       } else {
         showOnboarding(false);
       }
