@@ -1567,6 +1567,14 @@
     // ── Modal ─────────────────────────────────────────────────────
 
     function showOnboarding(isEditing) {
+      document.getElementById('onboarding-modal-title').textContent =
+        isEditing ? 'Edit Your Preferences' : 'Personalize Your Tools';
+      document.querySelector('.onboarding-sub').textContent =
+        isEditing
+          ? 'Update your selections below and save your changes.'
+          : 'Tell us about your classroom so we can surface the right EdTech tools for you.';
+      document.getElementById('btn-onboarding-submit').textContent =
+        isEditing ? 'Save Changes' : 'Find My Tools';
       document.getElementById('btn-onboarding-reset').style.display = isEditing ? 'inline' : 'none';
       document.getElementById('onboarding-overlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';

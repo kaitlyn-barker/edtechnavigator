@@ -1717,6 +1717,14 @@
     /* ── MODAL ────────────────────────────────────────────────── */
 
     function showOnboarding(isEditing) {
+      document.getElementById('onboarding-modal-title').textContent =
+        isEditing ? 'Edit Your Preferences' : 'Personalize Your Experience';
+      document.querySelector('.onboarding-sub').textContent =
+        isEditing
+          ? 'Update your selections below and save your changes.'
+          : 'Tell us about your child so we can surface the right tools for your family.';
+      document.getElementById('btn-onboarding-submit').textContent =
+        isEditing ? 'Save Changes' : 'Find Tools for My Child';
       document.getElementById('btn-onboarding-reset').style.display = isEditing ? 'inline' : 'none';
       document.getElementById('onboarding-overlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';
