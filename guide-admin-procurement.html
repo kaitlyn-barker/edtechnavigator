@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ed Tech Procurement Best Practices – EdTech Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #1a2e44;
+      --teal: #2A9D8F;
+      --teal-light: #e6f5f3;
+      --accent: #E76F51;
+      --accent-light: #fdf0ec;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e2e8f0;
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    nav a.logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--teal);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav a.logo span { color: var(--navy); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.92rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a6b 100%);
+      color: var(--white);
+      padding: 3.5rem 2rem 3rem;
+    }
+    .hero-inner { max-width: 820px; margin: 0 auto; }
+    .breadcrumb {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--white); }
+    .tag-row { display: flex; gap: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .tag {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tag.accent { background: var(--accent); border-color: var(--accent); }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      flex-wrap: wrap;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+    /* LAYOUT */
+    .page-body { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+
+    /* INTRO */
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    /* SECTIONS */
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.55rem;
+      color: var(--navy);
+      margin: 2.5rem 0 1rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 1.5rem 0 0.5rem;
+    }
+    p { margin-bottom: 1rem; color: var(--text); }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* STEP CARDS */
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50%;
+      min-width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content h4 { font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+    .step-content p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+
+    /* INFO CARDS */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .info-card .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .info-card h4 { font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .info-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: var(--teal-light);
+      border: 1px solid #b2dbd7;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .highlight strong { color: var(--teal); }
+
+    /* WARNING BOX */
+    .warning {
+      background: var(--accent-light);
+      border: 1px solid #f5c6ba;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .warning strong { color: var(--accent); }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    th { background: var(--navy); color: var(--white); padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+    td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f9fafb; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check { color: var(--teal); font-size: 1.1rem; margin-top: 0.1rem; }
+
+    /* NEXT STEPS */
+    .next-steps {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .next-steps h2 { color: var(--white); margin: 0 0 0.75rem; }
+    .next-steps p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: #228b7e; }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.4); color: var(--white); margin-left: 0.75rem; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero-meta { gap: 0.75rem; }
+      .step-card { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://kaitlyn-barker.github.io/edtechnavigator/index.html" class="logo">EdTech <span>Navigator</span></a>
+  <ul class="nav-links">
+    <li><a href="https://kaitlyn-barker.github.io/edtechnavigator/teachers.html">For Teachers</a></li>
+    <li><a href="https://kaitlyn-barker.github.io/edtechnavigator/parents.html">For Parents</a></li>
+    <li><a href="https://kaitlyn-barker.github.io/edtechnavigator/admin.html">For Administrators</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="https://kaitlyn-barker.github.io/edtechnavigator/admin.html">← For Administrators</a>
+      <span>/ Procurement Guide</span>
+    </div>
+    <div class="tag-row">
+      <span class="tag accent">Procurement</span>
+      <span class="tag">25 min read</span>
+      <span class="tag">Intermediate</span>
+    </div>
+    <h1>Ed Tech Procurement Best Practices</h1>
+    <div class="hero-meta">
+      <span>📋 Guidelines for evaluating, budgeting, and purchasing ed tech at scale</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <div class="intro-card">
+    Purchasing ed tech tools is a high-stakes process. Poor procurement decisions waste budget, burden teachers with tools they won't use, and can put student data at risk. This guide walks you through a structured, evidence-based approach to evaluating and purchasing ed tech tools at the district or school level.
+  </div>
+
+  <h2>Why Procurement Strategy Matters</h2>
+  <p>Districts spend an average of $400–$1,000 per student annually on digital tools — yet research consistently shows that a large portion of those tools go unused or underutilized. A strong procurement strategy ensures every dollar is tied to a clear instructional need and a realistic implementation plan.</p>
+
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="icon">💸</div>
+      <h4>Avoid Waste</h4>
+      <p>Up to 30% of ed tech licenses go unused. Systematic evaluation prevents costly impulse purchases.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🎯</div>
+      <h4>Align to Goals</h4>
+      <p>Tools purchased without a clear instructional purpose rarely get used consistently by teachers.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🔒</div>
+      <h4>Protect Students</h4>
+      <p>Procurement review is your first line of defense for data privacy and FERPA compliance.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">📈</div>
+      <h4>Build Trust</h4>
+      <p>A transparent process builds teacher and community confidence in technology decisions.</p>
+    </div>
+  </div>
+
+  <h2>Phase 1: Define the Need</h2>
+  <p>Before looking at any tool, clearly define the problem you are trying to solve. This is the most commonly skipped step — and the most important.</p>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Identify the instructional or operational gap</h4>
+        <p>What is not working? Where are students struggling? What is costing teachers time? Be specific — "we need better reading tools" is too vague. "Our 3rd–5th grade students lack independent reading practice outside of class" is actionable.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Involve teachers and instructional coaches early</h4>
+        <p>The people who will actually use the tool must be involved before a purchasing decision is made — not just during training. Teacher buy-in is the single strongest predictor of successful tool adoption.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Define success criteria before you start evaluating</h4>
+        <p>What outcomes would tell you this tool is working? Write these down now. Common metrics include: student usage rates, assessment score changes, time-on-task, or teacher self-efficacy scores. Having pre-defined criteria prevents confirmation bias during demos.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Phase 2: Evaluate Options</h2>
+  <p>Use a structured rubric to evaluate tools consistently. Avoid basing decisions on vendor demos alone — these are sales presentations designed to impress, not inform.</p>
+
+  <h3>Where to Find Credible Reviews</h3>
+  <ul>
+    <li><strong>Common Sense Education</strong> (commonsense.org/education) — independent ratings covering learning, engagement, and privacy</li>
+    <li><strong>EdReports</strong> (edreports.org) — in-depth curriculum quality reviews for core subject tools</li>
+    <li><strong>What Works Clearinghouse</strong> (ies.ed.gov/ncee/wwc) — federal database of evidence-based programs</li>
+    <li><strong>Evidence for ESSA</strong> (evidenceforessa.org) — tools rated by ESSA evidence tiers</li>
+    <li><strong>LearnPlatform</strong> — district-level usage and effectiveness analytics</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Pro Tip:</strong> Require vendors to submit peer-reviewed evidence — not just white papers or case studies they commissioned themselves. If a vendor cannot point to independent research, that's a red flag.
+  </div>
+
+  <h3>Key Evaluation Dimensions</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Questions to Ask</th>
+          <th>Who Should Lead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Academic Evidence</strong></td>
+          <td>Is there independent proof it improves outcomes?</td>
+          <td>Curriculum Director</td>
+        </tr>
+        <tr>
+          <td><strong>Data Privacy</strong></td>
+          <td>Does it meet FERPA, COPPA, and state law?</td>
+          <td>Technology Director</td>
+        </tr>
+        <tr>
+          <td><strong>Equity & Access</strong></td>
+          <td>Does it work for all students, devices, and languages?</td>
+          <td>Equity Officer</td>
+        </tr>
+        <tr>
+          <td><strong>Total Cost of Ownership</strong></td>
+          <td>What are training, integration, and renewal costs?</td>
+          <td>Finance / Procurement</td>
+        </tr>
+        <tr>
+          <td><strong>Implementation Readiness</strong></td>
+          <td>Do we have the capacity to deploy and support this?</td>
+          <td>IT Coordinator</td>
+        </tr>
+        <tr>
+          <td><strong>Curriculum Alignment</strong></td>
+          <td>Does it align to our standards at the right depth?</td>
+          <td>Curriculum Director</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Phase 3: Pilot Before You Buy</h2>
+  <p>A structured pilot is the most powerful tool you have against a bad purchase decision. Even a 6–8 week pilot can reveal critical issues — low teacher adoption, technical problems, or weak instructional fit — before you commit district resources.</p>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Select a representative pilot group</h4>
+        <p>Choose 2–4 classrooms that reflect the range of your student population and teacher technology comfort levels. Avoid piloting only with your most tech-forward teachers — you need realistic data.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Define your data collection plan</h4>
+        <p>Decide in advance what you will measure: usage logs, teacher feedback surveys, student work samples, or pre/post assessments. Usage data alone is not enough — a tool can be used frequently without improving learning.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Set a formal go/no-go decision point</h4>
+        <p>Before the pilot begins, communicate clearly that a full purchase is not guaranteed. Establishing this expectation in writing with the vendor strengthens your negotiating position and keeps stakeholders from assuming a done deal.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Phase 4: Negotiate and Contract</h2>
+  <p>Many administrators accept vendor contracts as-is. They shouldn't. You have more leverage than you think — especially if you're representing a district with multiple schools.</p>
+
+  <h3>Key Contract Clauses to Negotiate</h3>
+  <ul class="checklist">
+    <li><span class="check">✓</span> <span><strong>Data ownership and deletion:</strong> What happens to student data when the contract ends? Get deletion timelines in writing.</span></li>
+    <li><span class="check">✓</span> <span><strong>Price lock or cap:</strong> Limit how much the renewal price can increase annually (aim for 3–5% max).</span></li>
+    <li><span class="check">✓</span> <span><strong>Cancellation terms:</strong> Ensure you can exit without penalty if the tool underperforms. Avoid multi-year auto-renewals without notice periods.</span></li>
+    <li><span class="check">✓</span> <span><strong>Data Privacy Agreement (DPA):</strong> This must be signed before any student data is shared — not after purchase.</span></li>
+    <li><span class="check">✓</span> <span><strong>Support SLA:</strong> Define what "support" means — response time, dedicated contact, and escalation path for outages.</span></li>
+    <li><span class="check">✓</span> <span><strong>Training included:</strong> Specify the type, frequency, and format of onboarding. "Access to online tutorials" is not sufficient.</span></li>
+  </ul>
+
+  <div class="warning">
+    <strong>Watch Out For:</strong> Vendors who pressure you to sign before the school year ends, or who offer deep discounts only available "this week." These are negotiating tactics. A quality tool will still be available next month.
+  </div>
+
+  <h2>Phase 5: Plan for Adoption — Not Just Purchase</h2>
+  <p>Purchasing a license does not mean a tool will be used. Plan for adoption from day one.</p>
+
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="icon">🗓️</div>
+      <h4>Schedule PD Before Launch</h4>
+      <p>Training should happen before students use the tool — not during a chaotic first week of use.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">👩‍🏫</div>
+      <h4>Designate Champions</h4>
+      <p>Identify 1–2 teachers per building as go-to experts who can support colleagues informally.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">📊</div>
+      <h4>Monitor Usage Data</h4>
+      <p>Most platforms provide admin dashboards. Check in at 30, 60, and 90 days post-launch.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🔄</div>
+      <h4>Build in a Review</h4>
+      <p>Schedule a formal review at 6 months. If the tool isn't meeting goals, sunset it before renewal.</p>
+    </div>
+  </div>
+
+  <h2>Quick-Reference Procurement Checklist</h2>
+  <ul class="checklist">
+    <li><span class="check">✓</span> <span>Clear instructional need is documented before any vendor is contacted</span></li>
+    <li><span class="check">✓</span> <span>Teachers and instructional coaches have been consulted</span></li>
+    <li><span class="check">✓</span> <span>Tool has been reviewed by at least two independent sources (e.g., Common Sense Education, WWC)</span></li>
+    <li><span class="check">✓</span> <span>Data Privacy Agreement is signed before any student data is shared</span></li>
+    <li><span class="check">✓</span> <span>Total cost of ownership is calculated (not just license cost)</span></li>
+    <li><span class="check">✓</span> <span>Structured pilot conducted with pre-defined success criteria</span></li>
+    <li><span class="check">✓</span> <span>Contract reviewed by legal or procurement before signing</span></li>
+    <li><span class="check">✓</span> <span>Professional development plan is in place before launch</span></li>
+    <li><span class="check">✓</span> <span>6-month review date is scheduled at time of purchase</span></li>
+  </ul>
+
+  <div class="next-steps">
+    <h2>Continue Your Learning</h2>
+    <p>Procurement is just the first step. Explore the related administrator guides to build a comprehensive strategy.</p>
+    <a href="guide-data-privacy.html" class="btn btn-teal">Data Privacy & FERPA →</a>
+    <a href="guide-professional-development.html" class="btn btn-outline">PD for Tech Integration →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 EdTech Navigator. All rights reserved. &nbsp;|&nbsp;
+    <a href="https://kaitlyn-barker.github.io/edtechnavigator/admin.html">Back to Administrators</a>
+  </p>
+</footer>
+
+</body>
+</html>
