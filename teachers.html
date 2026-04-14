@@ -1938,12 +1938,12 @@
         showOnboarding(false);
       });
 
-      // Load saved prefs or show onboarding
+      // Load saved prefs and always show onboarding on page load
       const savedPrefs = loadPrefs();
       if (savedPrefs) {
         renderRecommendedSection(savedPrefs);
-      } else if (localStorage.getItem(SKIPPED_KEY)) {
-        document.getElementById('t-questionnaire-nudge').style.display = 'flex';
+        populateChipsFromPrefs(savedPrefs);
+        showOnboarding(true);
       } else {
         showOnboarding(false);
       }
