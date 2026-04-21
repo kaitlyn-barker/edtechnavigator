@@ -784,6 +784,41 @@
       line-height: 20px;
     }
 
+    /* ── HAMBURGER MENU ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      background: none; border: none;
+      cursor: pointer; padding: 8px;
+      border-radius: 8px; flex-shrink: 0;
+    }
+    .nav-hamburger:hover { background: rgba(15,22,35,0.05); }
+    .nav-hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: #364153; border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .nav-mobile-menu {
+      display: none;
+      background: white;
+      border-bottom: 1px solid rgba(229,231,235,0.8);
+      padding: 8px 20px 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+    }
+    .nav-mobile-menu.open { display: block; }
+    .nav-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .nav-mobile-menu a {
+      display: block; padding: 10px 12px;
+      font-size: 15px; color: #364153;
+      text-decoration: none; border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .nav-mobile-menu a:hover { background: rgba(15,22,35,0.05); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .tools-grid { grid-template-columns: repeat(2, 1fr); }
@@ -797,6 +832,7 @@
     }
 
     @media (max-width: 560px) {
+      .nav-hamburger { display: flex; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hero { padding: 0 20px; }
@@ -1166,7 +1202,18 @@
         </a>
       </li>
     </ul>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="nav-mobile-menu">
+    <ul>
+      <li><a href="teachers.html">For Teachers</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="admin.html">For Administrators</a></li>
+      <li><a href="account.html">My List</a></li>
+    </ul>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -2016,6 +2063,24 @@
     }
 
   })();
+  </script>
+
+  <script>
+    (function(){
+      var btn = document.querySelector('.nav-hamburger');
+      var menu = document.querySelector('.nav-mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+      document.addEventListener('click', function(e){
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
   </script>
 
 </body>
