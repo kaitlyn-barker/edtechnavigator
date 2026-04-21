@@ -90,7 +90,15 @@
     ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
     li { font-size: 0.97rem; margin-bottom: 0.4rem; }
     .quarter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 1.5rem; }
-    @media (max-width: 560px) { .quarter-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) {
+      .quarter-grid { grid-template-columns: 1fr; }
+      .nav-hamburger { display: flex; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 2rem 1.25rem 1.5rem; }
+      .layout { padding: 1.5rem 1.25rem 3rem; }
+      table { display: block; overflow-x: auto; }
+    }
     .quarter-card { border-radius: 10px; padding: 1.1rem 1.2rem; border: 1px solid var(--border); background: var(--white); }
     .quarter-card .q-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-mid); margin-bottom: 0.4rem; }
     .quarter-card h3 { margin: 0 0 0.6rem; font-size: 0.95rem; color: var(--navy); }
@@ -112,6 +120,14 @@
     .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
     .steps li::before { content: counter(step); min-width: 32px; height: 32px; border-radius: 50%; background: var(--blue-mid); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .steps li .step-body strong { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 8px; border-radius: 8px; flex-shrink: 0; }
+    .nav-hamburger:hover { background: rgba(15,22,35,0.05); }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #364153; border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-mobile-menu { display: none; background: white; border-bottom: 1px solid rgba(229,231,235,0.8); padding: 8px 20px 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08); }
+    .nav-mobile-menu.open { display: block; }
+    .nav-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .nav-mobile-menu a { display: block; padding: 10px 12px; font-size: 15px; color: #364153; text-decoration: none; border-radius: 8px; transition: background 0.15s; }
+    .nav-mobile-menu a:hover { background: rgba(15,22,35,0.05); }
   </style>
 </head>
 <body>
@@ -129,7 +145,17 @@
     <li><a href="parents.html">For Parents</a></li>
     <li><a href="admin.html">For Administrators</a></li>
   </ul>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu">
+  <ul>
+    <li><a href="teachers.html">For Teachers</a></li>
+    <li><a href="parents.html">For Parents</a></li>
+    <li><a href="admin.html">For Administrators</a></li>
+  </ul>
+</div>
 <div class="hero">
   <div class="hero-inner">
     <div class="badge"><span class="dot"></span> Intermediate Guide</div>
@@ -318,5 +344,23 @@
     </ul>
   </div>
 </div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.querySelector('.nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', function(e){
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 </body>
 </html>
