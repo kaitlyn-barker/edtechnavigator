@@ -288,9 +288,26 @@
       font-weight: 400;
       color: #4A5565;
       line-height: 26px;
-      flex: 1;
-      margin-bottom: 32px;
+      margin-bottom: 14px;
       max-width: 224px;
+    }
+
+    .role-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .role-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #4A5565;
+      line-height: 20px;
     }
 
     .role-link {
@@ -306,118 +323,6 @@
 
     .role-link svg { transition: transform 0.18s; }
     .role-card:hover .role-link svg { transform: translateX(4px); }
-
-    /* ── WHAT WE OFFER (dark) ── */
-    .offer-section {
-      background: #101828;
-      position: relative;
-      overflow: hidden;
-      padding: 96px 32px;
-    }
-
-    .offer-bg-orbs {
-      position: absolute;
-      inset: 0;
-      opacity: 0.10;
-      pointer-events: none;
-    }
-
-    .offer-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(64px);
-    }
-
-    .offer-orb-1 {
-      width: 384px; height: 384px;
-      background: #AD46FF;
-      left: 50%; top: 0;
-      transform: translateX(-50%);
-    }
-
-    .offer-orb-2 {
-      width: 384px; height: 384px;
-      background: #2B7FFF;
-      left: 50%; bottom: 0;
-      transform: translateX(-10%);
-    }
-
-    .offer-header {
-      text-align: center;
-      margin-bottom: 64px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .offer-title {
-      font-size: clamp(36px, 5vw, 48px);
-      font-weight: 400;
-      color: white;
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .offer-sub {
-      font-size: 20px;
-      font-weight: 400;
-      color: #99A1AF;
-      line-height: 28px;
-      max-width: 586px;
-      margin: 0 auto;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 967px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .feature-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 16px;
-      padding: 33px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .feature-card:hover { background: rgba(255,255,255,0.08); }
-
-    .feature-icon {
-      width: 80px; height: 80px;
-      border-radius: 16px;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 26px;
-    }
-
-    .fi-blue   { background: linear-gradient(135deg, #2B7FFF 0%, #4F39F6 100%); }
-    .fi-green  { background: linear-gradient(135deg, #00C950 0%, #009966 100%); }
-    .fi-violet { background: linear-gradient(135deg, #AD46FF 0%, #7F22FE 100%); }
-
-    .feature-title {
-      font-size: 24px;
-      font-weight: 400;
-      color: white;
-      line-height: 32px;
-      letter-spacing: 0.07px;
-      margin-bottom: 12px;
-    }
-
-    .feature-body {
-      font-size: 16px;
-      font-weight: 400;
-      color: #99A1AF;
-      line-height: 26px;
-      max-width: 234px;
-    }
 
     /* ── FOOTER ── */
     footer {
@@ -764,7 +669,6 @@
       .hero { padding: 48px 20px 40px; }
       .paths-section { padding: 64px 20px; }
       .featured-section { padding: 56px 20px 52px; }
-      .offer-section { padding: 64px 20px; }
       footer { padding: 48px 20px 0; }
       .carousel-track { grid-template-columns: 1fr; }
       .carousel-arrow { display: none; }
@@ -859,6 +763,20 @@
         </div>
         <div class="role-title">Teachers</div>
         <p class="role-desc">Discover tools, implementation guides, and peer reviews from fellow educators.</p>
+        <ul class="role-features">
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#2B7FFF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#2B7FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Implementation Guides
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#2B7FFF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#2B7FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Peer Reviews
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#2B7FFF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#2B7FFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Curated Tools
+          </li>
+        </ul>
         <span class="role-link">
           Learn more
           <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -877,6 +795,20 @@
         </div>
         <div class="role-title">Parents</div>
         <p class="role-desc">Learn how educational technology tools can support your child's learning.</p>
+        <ul class="role-features">
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#00C950" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#00C950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Family-Friendly Overviews
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#00C950" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#00C950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Age-Appropriate Tool Reviews
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#00C950" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#00C950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Child Safety Guides
+          </li>
+        </ul>
         <span class="role-link">
           Learn more
           <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -895,6 +827,20 @@
         </div>
         <div class="role-title">Administrators</div>
         <p class="role-desc">Access policy guides, implementation strategies, and district-level resources.</p>
+        <ul class="role-features">
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#AD46FF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#AD46FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Policy Resources
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#AD46FF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#AD46FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Implementation Strategies
+          </li>
+          <li>
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#AD46FF" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#AD46FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            District-Level Reports
+          </li>
+        </ul>
         <span class="role-link">
           Learn more
           <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -937,57 +883,6 @@
         <div class="carousel-progress-fill" id="carousel-progress"></div>
       </div>
       <p class="carousel-counter" id="carousel-counter">Loading tools…</p>
-    </div>
-  </section>
-
-  <!-- WHAT WE OFFER -->
-  <section class="offer-section" id="offerings">
-    <div class="offer-bg-orbs">
-      <div class="offer-orb offer-orb-1"></div>
-      <div class="offer-orb offer-orb-2"></div>
-    </div>
-
-    <div class="offer-header">
-      <h2 class="offer-title">What We Offer</h2>
-      <p class="offer-sub">Everything you need to make informed decisions about educational technology, always with the student in mind</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon fi-blue">
-          <svg width="40" height="40" fill="none" viewBox="0 0 40 40">
-            <rect x="5" y="8" width="30" height="24" rx="2.5" stroke="white" stroke-width="3.33"/>
-            <line x1="5" y1="16" x2="35" y2="16" stroke="white" stroke-width="3.33"/>
-            <line x1="13" y1="16" x2="13" y2="32" stroke="white" stroke-width="3.33"/>
-          </svg>
-        </div>
-        <div class="feature-title">Implementation Guides</div>
-        <p class="feature-body">Step-by-step instructions for integrating new tools into your educational environment.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon fi-green">
-          <svg width="40" height="40" fill="none" viewBox="0 0 40 40">
-            <circle cx="18" cy="14" r="7" stroke="white" stroke-width="3.33"/>
-            <path d="M6 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="white" stroke-width="3.33" stroke-linecap="round"/>
-            <path d="M28 20l3.5 3.5L38 16" stroke="white" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="feature-title">Peer Reviews</div>
-        <p class="feature-body">Real feedback from educators who have used these tools.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon fi-violet">
-          <svg width="40" height="40" fill="none" viewBox="0 0 40 40">
-            <rect x="5" y="22" width="8" height="14" rx="1.5" stroke="white" stroke-width="3.33"/>
-            <rect x="16" y="15" width="8" height="21" rx="1.5" stroke="white" stroke-width="3.33"/>
-            <rect x="27" y="6" width="8" height="30" rx="1.5" stroke="white" stroke-width="3.33"/>
-          </svg>
-        </div>
-        <div class="feature-title">Policy Resources</div>
-        <p class="feature-body">Guidance for administrators and policymakers on ed tech adoption and governance.</p>
-      </div>
     </div>
   </section>
 
