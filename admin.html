@@ -295,7 +295,12 @@
     }
 
     /* ── SOLUTION CARDS ── */
-    .solution-cards { display: flex; flex-direction: column; gap: 32px; margin-bottom: 32px; }
+    .solution-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
 
     .solution-card {
       background: white;
@@ -304,7 +309,13 @@
       padding: 32px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .solution-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.12), 0 8px 10px -6px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
     }
 
     .card-header { display: flex; flex-direction: column; gap: 12px; }
@@ -334,34 +345,35 @@
     .tag-gray  { background: #ECEEF2; color: #030213; }
 
     .card-desc {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
       color: #4A5565;
-      line-height: 29.25px;
+      line-height: 26px;
     }
 
-    .card-features { display: flex; flex-direction: column; gap: 12px; }
+    .solution-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
 
-    .features-label {
+    .solution-features li {
       font-size: 14px;
       font-weight: 400;
-      color: #364153;
+      color: #4A5565;
       line-height: 20px;
+      padding-left: 16px;
+      position: relative;
     }
 
-    .feature-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-
-    .feature-pill {
-      height: 38px;
-      padding: 0 17px;
-      background: #FAF5FF;
-      border-radius: 9999px;
-      border: 1px solid #E9D4FF;
-      font-size: 14px;
-      font-weight: 400;
-      color: #8200DB;
-      line-height: 38px;
-      white-space: nowrap;
+    .solution-features li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #9810FA;
+      font-weight: 700;
     }
 
     .card-actions { display: flex; gap: 12px; }
@@ -664,7 +676,12 @@
 
     .btn-guide:hover { background: rgba(0,0,0,0.05); }
 
+    @media (max-width: 860px) {
+      .solution-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 600px) {
+      .solution-cards { grid-template-columns: 1fr; }
       .guide-card { flex-direction: column; height: auto; gap: 16px; }
       .btn-guide { align-self: flex-start; }
     }
@@ -2206,29 +2223,29 @@
 
     // ── Tool database rendering ───────────────────────────────────
     function buildAdminCard(tool) {
-      const tier  = tool.adminRelevant === 'High' ? 'Enterprise' : 'District';
-      const scope = tool.gradeLevels;
+      const tier = tool.adminRelevant === 'High' ? 'Enterprise' : 'District';
+      const features = [
+        `Grades: ${tool.gradeLevels}`,
+        `Subjects: ${tool.subjects.join(', ')}`,
+        `Platforms: ${tool.platforms}`,
+        `Pricing: ${tool.pricingModel}`
+      ];
       return `
         <div class="solution-card">
           <div class="card-header">
             <h3 class="card-title">${tool.name}</h3>
             <div class="card-tags">
               <span class="tag tag-dark">${tool.category}</span>
-              <span class="tag tag-light">${scope}</span>
+              <span class="tag tag-light">${tool.gradeLevels}</span>
               <span class="tag tag-gray">${tier}</span>
             </div>
           </div>
-          <p class="card-desc">${tool.description} Vendor: ${tool.vendor}. Subjects: ${tool.subjects.join(', ')}. Pricing: ${tool.pricingModel}.</p>
-          <div class="card-features">
-            <p class="features-label">Key Details:</p>
-            <div class="feature-pills">
-              <span class="feature-pill">${tool.subcategory}</span>
-              <span class="feature-pill">${tool.platforms}</span>
-              <span class="feature-pill">${tool.adminRelevant} Admin Relevance</span>
-            </div>
-          </div>
+          <p class="card-desc">${tool.description}</p>
+          <ul class="solution-features">
+            ${features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
           <div class="card-actions">
-            <a class="btn-primary" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">Visit Website</a>
+            <a class="btn-primary" href="${tool.website}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;flex:1;">Learn More</a>
             <button class="btn-save-tool" data-tool-id="${tool.id}">Save to My List</button>
           </div>
         </div>`;
